@@ -13,6 +13,16 @@ async function rebuildDB() {
     `);
 
     await client.query(/*sql*/ `
+      DROP TABLE IF EXISTS cart;
+    `);
+
+    await client.query(/*sql*/`
+      CREATE TABLE cart(
+        id SERIAL PRIMARY KEY,
+        "userId" INTEGER REFERENCES users(id),
+        "productId" INTEGER REFERENCES products(id),
+        quantity INTEGER NOT NULL
+      );
       CREATE TABLE users(
         id  SERIAL PRIMARY KEY, 
         name VARCHAR(255) NOT NULL,
@@ -91,6 +101,18 @@ async function seedData() {
       (name, description, imageurl, condition, inventory, price)
       VALUES ($1, $2, $3, $4, $5, $6);
       `, [product.name, product.description, product.imageurl, product.condition, product.inventory, product.price ]);
+  }
+
+  const carts = [
+    {userId: 1, productId: 1, quantity: 2}
+  ];
+
+  for (const cart of carts) {
+    await client.query(/*sql*/`
+      INSERT INTO cart
+      ("userId", "productId", quantity)
+      VALUES ($1, $2, $3);
+    `,[cart.userId, cart.productId, cart.quantity]);
   }
 
   // create useful starting data
