@@ -27,4 +27,12 @@ describe('rebuildDB', () => {
     `,['testuser']);
     expect(rows.length).toBe(1);
   })
+  
+  it("should create the products table", async () => {
+    await rebuildDB();
+    const { rows } = await client.query(/*sql */`
+      SELECT * FROM products;
+    `);
+    expect(rows).toBeTruthy();
+  });
 }); 
