@@ -140,6 +140,24 @@ async function seedData() {
         inventory: 1,
         price: 3019,
       },
+      {
+        name: "Allora ACL-250 Student Series Clarinet",
+        description: "The Allora ACL-250 has an ABS plastic body with a smooth finish, nickel-plated nickel silver keys, a fixed thumb rest with neck strap ring and Pisoni pads. Comes with an upgraded nylon polyfoam case and a three-year warranty.",
+        imageurl:
+          "https://media.guitarcenter.com/is/image/MMGS7/J51109000000000-00-720x720.jpg",
+        condition: "Used",
+        inventory: 1,
+        price: 175,
+      },
+      {
+        name: "Prelude by Conn-Selmer AS711 Student Alto Saxophone",
+        description: "This beginner's model from Conn-Selmer, the Prelude Alto Saxophone, is built to be durable and easy to play. It features a gold lacquer body with high F#, rocking table keys, and articulated C#. Includes case, mouthpiece, cap, and ligature.",
+        imageurl:
+          "https://media.musicarts.com/is/image/MMGS7/Prelude-by-Conn-Selmer-AS711-Student-Model-Alto-Saxophone/585558000000000-00-250x250.jpg",
+        condition: "New",
+        inventory: 1,
+        price: 975,
+      },
     ];
     
     for (const product of products) {
