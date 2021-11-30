@@ -1,0 +1,1 @@
+// page with one product that shows product details and ability to add to cart
