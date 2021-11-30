@@ -8,6 +8,8 @@ async function rebuildDB() {
   try {
     await client.query(/*sql*/ `
       DROP TABLE IF EXISTS users;
+      DROP TABLE IF EXISTS products;
+      DROP TYPE IF EXISTS condition_enum;
     `);
 
     await client.query(/*sql*/ `
@@ -17,7 +19,20 @@ async function rebuildDB() {
         email VARCHAR(255) UNIQUE NOT NULL, 
         password VARCHAR(255) NOT NULL
       );
-    `); // drop tables in correct order
+
+      CREATE TYPE condition_enum as ENUM('New', 'Used');
+
+      CREATE TABLE products(
+        id  SERIAL PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        description VARCHAR(255) NOT NULL,
+        imageurl TEXT,
+        condition condition_enum,
+        inventory INTEGER,
+        price DECIMAL
+      );
+    `)    
+    // drop tables in correct order
     // build tables in correct order
   } catch (error) {
     throw error;
@@ -60,7 +75,25 @@ async function seedData() {
       );
     }
 
-    // create useful starting data
+  const products = [
+    { name: "Gibson Les Paul",
+      description: "The legendary class guitar",
+      imageurl: 'https://static.gibson.com/product-images/USA/USAI9Q269/Heritage%20Cherry%20Sunburst/front-300_600.png',
+      condition: "New",
+      inventory: 1,
+      price: 1000
+  }
+  ];
+
+  for(const product of products) {
+    await client.query(/*sql*/`
+      INSERT INTO products
+      (name, description, imageurl, condition, inventory, price)
+      VALUES ($1, $2, $3, $4, $5, $6);
+      `, [product.name, product.description, product.imageurl, product.condition, product.inventory, product.price ]);
+  }
+
+  // create useful starting data
   } catch (error) {
     throw error;
   }

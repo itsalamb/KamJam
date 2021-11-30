@@ -29,5 +29,13 @@ describe("rebuildDB", () => {
       ["kamjamtest@gmail.com"]
     );
     expect(rows.length).toBe(1);
+  })
+  
+  it("should create the products table", async () => {
+    await rebuildDB();
+    const { rows } = await client.query(/*sql */`
+      SELECT * FROM products;
+    `);
+    expect(rows).toBeTruthy();
   });
-});
+}); 
