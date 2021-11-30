@@ -9,6 +9,7 @@ async function rebuildDB() {
     await client.query(/*sql*/`
       DROP TABLE IF EXISTS users;
       DROP TABLE IF EXISTS products;
+      DROP TYPE IF EXISTS condition_enum;
     `);
 
     await client.query(/*sql*/`
@@ -18,13 +19,14 @@ async function rebuildDB() {
         password VARCHAR(255) NOT NULL
       );
 
+      CREATE TYPE condition_enum as ENUM('New', 'Used');
+
       CREATE TABLE products(
         id  SERIAL PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
         description VARCHAR(255) NOT NULL,
         imageurl TEXT,
-        "categoriesId" VARCHAR(255) NOT NULL,
-        condition ENUM(New, Used),
+        condition condition_enum,
         inventory INTEGER,
         price DECIMAL
       );
@@ -52,15 +54,21 @@ async function seedData() {
   }
 
   const products = [
-    { username: "testuser", password: "testuser999" }
+    { name: "Gibson Les Paul",
+      description: "The legendary class guitar",
+      imageurl: 'https://static.gibson.com/product-images/USA/USAI9Q269/Heritage%20Cherry%20Sunburst/front-300_600.png',
+      condition: "New",
+      inventory: 1,
+      price: 1000
+  }
   ];
 
   for(const product of products) {
     await client.query(/*sql*/`
       INSERT INTO products
-      (name, description, imageurl, categoriesId, condition, inventory, price)
-      VALUES ($1, $2, $3, $4, $5, $6, $7);
-      `, [products.name, products.description, products.imgaeurl, products.catagoriesId, products.condition, products.inventory, products.price ]);
+      (name, description, imageurl, condition, inventory, price)
+      VALUES ($1, $2, $3, $4, $5, $6);
+      `, [product.name, product.description, product.imageurl, product.condition, product.inventory, product.price ]);
   }
 
   // create useful starting data
