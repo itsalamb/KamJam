@@ -26,7 +26,7 @@ describe("rebuildDB", () => {
       SELECT * from users
       WHERE email = $1
     `,
-      ["testuser"]
+      ["kamjamtest@gmail.com"]
     );
     expect(rows.length).toBe(1);
   });
