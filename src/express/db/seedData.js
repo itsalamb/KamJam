@@ -2,20 +2,21 @@
 const {
   client,
   // other db methods
-} = require("./index")
+} = require("./index");
 
 async function rebuildDB() {
   try {
-    await client.query(/*sql*/`
+    await client.query(/*sql*/ `
       DROP TABLE IF EXISTS users;
       DROP TABLE IF EXISTS products;
       DROP TYPE IF EXISTS condition_enum;
     `);
 
-    await client.query(/*sql*/`
+    await client.query(/*sql*/ `
       CREATE TABLE users(
         id  SERIAL PRIMARY KEY, 
-        username VARCHAR(255) UNIQUE NOT NULL, 
+        name VARCHAR(255) NOT NULL,
+        email VARCHAR(255) UNIQUE NOT NULL, 
         password VARCHAR(255) NOT NULL
       );
 
@@ -34,24 +35,45 @@ async function rebuildDB() {
     // drop tables in correct order
     // build tables in correct order
   } catch (error) {
-    throw error
+    throw error;
   }
 }
 
 async function seedData() {
   try {
+    const users = [
+      {
+        email: "kamjamtest@gmail.com",
+        password: "kamjampassword000",
+        name: "KamJam Test",
+      },
+      {
+        email: "kyletest@gmail.com",
+        password: "kyletestpassword123",
+        name: "Kyle Test",
+      },
+      {
+        email: "austintest@gmail.com",
+        password: "austintestpassword456",
+        name: "Austin Test",
+      },
+      {
+        email: "marktest@gmail.com",
+        password: "marktestpassword789",
+        name: "Mark Test",
+      },
+    ];
 
-  const users = [
-    { username: "testuser", password: "testuser999" }
-  ];
-
-  for(const user of users) {
-    await client.query(/*sql*/`
+    for (const user of users) {
+      await client.query(
+        /*sql*/ `
       INSERT INTO users
-      (username, password)
-      VALUES ($1, $2);
-    `,[user.username, user.password]);
-  }
+      (email, password, name)
+      VALUES ($1, $2, $3);
+    `,
+        [user.email, user.password, user.name]
+      );
+    }
 
   const products = [
     { name: "Gibson Les Paul",
@@ -73,11 +95,11 @@ async function seedData() {
 
   // create useful starting data
   } catch (error) {
-    throw error
+    throw error;
   }
 }
 
 module.exports = {
   rebuildDB,
   seedData,
-}
+};
