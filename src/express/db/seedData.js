@@ -89,9 +89,9 @@ async function seedData() {
         name: "Gibson 50s J-45 Original",
         description: "The new 50s J-45 Original model flaunts vintage-inspired detailing from the golden era of Gibson. Classic “Workhorse” materials include a Sitka Spruce top and Select Mahogany back and sides. The multi-ply top and single-ply back binding are subtly antiqued making each instrument look just like a seasoned Gibson acoustic. Appointed with cream button tuners, a 50s-era tortoise pick guard, and upgraded with an LR Baggs® VTC pickup for the best and most natural-sounding tone when amplified. ",
         imageurl: "https://static.gibson.com/product-images/Acoustic/ACCSRX331/Ebony/front-banner-1600_900.png",
-        condition: "New",
+        condition: "Used",
         inventory: 1,
-        price: 2799,
+        price: 2199,
       },
       {
         name: "Fender Jason Isbell Custom Telecaster",
@@ -117,7 +117,7 @@ async function seedData() {
         description: "Heritage Build authentically recaptures the classic look and vibe from the revered Gretsch days of the Big Band and Jazz era. The classic G5472 double-ended lug, fitted with our extra-long tension rods, enriches the look of any Nitron, Satin or Gloss finish on your custom Gretsch drum kit. ",
         imageurl:
           "https://www.gretschdrums.com/sites/default/files/styles/portfolio_portrait_full/public/drums/usa-custom-gallery/USACustomCaribbeanTwilight.png?itok=QpWiOXTx",
-        condition: "New",
+        condition: "Used",
         inventory: 1,
         price: 3400,
       },
@@ -130,8 +130,18 @@ async function seedData() {
         inventory: 1,
         price: 1011,
       },
+      // Band / Orchestra
+      {
+        name: "Bach 18037 Professional Bb Trumpet",
+        description: "The Bach 180 series trumpets are the number one selling professional trumpets in the world. The 18037 features a #37 one-piece hand-hammered professional bell that produces a warm sound with great projection allowing this instrument to work well in multiple musical settings—from jazz to concert or solo playing.",
+        imageurl:
+          "https://www.conn-selmer.com/application/files/8815/0722/9036/18037.png",
+        condition: "New",
+        inventory: 1,
+        price: 3019,
+      },
     ];
-
+    
     for (const product of products) {
       await client.query(
         /*sql*/ `
