@@ -1,6 +1,6 @@
 const express = require("express");
 const usersRouter = express.Router();
-const { getAllUsers, getUserByEmail, createUser } = require("../db");
+const { getAllUsers, getUserByEmail, createUser } = require("../db/users");
 const jwt = require("jsonwebtoken");
 const { requireUser } = require("./utils");
 
@@ -53,7 +53,7 @@ usersRouter.post("/login", async (req, res, next) => {
 });
 
 usersRouter.post("/register", async (req, res, next) => {
-  const { username, password, name } = req.body;
+  const { email, password, name } = req.body;
 
   try {
     const user = await getUserByEmail(email);
@@ -65,7 +65,7 @@ usersRouter.post("/register", async (req, res, next) => {
       });
     }
 
-    const user = await createUser({
+    const newUser = await createUser({
       email,
       password,
       name,
@@ -73,7 +73,7 @@ usersRouter.post("/register", async (req, res, next) => {
 
     const token = jwt.sign(
       {
-        id: user.id,
+        id: newUser.id,
         email,
       },
       process.env.JWT_SECRET,
@@ -83,6 +83,7 @@ usersRouter.post("/register", async (req, res, next) => {
     );
 
     res.send({
+      name: newUser.name,
       message: "Thank you for registering with KamJam!",
       token,
     });
