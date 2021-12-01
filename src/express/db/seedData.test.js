@@ -38,4 +38,24 @@ describe("rebuildDB", () => {
     `);
     expect(rows).toBeTruthy();
   });
+ 
+  it("should create the cart table", async () => {
+    await rebuildDB();
+    const { rows } = await client.query(/*sql*/`
+      SELECT * FROM cart;
+    `);
+    expect(rows).toBeTruthy();
+  });
+  
+
+  it("should create the default test cart", async () => {
+    await rebuildDB();
+    await seedData();
+    const { rows } = await client.query(/*sql*/`
+      SELECT * from cart
+      WHERE id = $1
+    `,[1]);
+    expect(rows.length).toBe(1);
+  })
+
 }); 
