@@ -27,7 +27,7 @@ async function rebuildDB() {
       CREATE TABLE products(
         id  SERIAL PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
-        description VARCHAR(255) NOT NULL,
+        description TEXT NOT NULL,
         imageurl TEXT,
         condition condition_enum,
         inventory INTEGER,
@@ -170,9 +170,9 @@ async function seedData() {
 
   const carts = [
     {userId: 1, productId: 1, quantity: 2},
-    // {userId: 2, productId: 4, quantity: 1},
-    // {userId: 3, productId: 5, quantity: 1},
-    // {userId: 4, productId: 2, quantity: 4}
+    {userId: 2, productId: 4, quantity: 1},
+    {userId: 3, productId: 5, quantity: 1},
+    {userId: 4, productId: 2, quantity: 4}
   ];
 
   for (const cart of carts) {
