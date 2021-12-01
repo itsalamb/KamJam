@@ -84,7 +84,55 @@ const products = [
       price: 975,
     },
     // keyboard / synths
+    {
+        name: "Nord Stage 3 Keyboard",
+        description: "Our outstanding new flagship instrument features our latest award-winning technologies including the Nord Lead A1 Synth Engine with sample playback, our acclaimed Nord C2D organ, a greatly enhanced Piano Section and extensive hands-on Effects - all in one exceptional performance keyboard.",
+        imageurl: "https://www.nordkeyboards.com/sites/default/files/files/products/nord-stage-3/images/models-stage3-88-revb.jpg",
+        condition: "New",
+        inventory: 1,
+        price: 4800,
+      },
+    {
+        name: "Yamaha EZ-300 Keyboard",
+        description: "EZ-300 is a 61-key, touch-sensitive keyboard—specially equipped with lighting keys, and designed as an entry portable keyboard model for the first-time players. Stylish and comprehensive, it allows you to practice, play and perform with a variety of lesson functions and authentic instrument sounds.",
+        imageurl: "https://www.yamaha.com/yamahavgn/PIM/Images/ez-300_detail06_5c21239d586292cef740b246009a5d85.png?_ga=2.108831554.1564538047.1638376634-424214226.1638376634",
+        condition: "Used",
+        inventory: 1,
+        price: 400,
+    },
+    {
+        name: "Yamaha CEL-56 Glockenspiel",
+        description: "Professional model equipped with a soft pedal.",
+        imageurl: "https://www.yamaha.com/yamahavgn/PIM/Images/CEL-56P_540x540_735x735_d5dd4b16e6705e566f63a43cc7c0af46.jpg",
+        condition: "New",
+        inventory: 1,
+        price: 33280,
+    },
     // accessories
+    {
+        name: "Monster Cable Monster Rock 1/4 inch Instrument Cable 6 ft.",
+        description: "Monster Rock is a high-performance, application-specific cable designed to enhance the sonic bite and character of your instrument. Multi-gauge wire networks maximize your guitar's tone. Cut through the mix with Monster Rock.",
+        imageurl: "https://i5.walmartimages.com/asr/1f63b4c8-e1d0-431e-bc0b-b0c81f4dc901_1.26ef1431d23f15df4686282a1353e777.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+        condition: "New",
+        inventory: 1,
+        price: 84,
+    },
+    {
+        name: "Boss DB-90 Dr. Beat Metronome",
+        description: "The Boss DB-90 Dr. Beat Metronome features Rhythm Coach functions with an onboard microphone, a reference-tone function for tuning, an instrument input, MIDI input, and other handy tools.",
+        imageurl: "https://media.guitarcenter.com/is/image/MMGS7/213017000000000-00-2000x2000.jpg",
+        condition: "Used",
+        inventory: 1,
+        price: 99,
+    },
+    {
+        name: "Musician's Gear Guitar Stand",
+        description: "Made to exacting specs with soft black neoprene rubber tubing to protect guitar. Folds up for easy transport. Not for nitrocellulose-finish guitars.",
+        imageurl: "https://target.scene7.com/is/image/Target/GUEST_6560a448-880f-4dea-b37c-e397baf5a8be?fmt=webp&wid=1400&qlt=80",
+        condition: "Used",
+        inventory: 1,
+        price: 8,
+    },
   ];
 
   module.exports = { products }
