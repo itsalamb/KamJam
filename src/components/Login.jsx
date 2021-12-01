@@ -12,7 +12,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
     event.preventDefault();
 
     const response = await fetch(
-      ``,
+      `api/users/login`,
       {
         method: "POST",
         headers: {

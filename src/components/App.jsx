@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { getMessage } from '../api';
+import LoginForm from './Login';
 
 // This is just a sample App component, replace it with your own.
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
     <div className="App">
       <h1>Hello, World!</h1>
       <h2>{ message }</h2>
+      <LoginForm/>
     </div>
   );
 }
