@@ -8,17 +8,25 @@ const { products } = require("./productData")
 async function rebuildDB() {
   try {
     await client.query(/*sql*/ `
-      DROP TABLE IF EXISTS users;
+      DROP TABLE IF EXISTS cart;
       DROP TABLE IF EXISTS products;
       DROP TYPE IF EXISTS condition_enum;
+      DROP TABLE IF EXISTS categories;
+      DROP TABLE IF EXISTS users;
     `);
 
-    await client.query(/*sql*/ `
+
+    await client.query(/*sql*/`
       CREATE TABLE users(
         id  SERIAL PRIMARY KEY, 
         name VARCHAR(255) NOT NULL,
         email VARCHAR(255) UNIQUE NOT NULL, 
         password VARCHAR(255) NOT NULL
+      );
+      CREATE TABLE categories(
+        id  SERIAL PRIMARY KEY,
+        name VARCHAR (255),
+        imageurl TEXT
       );
 
       CREATE TYPE condition_enum as ENUM('New', 'Used');
@@ -26,13 +34,19 @@ async function rebuildDB() {
       CREATE TABLE products(
         id  SERIAL PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
-        description VARCHAR(255) NOT NULL,
+        description TEXT NOT NULL,
         imageurl TEXT,
         condition condition_enum,
         inventory INTEGER,
         price DECIMAL
       );
-    `);
+      CREATE TABLE cart(
+        id SERIAL PRIMARY KEY,
+        "userId" INTEGER REFERENCES users(id),
+        "productId" INTEGER REFERENCES products(id),
+        quantity INTEGER NOT NULL
+      );
+    `)    
     // drop tables in correct order
     // build tables in correct order
   } catch (error) {
@@ -75,6 +89,26 @@ async function seedData() {
         [user.email, user.password, user.name]
       );
     }
+
+    const categories = [
+      {name: 'Guitars', imageurl: 'https://static.sonovente.com/img/library/zoom/56/optim/56153_1.jpg'},
+      {name:'Drums', imageurl: 'https://media.sweetwater.com/api/i/q-82__ha-1f60e355579b2bf7__hmac-d80888d53b2a61ae45066af962fceb423dcbf45d/images/items/750/EVO22BKSi-large.jpg'},
+      {name: 'Band/Orchestra', imageurl: 'https://cdn.shopify.com/s/files/1/0577/8492/6388/products/TC236GL_0168-min.jpg?v=1624549836'},
+      {name: 'Keyboards/Synths', imageurl: 'https://m.media-amazon.com/images/I/71HQQWhlK9L._AC_SL1500_.jpg'},
+      {name: 'Accessories', imageurl: 'https://media.guitarcenter.com/is/image/MMGS7/213017000000000-00-2000x2000.jpg'}
+    ]
+
+    for (const category of categories) {
+      await client.query(
+        /*sql*/ `
+      INSERT INTO categories
+      (name, imageurl)
+      VALUES ($1, $2);
+    `,
+        [category.name, category.imageurl]
+      );
+    }
+
 // list of products - moved to db/productData.js
     
     
@@ -96,7 +130,21 @@ async function seedData() {
       );
     }
 
-    // create useful starting data
+  const carts = [
+    {userId: 1, productId: 1, quantity: 2},
+    {userId: 2, productId: 4, quantity: 1},
+    {userId: 3, productId: 5, quantity: 1},
+    {userId: 4, productId: 2, quantity: 4}
+  ];
+
+  for (const cart of carts) {
+    await client.query(/*sql*/`
+      INSERT INTO cart
+      ("userId", "productId", quantity)
+      VALUES ($1, $2, $3);
+    `,[cart.userId, cart.productId, cart.quantity]);
+  }
+  // create useful starting data
   } catch (error) {
     throw error;
   }
