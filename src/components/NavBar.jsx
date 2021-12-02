@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 const NavBar = () => {
   return (
     <nav className="navbar">
       <div className="logo">
-        <img src="/images/logo.png" />
+        <h2>KamJam logo here!</h2>
       </div>
       <div className="nav-main">
-        <button>Insert Searchbar here</button>
+        <SearchBar className="search-bar" />
         <div className="links">
           <Link className="navlinks">Guitars</Link>
           <Link className="navlinks">Drums</Link>
@@ -23,10 +24,10 @@ const NavBar = () => {
           <p>Hello, *insert username*!</p>
           <button>Insert cart icon</button>
         </div>
-        <div className="login-links">
-          <Link>Checkout</Link>
-          <Link>Login/Sign Up</Link>
-          <Link>Logout</Link>
+        <div>
+          <Link className="login-links">Checkout</Link>
+          <Link className="login-links">Login/Sign Up</Link>
+          <Link className="login-links">Logout</Link>
         </div>
       </div>
     </nav>
