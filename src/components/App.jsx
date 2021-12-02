@@ -3,7 +3,7 @@ import LoginForm from "./Login";
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 //import Home from "./components/Home";
 import NavBar from "./NavBar";
-// import Register from "./components/Register";
+import Register from "./Register";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -37,9 +37,9 @@ const App = () => {
             {/* <Route exact path="/">
               <Home />
             </Route> */}
-            {/* <Route path="/register">
+            <Route path="/register">
               <Register setIsLoggedIn={setIsLoggedIn} />
-            </Route> */}
+            </Route>
             <Route path="/login">
               <LoginForm setIsLoggedIn={setIsLoggedIn} />
             </Route>
