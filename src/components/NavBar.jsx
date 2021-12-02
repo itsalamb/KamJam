@@ -35,9 +35,14 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
               Logout
             </Link>
           ) : (
-            <Link className="login-links" to="/login">
-              Login/Sign Up
-            </Link>
+            <>
+              <Link className="login-links" to="/login">
+                Login
+              </Link>
+              <Link className="login-links" to="/register">
+                Sign Up
+              </Link>
+            </>
           )}
           <Link className="login-links">Checkout</Link>
         </div>
