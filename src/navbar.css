@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+  margin: 2px;
+}
+
+/* NavBar styles */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  background-color: lightgray;
+  height: 100px;
+}
+
+.nav-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-between;
+  gap: 20px;
+}
+
+.navlinks {
+  width: fit-content;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10%;
+  text-decoration: none;
+  border: 2px solid black;
+  color: black;
+}
+
+.navlinks:hover {
+  cursor: pointer;
+  background-color: indianred;
+}
+
+.right-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.login-links {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10%;
+  text-decoration: none;
+  border: 2px solid black;
+  color: black;
+}
+
+.login-links:hover {
+  cursor: pointer;
+  background-color: indianred;
+}

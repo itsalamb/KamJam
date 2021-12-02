@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import LoginForm from './Login';
+import React, { useState, useEffect } from "react";
+import LoginForm from "./Login";
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 //import Home from "./components/Home";
-// import NavBar from "./components/NavBar";
-import Register from './Register';
+import NavBar from "./NavBar";
+import Register from "./Register";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -12,17 +12,14 @@ const App = () => {
   useEffect(() => {
     const TOKEN = window.localStorage.getItem("token");
     const checkAuth = async () => {
-      const response = await fetch(
-        `api/users/login`,
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${TOKEN}`,
-          },
-        }
-      );
+      const response = await fetch(`api/users/login`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${TOKEN}`,
+        },
+      });
       const data = await response.json();
-      console.log(data)
+      console.log(data);
       setEmail(data.email);
 
       if (data.id) {
@@ -34,7 +31,7 @@ const App = () => {
   return (
     <Router>
       <div className="App">
-        {/* <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} /> */}
+        <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         <div className="content">
           <Switch>
             {/* <Route exact path="/">

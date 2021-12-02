@@ -1,14 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
-const NavBar = () => {
+const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
+  const handleClick = () => {
+    localStorage.clear();
+    setIsLoggedIn(false);
+  };
+
   return (
     <nav className="navbar">
       <div className="logo">
-        <img src="/images/logo.png" />
+        <h2>KamJam logo here!</h2>
       </div>
       <div className="nav-main">
-        <button>Insert Searchbar here</button>
+        <SearchBar className="search-bar" />
         <div className="links">
           <Link className="navlinks">Guitars</Link>
           <Link className="navlinks">Drums</Link>
@@ -23,10 +29,17 @@ const NavBar = () => {
           <p>Hello, *insert username*!</p>
           <button>Insert cart icon</button>
         </div>
-        <div className="login-links">
-          <Link>Checkout</Link>
-          <Link>Login/Sign Up</Link>
-          <Link>Logout</Link>
+        <div>
+          {isLoggedIn ? (
+            <Link className="login-links" to="/login" onClick={handleClick}>
+              Logout
+            </Link>
+          ) : (
+            <Link className="login-links" to="/login">
+              Login/Sign Up
+            </Link>
+          )}
+          <Link className="login-links">Checkout</Link>
         </div>
       </div>
     </nav>
