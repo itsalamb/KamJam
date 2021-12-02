@@ -2,7 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 
-const NavBar = () => {
+const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
+  const handleClick = () => {
+    localStorage.clear();
+    setIsLoggedIn(false);
+  };
+
   return (
     <nav className="navbar">
       <div className="logo">
@@ -25,9 +30,16 @@ const NavBar = () => {
           <button>Insert cart icon</button>
         </div>
         <div>
+          {isLoggedIn ? (
+            <Link className="login-links" to="/login" onClick={handleClick}>
+              Logout
+            </Link>
+          ) : (
+            <Link className="login-links" to="/login">
+              Login/Sign Up
+            </Link>
+          )}
           <Link className="login-links">Checkout</Link>
-          <Link className="login-links">Login/Sign Up</Link>
-          <Link className="login-links">Logout</Link>
         </div>
       </div>
     </nav>
