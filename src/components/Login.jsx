@@ -27,7 +27,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
       }
     );
     const data = await response.json();
-    console.log(data.token);
+    console.log(data);
     window.localStorage.setItem("token", data.token);
 
     if (data.token) {
