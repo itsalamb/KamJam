@@ -1,28 +1,56 @@
 import React, { useState, useEffect } from 'react';
+import LoginForm from './Login';
+import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
+//import Home from "./components/Home";
+// import NavBar from "./components/NavBar";
+// import Register from "./components/Register";
 
-import { getMessage } from '../api';
-
-// This is just a sample App component, replace it with your own.
 const App = () => {
-  const [message, setMessage] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
-    // This is a sample of querying our API for a message
-    getMessage()
-      .then(response => {
-        setMessage(response.message);
-      })
-      .catch(error => {
-        setMessage(error.message);
-      });
-  }, []);
+    const TOKEN = window.localStorage.getItem("token");
+    const checkAuth = async () => {
+      const response = await fetch(
+        `api/users/login`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${TOKEN}`,
+          },
+        }
+      );
+      const data = await response.json();
+      console.log(data)
+      setEmail(data.email);
 
+      if (data.id) {
+        setIsLoggedIn(true);
+      }
+    };
+    checkAuth();
+  }, [isLoggedIn]);
   return (
-    <div className="App">
-      <h1>Hello, World!</h1>
-      <h2>{ message }</h2>
-    </div>
+    <Router>
+      <div className="App">
+        {/* <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} /> */}
+        <div className="content">
+          <Switch>
+            {/* <Route exact path="/">
+              <Home />
+            </Route> */}
+            {/* <Route path="/register">
+              <Register setIsLoggedIn={setIsLoggedIn} />
+            </Route> */}
+            <Route path="/login">
+              <LoginForm setIsLoggedIn={setIsLoggedIn} />
+            </Route>
+          </Switch>
+        </div>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
