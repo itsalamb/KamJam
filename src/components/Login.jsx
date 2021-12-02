@@ -3,8 +3,9 @@ import { NavLink, useHistory } from "react-router-dom";
 
 const LoginForm = ({ setIsLoggedIn }) => {
   const history = useHistory();
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState(null);
 
@@ -19,8 +20,9 @@ const LoginForm = ({ setIsLoggedIn }) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          username,
+          email,
           password,
+          name
         }),
       }
     );
@@ -50,9 +52,9 @@ const LoginForm = ({ setIsLoggedIn }) => {
             <input
               type="text"
               name="name"
-              placeholder="USERNAME"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Enter Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </label>
           <br />
@@ -61,7 +63,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
             <input
               type="password"
               name="password"
-              placeholder="PASSWORD"
+              placeholder="Enter Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -70,7 +72,8 @@ const LoginForm = ({ setIsLoggedIn }) => {
           <input type="submit" value="Log In" />
         </form>
         <h3>
-          Not a member yet? <NavLink to="/register">Register today!</NavLink>
+            {/* NavLink can be reabled when other components are working */}
+          {/* Not a member yet? <NavLink to="/register">Register today!</NavLink> */}
         </h3>
       </div>
     </>
