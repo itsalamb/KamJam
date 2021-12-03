@@ -16,12 +16,24 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
       <div className="nav-main">
         <SearchBar className="search-bar" />
         <div className="links">
-          <Link className="navlinks">Guitars</Link>
-          <Link className="navlinks">Drums</Link>
-          <Link className="navlinks">Band/Orchestra</Link>
-          <Link className="navlinks">Keyboards/Synths</Link>
-          <Link className="navlinks">Accessories</Link>
-          <Link className="navlinks">See All Products</Link>
+          <Link to="/" className="navlinks">
+            Guitars
+          </Link>
+          <Link to="/" className="navlinks">
+            Drums
+          </Link>
+          <Link to="/" className="navlinks">
+            Band/Orchestra
+          </Link>
+          <Link to="/" className="navlinks">
+            Keyboards/Synths
+          </Link>
+          <Link to="/" className="navlinks">
+            Accessories
+          </Link>
+          <Link to="/" className="navlinks">
+            See All Products
+          </Link>
         </div>
       </div>
       <div className="right-nav">
@@ -44,7 +56,9 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
               </Link>
             </>
           )}
-          <Link className="login-links">Checkout</Link>
+          <Link to="/" className="login-links">
+            Checkout
+          </Link>
         </div>
       </div>
     </nav>
