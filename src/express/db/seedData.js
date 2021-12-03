@@ -22,9 +22,10 @@ async function rebuildDB() {
         email VARCHAR(255) UNIQUE NOT NULL, 
         password VARCHAR(255) NOT NULL
       );
+      
       CREATE TABLE categories(
         id  SERIAL PRIMARY KEY,
-        name VARCHAR (255),
+        name VARCHAR(255) UNIQUE NOT NULL,
         imageurl TEXT
       );
 
@@ -35,11 +36,12 @@ async function rebuildDB() {
         name VARCHAR(255) NOT NULL,
         description TEXT NOT NULL,
         imageurl TEXT,
-        "categoryName" TEXT REFERENCES categories(name),
+        "categoryName" VARCHAR(255) REFERENCES categories(name),
         condition condition_enum,
         inventory INTEGER,
         price DECIMAL
       );
+
       CREATE TABLE cart(
         id SERIAL PRIMARY KEY,
         "userId" INTEGER REFERENCES users(id),

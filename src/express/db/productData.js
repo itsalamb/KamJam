@@ -6,7 +6,7 @@ const products = [
       "The Gibson Les Paul™ Classic combines the early 60's style Les Paul model with some functional and time-tested modifications. As expected, the LP Classic is crafted with a mahogany back and maple top coupled with a slim taper mahogany neck and bound, rosewood fingerboard. BurstBucker™ 61R & 61T zebra, open-coil pickups provide classic Gibson tones from the era with a bit of extra punch thanks to the open coils. The control assembly features 4 push-pull pots which provide choices of coil tapping, phase switching, and pure bypassing for functional and versatile sonic variety.",
     imageurl:
       "https://static.gibson.com/product-images/USA/USAI9Q269/Translucent%20Cherry/front-banner-1600_900.png",
-    categoryName: "Guitar",
+    categoryName: "Guitars",
     condition: "New",
     inventory: 1,
     price: 2299,
@@ -17,7 +17,7 @@ const products = [
       "The new 50s J-45 Original model flaunts vintage-inspired detailing from the golden era of Gibson. Classic “Workhorse” materials include a Sitka Spruce top and Select Mahogany back and sides. The multi-ply top and single-ply back binding are subtly antiqued making each instrument look just like a seasoned Gibson acoustic. Appointed with cream button tuners, a 50s-era tortoise pick guard, and upgraded with an LR Baggs® VTC pickup for the best and most natural-sounding tone when amplified. ",
     imageurl:
       "https://static.gibson.com/product-images/Acoustic/ACCSRX331/Ebony/front-banner-1600_900.png",
-    categoryName: "Guitar",
+    categoryName: "Guitars",
     condition: "Used",
     inventory: 1,
     price: 2199,
@@ -28,7 +28,7 @@ const products = [
       "The Jason Isbell Custom Telecaster is visually striking – the Chocolate Sunburst pops against the cream double-binding of the ‘59-style Telecaster Custom body while Fender’s Road Worn® aging process gives it the look and feel of a well-used instrument. The vintage-inspired mid-’60s “C”-shaped maple neck and 21-fret rosewood fingerboard combines with the sparkling, fiery tones of the custom Jason Isbell Telecaster Pickups and the chicken-pickin’ playability of the modified bridge to create a guitar that sounds and plays as a good as it looks.",
     imageurl:
       "https://www.fmicassets.com/Damroot/GuitarVertDesktopJpg/10001/0140320364_fen_ins_frt_1_rr.jpg",
-    categoryName: "Guitar",
+    categoryName: "Guitars",
     condition: "New",
     inventory: 1,
     price: 1545,
