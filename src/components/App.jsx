@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import LoginForm from "./Login";
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
-//import Home from "./components/Home";
+import Home from "./Home";
 import NavBar from "./NavBar";
 import Register from "./Register";
 
@@ -34,9 +34,9 @@ const App = () => {
         <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         <div className="content">
           <Switch>
-            {/* <Route exact path="/">
+            <Route exact path="/">
               <Home />
-            </Route> */}
+            </Route>
             <Route path="/register">
               <Register setIsLoggedIn={setIsLoggedIn} />
             </Route>
