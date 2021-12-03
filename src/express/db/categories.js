@@ -1,17 +1,17 @@
 const { client } = require("./index");
 
-async function getAllCategories() {
-  try {
-    const { rows } = await client.query(`
-        SELECT *
-        FROM categories;
-        `);
+// async function getAllCategories() {
+//   try {
+//     const { rows } = await client.query(`
+//         SELECT *
+//         FROM categories;
+//         `);
 
-    return { rows };
-  } catch (error) {
-    throw error;
-  }
-}
+//     return { rows };
+//   } catch (error) {
+//     throw error;
+//   }
+// }
 
 async function getCategoryByName(categoryName) {
   try {
@@ -52,7 +52,7 @@ async function getProductsByCategoryName(categoryName) {
   }
 }
 
-module.export = {
+module.exports = {
   getAllCategories,
   getCategoryByName,
   getProductsByCategoryName,
