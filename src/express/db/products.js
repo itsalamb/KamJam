@@ -4,7 +4,7 @@ async function getAllProducts() {
   try {
     const { rows } = await client.query(`
       SELECT *
-      FROM prdoducts;
+      FROM products;
       `);
 
     return rows;
@@ -12,8 +12,6 @@ async function getAllProducts() {
     throw error;
   }
 }
-
-
 
 // async function getProductsById(productId) {
 //   try {
@@ -42,15 +40,14 @@ async function getAllProducts() {
 //   //         FROM prdoducts;
 //   //         WHERE id=$1
 //   //         `, [category]);
-  
+
 //   //     return rows;
 //   //   } catch (error) {
 //   //     throw error;
 //   //   }
 //   // }
 
-
 module.exports = {
   getAllProducts,
   // getProductsByCategoryName,
-}
+};
