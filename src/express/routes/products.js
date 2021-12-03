@@ -1,5 +1,5 @@
 const express = require("express");
-const {getAllProducts, getProductsByCategoryName} = require("../db/products")
+const {getAllProducts} = require("../db/products")
 const productsRouter = express.Router();
 
 productsRouter.use((req, res, next) => {
@@ -15,6 +15,16 @@ productsRouter.get("/", async (req, res) => {
     products,
   });
 });
+
+// productsRouter.get("/:productId", async (req, res) => {
+//   const products = await getProductsById();
+
+//   res.send({
+//     products,
+//   });
+// });
+
+
 
 // productsRouter.get("/category", async (req, res) => {
 //     const products = await getProductsByCategoryName();
