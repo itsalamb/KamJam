@@ -1,1 +1,1 @@
-// page with one product that shows product details and ability to add to cart
+// products page (list of products in one musical family)
