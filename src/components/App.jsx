@@ -47,6 +47,7 @@ const App = () => {
             </Route>
             <Route path="/cart">
               <Cart setIsLoggedIn={setIsLoggedIn} />
+            </Route>
             <Route path="/products">
               <AllProducts />
             </Route>
