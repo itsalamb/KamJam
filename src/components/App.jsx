@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import Home from "./Home";
 import NavBar from "./NavBar";
 import Register from "./Register";
-import ProductDetails from "./ProductDetails";
+import AllProducts from "./Products";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -45,7 +45,7 @@ const App = () => {
               <LoginForm setIsLoggedIn={setIsLoggedIn} />
             </Route>
             <Route path="/products">
-              <ProductDetails />
+              <AllProducts />
             </Route>
           </Switch>
         </div>
