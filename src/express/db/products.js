@@ -6,6 +6,7 @@ async function getAllProducts() {
       SELECT *
       FROM products;
       `);
+      
 
     return rows;
   } catch (error) {
@@ -13,25 +14,25 @@ async function getAllProducts() {
   }
 }
 
-// async function getProductsById(productId) {
-//   try {
-//     const { rows: [product] } = await client.query(`
-//       SELECT *
-//       FROM products
-//       WHERE id=$1;
-//     `, [productId]);
+async function getProductById(productId) {
+  try {
+    const { rows: [product] } = await client.query(`
+      SELECT *
+      FROM products
+      WHERE id=$1;
+    `, [productId]);
 
-//     if (!product) {
-//       throw {
-//         name: "ProductNotFoundError",
-//         message: "Could not find a post with that postId"
-//       };
-//     }
-//     return post;
-//   } catch (error) {
-//     throw (error)
-//   }
-// }
+    if (!product) {
+      throw {
+        name: "ProductNotFoundError",
+        message: "Could not find a product with that productId"
+      };
+    }
+    return product;
+  } catch (error) {
+    throw (error)
+  }
+}
 
 // async function getProductsByCategoryName(categoryName) {
 //   //   try {
@@ -49,5 +50,5 @@ async function getAllProducts() {
 
 module.exports = {
   getAllProducts,
-  // getProductsByCategoryName,
+  getProductById
 };

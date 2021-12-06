@@ -5,6 +5,7 @@ import Home from "./Home";
 import NavBar from "./NavBar";
 import Register from "./Register";
 import Cart from "./Cart";
+import AllProducts from "./Products";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -46,6 +47,8 @@ const App = () => {
             </Route>
             <Route path="/cart">
               <Cart setIsLoggedIn={setIsLoggedIn} />
+            <Route path="/products">
+              <AllProducts />
             </Route>
           </Switch>
         </div>

@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+    margin: 2px;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90vw;
+    
+}
+
+.product-card {
+    margin: 2vw;
+    width: 25vw;
+    background-color: lightgray;
+}
+
+.price {
+    color: green;
+}
+
+.product-image {
+    height: 200px;
+    width: 200px
+}
