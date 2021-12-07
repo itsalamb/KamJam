@@ -12,20 +12,17 @@ const LoginForm = ({ setIsLoggedIn }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const response = await fetch(
-      `api/users/login`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          password,
-          name
-        }),
-      }
-    );
+    const response = await fetch(`api/users/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+        name,
+      }),
+    });
     const data = await response.json();
     console.log(data);
     window.localStorage.setItem("token", data.token);
@@ -72,7 +69,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
           <input type="submit" value="Log In" />
         </form>
         <h3>
-            {/* NavLink can be reabled when other components are working */}
+          {/* NavLink can be reabled when other components are working */}
           {/* Not a member yet? <NavLink to="/register">Register today!</NavLink> */}
         </h3>
       </div>

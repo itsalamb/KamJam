@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
+import { CartContext } from "./CartProvider";
 
 const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
+  const { cart, refreshCart, isLoading } = useContext(CartContext);
+
   const handleClick = () => {
     localStorage.clear();
     setIsLoggedIn(false);
@@ -41,7 +44,7 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
           <p>Hello, *insert username*!</p>
           <Link to="/cart">
             <span class="material-icons">shopping_cart</span>
-            <p>View cart (#)</p>
+            <p>View cart {cart.length}</p>
           </Link>
         </div>
         <div>
