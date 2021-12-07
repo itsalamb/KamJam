@@ -19,19 +19,19 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
       <div className="nav-main">
         <SearchBar className="search-bar" />
         <div className="links">
-          <Link to="/" className="navlinks">
+          <Link to="/Guitars/products" className="navlinks">
             Guitars
           </Link>
-          <Link to="/" className="navlinks">
+          <Link to="/Drums/products" className="navlinks">
             Drums
           </Link>
-          <Link to="/" className="navlinks">
+          <Link to="/Band/products" className="navlinks">
             Band/Orchestra
           </Link>
-          <Link to="/" className="navlinks">
+          <Link to="/Keyboards/products" className="navlinks">
             Keyboards/Synths
           </Link>
-          <Link to="/" className="navlinks">
+          <Link to="/Accessories/products" className="navlinks">
             Accessories
           </Link>
           <Link to="/products" className="navlinks">

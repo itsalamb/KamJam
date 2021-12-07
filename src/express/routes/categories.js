@@ -1,9 +1,14 @@
 const express = require("express");
 const categoriesRouter = express.Router();
 const {
-  getAllCategories,
   getProductsByCategoryName,
 } = require("../db/categories");
+
+categoriesRouter.use((req, res, next) => {
+  console.log("A request is being made to /categories");
+
+  next();
+});
 
 categoriesRouter.get("/", async (req, res) => {
   const categories = await getAllCategories();
@@ -18,7 +23,9 @@ categoriesRouter.get("/:categoryName/products", async (req, res, next) => {
   try {
     const matchingProducts = await getProductsByCategoryName(categoryName);
     res.send(matchingProducts);
-  } catch ({ name, description, condition, price }) {
-    next({ name, description, condition, price });
+  } catch (error) {
+    next(error);
   }
 });
+
+module.exports = categoriesRouter

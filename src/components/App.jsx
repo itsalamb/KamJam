@@ -6,6 +6,7 @@ import NavBar from "./NavBar";
 import Register from "./Register";
 import Cart from "./Cart";
 import AllProducts from "./Products";
+import CategoryProducts from "./CategoryProducts";
 // import ProductsProvider from "./ProductsProvider";
 // import CartProvider from "./CartProvider";
 
@@ -54,6 +55,9 @@ const App = () => {
             </Route>
             <Route path="/products">
               <AllProducts />
+            </Route>
+            <Route path="/:categoryName/products">
+              <CategoryProducts />
             </Route>
           </Switch>
         </div>

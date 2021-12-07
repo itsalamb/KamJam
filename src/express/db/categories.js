@@ -1,4 +1,5 @@
 const { client } = require("./index");
+const getProductById = require("./products")
 
 // async function getAllCategories() {
 //   try {
@@ -33,27 +34,20 @@ async function getCategoryByName(categoryName) {
 }
 
 async function getProductsByCategoryName(categoryName) {
-  try {
-    const { rows: productIds } = await client.query(
+  
+    const { rows: products } = await client.query(
       `
-        SELECT products.id
+        SELECT *
         FROM products
-        JOIN categories ON products."categoryName"=categories.name
-        WHERE categories.name=$1;
+        WHERE "categoryName"=$1;
         `,
       [categoryName]
     );
 
-    return await Promise.all(
-      productIds.map((product) => getProductById(productId))
-    );
-  } catch (error) {
-    throw error;
-  }
+    return products
 }
 
 module.exports = {
-  getAllCategories,
   getCategoryByName,
   getProductsByCategoryName,
 };

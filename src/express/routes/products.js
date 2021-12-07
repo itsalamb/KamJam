@@ -17,7 +17,7 @@ productsRouter.get("/", async (req, res) => {
 });
 
 productsRouter.get("/:productId", async (req, res) => {
-  const product = await getProductById(postId);
+  const product = await getProductById(productId);
 
   res.send({
     product,
@@ -26,12 +26,12 @@ productsRouter.get("/:productId", async (req, res) => {
 
 
 
-// productsRouter.get("/category", async (req, res) => {
-//     const products = await getProductsByCategoryName();
+productsRouter.get("/category", async (req, res) => {
+    const products = await getProductsByCategoryName();
   
-//     res.send({
-//       products,
-//     });
-//   });
+    res.send({
+      products,
+    });
+  });
 
 module.exports = productsRouter;
