@@ -1,6 +1,7 @@
 const apiRouter = require("express").Router();
 const usersRouter = require("./users");
 const productsRouter = require("./products")
+const categoriesRouter = require("./categories")
 
 // GET /api
 
@@ -14,6 +15,7 @@ apiRouter.use((req, res, next) => {
 
 apiRouter.use("/users", usersRouter);
 apiRouter.use("/products", productsRouter)
+apiRouter.use("/categories", categoriesRouter)
 
 // This is a sample route
 apiRouter.get("/", (req, res, next) => {
