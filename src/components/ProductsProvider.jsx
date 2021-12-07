@@ -1,5 +1,4 @@
 import { createContext, useState, useEffect } from "react";
-import { getAllProducts } from "../express/db/products";
 
 export const ProductsContext = createContext();
 
@@ -10,6 +9,7 @@ const ProductsProvider = ({ children }) => {
 
   useEffect(() => {
     if (refresh) {
+      setIsLoading(true);
       (async () => {
         const products = await getAllProducts();
         setProducts(products);

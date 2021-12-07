@@ -42,4 +42,19 @@ async function updateQuantityInCart({ cartId, productId, quantity }) {
   );
 }
 
-module.exports = { addToCart, removeFromCart, updateQuantityInCart };
+async function getCart({ cartId, productId, quantity }) {
+  try {
+    const {
+      rows: [cart],
+    } = await client.query(`
+  SELECT *
+  FROM cart
+  `);
+
+    return rows;
+  } catch (error) {
+    throw error;
+  }
+}
+
+module.exports = { addToCart, removeFromCart, updateQuantityInCart, getCart };
