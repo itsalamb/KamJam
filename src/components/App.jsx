@@ -6,6 +6,8 @@ import NavBar from "./NavBar";
 import Register from "./Register";
 import Cart from "./Cart";
 import AllProducts from "./Products";
+// import ProductsProvider from "./ProductsProvider";
+// import CartProvider from "./CartProvider";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -32,6 +34,8 @@ const App = () => {
   }, [isLoggedIn]);
   return (
     <Router>
+      {/* <CartProvider>
+        <ProductsProvider> */}
       <div className="App">
         <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         <div className="content">
@@ -54,6 +58,8 @@ const App = () => {
           </Switch>
         </div>
       </div>
+      {/* </ProductsProvider>
+      </CartProvider> */}
     </Router>
   );
 };
