@@ -39,12 +39,10 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
       <div className="right-nav">
         <div className="cart-icon">
           <p>Hello, *insert username*!</p>
-          <>
-            <Link to="/cart">
-              <span class="material-icons">shopping_cart</span>
-              <p>View cart</p>
-            </Link>
-          </>
+          <Link to="/cart">
+            <span class="material-icons">shopping_cart</span>
+            <p>View cart (#)</p>
+          </Link>
         </div>
         <div>
           {isLoggedIn ? (
