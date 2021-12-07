@@ -11,8 +11,9 @@ import CategoryProducts from "./CategoryProducts";
 // import CartProvider from "./CartProvider";
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState();
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
 
   useEffect(() => {
     const TOKEN = window.localStorage.getItem("token");
@@ -38,7 +39,11 @@ const App = () => {
       {/* <CartProvider>
         <ProductsProvider> */}
       <div className="App">
-        <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+        <NavBar
+          isLoggedIn={isLoggedIn}
+          setIsLoggedIn={setIsLoggedIn}
+          name={name}
+        />
         <div className="content">
           <Switch>
             <Route exact path="/">
