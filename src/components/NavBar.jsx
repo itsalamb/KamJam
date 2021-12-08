@@ -42,7 +42,8 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn, name }) => {
       </div>
       <div className="right-nav">
         <div className="cart-icon">
-          <p>Hello, {name ? { name } : `guest`}</p>
+          <p>Hello, {name ? name : `guest`}</p>
+          {/* {console.log("NAMEEEE:", user.name)} */}
           <Link to="/cart">
             <span class="material-icons">shopping_cart</span>
             <p>View cart (0))</p>

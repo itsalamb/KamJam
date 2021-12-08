@@ -1,9 +1,37 @@
+const express = require("express");
 const apiRouter = require("express").Router();
-const usersRouter = require("./users");
-const productsRouter = require("./products")
-const categoriesRouter = require("./categories")
 
-// GET /api
+const jwt = require("jsonwebtoken");
+const { getUserById } = require("../db/users.js");
+const { JWT_SECRET } = process.env;
+
+apiRouter.use(async (req, res, next) => {
+  const prefix = "Bearer ";
+  const auth = req.header("Authorization");
+  console.log("AUTH:", auth);
+
+  if (!auth) {
+    next();
+  } else if (auth.startsWith(prefix)) {
+    const token = auth.slice(prefix.length);
+
+    try {
+      const { id } = jwt.verify(token, JWT_SECRET);
+
+      if (id) {
+        req.user = await getUserById(id);
+        next();
+      }
+    } catch ({ name, message }) {
+      next({ name, message });
+    }
+  } else {
+    next({
+      name: "AuthorizationHeaderError",
+      message: `Authorization token must start with ${prefix}`,
+    });
+  }
+});
 
 apiRouter.use((req, res, next) => {
   if (req.user) {
@@ -11,17 +39,6 @@ apiRouter.use((req, res, next) => {
   }
 
   next();
-});
-
-apiRouter.use("/users", usersRouter);
-apiRouter.use("/products", productsRouter)
-apiRouter.use("/categories", categoriesRouter)
-
-// This is a sample route
-apiRouter.get("/", (req, res, next) => {
-  res.send({
-    message: "API is under construction!",
-  });
 });
 
 apiRouter.use((error, req, res, next) => {
@@ -32,6 +49,13 @@ apiRouter.use((error, req, res, next) => {
   });
 });
 
-// use your sub-routers here
+const usersRouter = require("./users");
+apiRouter.use("/users", usersRouter);
+
+const productsRouter = require("./products");
+apiRouter.use("/products", productsRouter);
+
+const categoriesRouter = require("./categories");
+apiRouter.use("/categories", categoriesRouter);
 
 module.exports = apiRouter;

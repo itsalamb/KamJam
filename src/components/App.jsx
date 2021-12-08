@@ -26,10 +26,10 @@ const App = () => {
       });
       const data = await response.json();
       console.log("AUTH DATA:", data);
-      setEmail(data.email);
 
-      if (data.id) {
+      if (data.success === true) {
         setIsLoggedIn(true);
+        setName(data.user.name);
       }
     };
     checkAuth();
