@@ -8,6 +8,8 @@ const AddToCartButton = () => {
   const handleClick = async (event) => {
     event.preventDefault();
 
+    console.log(productId);
+
     const response = await fetch(
       `
         /api/cart
