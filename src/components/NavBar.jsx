@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar";
 import { CartContext } from "./CartProvider";
 
 const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
-  // const { cart, refreshCart, isLoading } = useContext(CartContext);
+  const { cart, refreshCart, isLoading } = useContext(CartContext);
 
   const handleClick = () => {
     localStorage.clear();
@@ -44,7 +44,7 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
           <p>Hello, *insert username*!</p>
           <Link to="/cart">
             <span class="material-icons">shopping_cart</span>
-            {/* <p>View cart {cart.length}</p> */}
+            <p>View cart {cart.length}</p>
           </Link>
         </div>
         <div>
