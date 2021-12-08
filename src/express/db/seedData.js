@@ -39,7 +39,7 @@ async function rebuildDB() {
         "categoryName" VARCHAR(255) REFERENCES categories(name),
         condition condition_enum,
         inventory INTEGER,
-        price DECIMAL
+        price DECIMAL(10,2)
       );
 
       CREATE TABLE cart(
