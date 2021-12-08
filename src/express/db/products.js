@@ -14,13 +14,13 @@ async function getAllProducts() {
   }
 }
 
-async function getProductById(productId) {
+async function getProductById(id) {
   try {
-    const { rows: [product] } = await client.query(`
+    const { rows: product } = await client.query(`
       SELECT *
       FROM products
       WHERE id=$1;
-    `, [productId]);
+    `, [id]);
 
     if (!product) {
       throw {

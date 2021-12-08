@@ -7,8 +7,9 @@ import Register from "./Register";
 import Cart from "./Cart";
 import AllProducts from "./Products";
 import CategoryProducts from "./CategoryProducts";
-// import ProductsProvider from "./ProductsProvider";
-// import CartProvider from "./CartProvider";
+import ProductDetails from "./ProductDetails";
+import ProductsProvider from "./ProductsProvider";
+import CartProvider from "./CartProvider";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -35,8 +36,8 @@ const App = () => {
   }, [isLoggedIn]);
   return (
     <Router>
-      {/* <CartProvider>
-        <ProductsProvider> */}
+      <CartProvider>
+        <ProductsProvider>
       <div className="App">
         <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         <div className="content">
@@ -53,17 +54,21 @@ const App = () => {
             <Route path="/cart">
               <Cart setIsLoggedIn={setIsLoggedIn} />
             </Route>
+            <Route path="/products/:productId">
+              <ProductDetails />
+            </Route>
             <Route path="/products">
               <AllProducts />
             </Route>
             <Route path="/:categoryName/products">
               <CategoryProducts />
             </Route>
+            
           </Switch>
         </div>
       </div>
-      {/* </ProductsProvider>
-      </CartProvider> */}
+      </ProductsProvider>
+      </CartProvider>
     </Router>
   );
 };
