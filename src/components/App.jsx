@@ -11,21 +11,21 @@ import CategoryProducts from "./CategoryProducts";
 // import CartProvider from "./CartProvider";
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
 
   useEffect(() => {
     const TOKEN = window.localStorage.getItem("token");
+    console.log("TOKENNNNN:", TOKEN);
     const checkAuth = async () => {
-      const response = await fetch(`api/users/login`, {
+      const response = await fetch(`api/users/authenticate`, {
         headers: {
-          "Content-Type": "application/json",
           Authorization: `Bearer ${TOKEN}`,
         },
       });
       const data = await response.json();
-      console.log(data);
+      console.log("AUTH DATA:", data);
       setEmail(data.email);
 
       if (data.id) {

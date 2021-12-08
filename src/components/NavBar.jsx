@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import { CartContext } from "./CartProvider";
+import "material-icons/iconfont/material-icons.css";
 
 const NavBar = ({ isLoggedIn, setIsLoggedIn, name }) => {
   // const { cart, refreshCart, isLoading } = useContext(CartContext);
