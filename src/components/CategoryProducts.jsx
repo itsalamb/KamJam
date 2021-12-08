@@ -6,6 +6,8 @@ const CategoryProducts = (categoryName, setCategoryName) => {
     const params = useParams();
     const [catProducts, setCatProducts] = useState([]);
 
+    console.log(params.categoryName);
+
     useEffect (() => {
       const fetchProducts = async () => {
             
