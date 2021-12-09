@@ -7,6 +7,7 @@ const SearchBar = ({ setIsLoading }) => {
 
   return (
     <form
+      className="search"
       id="search"
       onSubmit={async (event) => {
         event.preventDefault();
@@ -22,8 +23,9 @@ const SearchBar = ({ setIsLoading }) => {
       }}
     >
       <fieldset>
-        <label htmlFor="keywords">Find your sound:</label>
+        <label htmlFor="keywords">Find your sound: </label>
         <input
+          className="searchbar"
           id="keywords"
           type="text"
           placeholder="Search KamJam"
@@ -31,9 +33,9 @@ const SearchBar = ({ setIsLoading }) => {
           onChange={(e) => setQueryString(e.target.value)}
         />
       </fieldset>
-      <button>SEARCH</button>
+      <button className="search-button">SEARCH</button>
     </form>
   );
-}
+};
 
 export default SearchBar;
