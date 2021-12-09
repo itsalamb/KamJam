@@ -34,6 +34,6 @@ const SearchBar = ({ setIsLoading }) => {
       <button>SEARCH</button>
     </form>
   );
-};
+}
 
 export default SearchBar;
