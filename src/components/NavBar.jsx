@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar";
 import { CartContext } from "./CartProvider";
 import "material-icons/iconfont/material-icons.css";
 
-const NavBar = ({ isLoggedIn, setIsLoggedIn, name }) => {
+const NavBar = ({ isLoggedIn, setIsLoggedIn, name, setIsLoading }) => {
   // const { cart, refreshCart, isLoading } = useContext(CartContext);
 
   const handleClick = () => {
@@ -14,12 +14,17 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn, name }) => {
 
   return (
     <nav className="navbar">
-      <div className="logo">
-        <h2>KamJam logo here!</h2>
+      <div className="logoDiv">
+        <Link to="/" className="logo">
+          <h2>KamJam logo here!</h2>
+        </Link>
       </div>
       <div className="nav-main">
-        <SearchBar className="search-bar" />
+        <SearchBar className="search-bar" setIsLoading={setIsLoading} />
         <div className="links">
+          <Link to="/" className="navlinks">
+            Home
+          </Link>
           <Link to="/Guitars/products" className="navlinks">
             Guitars
           </Link>
