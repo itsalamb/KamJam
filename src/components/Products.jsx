@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import AddToCartButton from "./AddToCartButton";
+import { useHistory } from "react-router";
 
 const AllProducts = ({}) => {
   const [products, setProducts] = useState([]);
+  const history = useHistory()
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -29,7 +31,10 @@ const AllProducts = ({}) => {
             <h3>{product.name}</h3>
             <img className="product-image" src={product.imageurl} />
             <p className="price">$ {product.price}</p>
+            <span>
             <AddToCartButton />
+            <button type="button" className="details-button" onClick={() => {history.push(`/products/${product.id}`)}}>See Details</button>
+            </span>
           </div>
         ))}
       </div>

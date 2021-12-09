@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { useHistory } from "react-router";
 import AddToCartButton from "./AddToCartButton";
 
 const CategoryProducts = (categoryName, setCategoryName) => {
   const params = useParams();
+  const history = useHistory()
   const [catProducts, setCatProducts] = useState([]);
 
     console.log(params.categoryName);
@@ -36,7 +38,10 @@ const CategoryProducts = (categoryName, setCategoryName) => {
             <h3>{product.name}</h3>
             <img className="product-image" src={product.imageurl} />
             <p className="price">$ {product.price}</p>
+            <span>
             <AddToCartButton />
+            <button type="button" className="details-button" onClick={() => {history.push(`/products/${product.id}`)}}>See Details</button>
+            </span>
           </div>
         ))}
       </div>

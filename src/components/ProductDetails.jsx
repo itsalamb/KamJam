@@ -28,7 +28,7 @@ const ProductDetails = ({}) => {
       <div className="product-container">
         
       {product.length > 0 ? product.map((product) => (
-          <div className="product-card" key={product.id}>
+          <div className="product-details-card" key={product.id}>
             <h3>{product.name}</h3>
             <img className="product-image" src={product.imageurl} />
             <p className="price">$ {product.price}</p>
