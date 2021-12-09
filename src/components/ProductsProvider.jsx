@@ -11,7 +11,7 @@ const ProductsProvider = ({ children }) => {
     if (refresh) {
       setIsLoading(true);
       (async () => {
-        const products = await getAllProducts();
+        // const products = await getAllProducts();
         setProducts(products);
         setRefresh(false);
         setIsLoading(false);
