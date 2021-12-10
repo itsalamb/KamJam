@@ -1,20 +1,28 @@
 const express = require("express");
 const searchRouter = express.Router();
+const {getSearchResults} = require("../db/searchResults")
 
 searchRouter.use((req, res, next) => {
     console.log("A request is being made to /search");
 
-    next();   
+    next();
 })
 
 searchRouter.get("/", async (req, res, next) => {
-    const { term } = req.query
+    try {
+        const { term } = req.query
+        const products = await getSearchResults(term)
 
-    console.log('term:', term)
+        res.send({
+            products,
+        })
+    } catch (error) {
+        console.error(error)
+        next({
+            name: "searchResultError",
+            message: "Could Not Get Search Results"
+        })
+    } 
+});
 
-    res.send({
-        term,
-    })
-  });
-
-  module.exports = searchRouter
+module.exports = searchRouter

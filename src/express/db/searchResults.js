@@ -1,16 +1,13 @@
 const { client } = require("./index");
 
 async function getSearchResults(searchTerm) {
-  try {
     const { rows } = await client.query(`
         SELECT *
         FROM products
-        WHERE description LIKE '%${searchTerm}'`);
+        WHERE description ILIKE $1 OR name ILIKE $1`
+        ,[`%${searchTerm}%`]);
 
     return rows;
-  } catch (error) {
-    console.error(error);
-  }
 }
 
-module.export = { getSearchResults };
+module.exports = { getSearchResults };
