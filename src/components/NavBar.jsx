@@ -52,6 +52,8 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn, name, setIsLoading }) => {
           <div className="view-cart">
             <Link to="/cart">
               <span class="material-icons">shopping_cart</span>
+            </Link>
+            <Link to="/cart">
               <p>View cart (0)</p>
             </Link>
           </div>
