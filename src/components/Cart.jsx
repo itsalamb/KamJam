@@ -1,4 +1,8 @@
-// cart, edit cart, remove from cart, checkout
+// to do: 
+// delete from cart, 
+// increase quantity,
+// decrease quantity,
+// link to checkout component
 
 import { useState, useContext } from "react";
 import { useHistory } from "react-router";
@@ -8,18 +12,17 @@ const Cart = ({ cartId }) => {
   const [userId, setUserId] = useState([]);
   const [productId, setProductId] = useState([]);
   const [quantity, setQuantity] = useState([]);
+
   const {cart} = useContext(CartContext);
 
-  
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const removeFromCart = async (event) => {
+    event.removeFromCart();
     const TOKEN = window.localStorage.getItem("token");
 
-    const response = await fetch(
+    const response = await delete(
         `/api/cart`,
       {
-        method: "POST",
+        method: "DELETE",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${TOKEN}`,
@@ -31,12 +34,18 @@ const Cart = ({ cartId }) => {
       }
     );
     const data = await response.json();
-    console.log(productId);
-    history.push("/products");
+    console.log(cart);
   };
 
-   return <h1>this will be your shopping cart</h1>;
+  const cartItem = [
+    CartContext.productId
+]
+console.log(cartItem);
 
-  
+  return( 
+    <div>
+      {cartItem ? cartItem : <span>Cart is empty</span>}
+    </div>
+  );
 };
 export default Cart;
