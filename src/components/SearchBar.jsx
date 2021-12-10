@@ -2,8 +2,14 @@ import React from "react";
 import { useState } from "react";
 
 const SearchBar = ({ setIsLoading }) => {
-  const [queryString, setQueryString] = useState("");
+  const [term, setTerm] = useState("");
   const [searchResults, setSearchResults] = useState(null);
+
+  const query = new URLSearchParams({
+    term
+  })
+
+  console.log()
 
   return (
     <form
@@ -13,7 +19,12 @@ const SearchBar = ({ setIsLoading }) => {
         event.preventDefault();
         setIsLoading(true);
         try {
-          const results = await getSearchResults({});
+          const results = await fetch ( `/api/search?${query.toString()}`,{
+            method: "GET",
+            headers:{
+              "Content-Type": "application/json",
+            }
+          });
           setSearchResults(results);
         } catch (error) {
           console.error(error);
@@ -29,8 +40,8 @@ const SearchBar = ({ setIsLoading }) => {
           id="keywords"
           type="text"
           placeholder="Search KamJam"
-          value={queryString}
-          onChange={(e) => setQueryString(e.target.value)}
+          value={term}
+          onChange={(e) => setTerm(e.target.value)}
         />
       </fieldset>
       <button className="search-button">SEARCH</button>
