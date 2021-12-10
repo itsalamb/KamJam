@@ -1,6 +1,7 @@
 const express = require("express");
 const apiRouter = require("express").Router();
 
+
 const jwt = require("jsonwebtoken");
 const { getUserById } = require("../db/users.js");
 const { JWT_SECRET } = process.env;
@@ -57,6 +58,9 @@ apiRouter.use("/products", productsRouter);
 
 const categoriesRouter = require("./categories");
 apiRouter.use("/categories", categoriesRouter);
+
+const cartRouter = require("./cartRouter.js");
+apiRouter.use("/cart", cartRouter);
 
 const searchRouter = require("./search");
 apiRouter.use("/search", searchRouter)

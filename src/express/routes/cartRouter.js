@@ -43,3 +43,5 @@ cartRouter.patch("/", async (req, res, next) => {
     next(error);
   }
 });
+
+module.exports = cartRouter

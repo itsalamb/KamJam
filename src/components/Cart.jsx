@@ -1,31 +1,28 @@
-// cart, edit cart, remove from cart, checkout
+// to do: 
+// delete from cart, 
+// increase quantity,
+// decrease quantity,
+// link to checkout component
 
-import { useState, useEffect } from "react";
+import { useState, useContext } from "react";
 import { useHistory } from "react-router";
+import { CartContext } from "./CartProvider";
 
 const Cart = ({ cartId }) => {
   const [userId, setUserId] = useState([]);
   const [productId, setProductId] = useState([]);
   const [quantity, setQuantity] = useState([]);
 
-  // useEffect(() => {
-  //   const getCart = async () => {
-  //     const response = await fetch();
-  //     // 'api route here'
-  //     const data = await response.json();
-  //     setProductId(data);
-  //   };
-  //   getCart();
-  // });
+  const {cart} = useContext(CartContext);
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const removeFromCart = async (event) => {
+    event.removeFromCart();
     const TOKEN = window.localStorage.getItem("token");
 
-    const response = await fetch(
-      //   `API route here`,
+    const response = await delete(
+        `/api/cart`,
       {
-        method: "POST",
+        method: "DELETE",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${TOKEN}`,
@@ -37,60 +34,18 @@ const Cart = ({ cartId }) => {
       }
     );
     const data = await response.json();
-    console.log(productId);
-    history.push("/products");
+    console.log(cart);
   };
 
-  return <h1>this will be your shopping cart</h1>;
+  const cartItem = [
+    CartContext.productId
+]
+console.log(cartItem);
 
-  //   return (
-  //     <>
-  //       <div className="addActivity">
-  //         <h1>Let's attach activities to your routine</h1>
-
-  //         <form onSubmit={handleSubmit}>
-  //           <h3>Select an activity:</h3>
-  //           <select
-  //             value={activities}
-  //             onChange={(e) => setActivityId(e.target.value)}
-  //           >
-  //             {activities.map((activity) => (
-  //               <option value={activity.id}>{activity.name}</option>
-  //             ))}
-  //           </select>
-  //           <br />
-  //           <br />
-  //           <label>
-  //             Number of Reps:
-  //             <br />
-  //             <input
-  //               type="text"
-  //               required
-  //               name="count"
-  //               value={count}
-  //               placeholder="set desired count"
-  //               onChange={(e) => setCount(e.target.value)}
-  //             />
-  //           </label>
-  //           <br />
-  //           <label>
-  //             Duration:
-  //             <br />
-  //             <input
-  //               type="text"
-  //               required
-  //               name="duration"
-  //               value={duration}
-  //               placeholder="set desired duration"
-  //               onChange={(e) => setDuration(e.target.value)}
-  //             />
-  //           </label>
-  //           <br />
-  //           {/* <button type="submit">Add Activity</button> */}
-  //           <input type="submit" value="Add Activity" />
-  //         </form>
-  //       </div>
-  //     </>
-  //   );
+  return( 
+    <div>
+      {cartItem ? cartItem : <span>Cart is empty</span>}
+    </div>
+  );
 };
 export default Cart;
