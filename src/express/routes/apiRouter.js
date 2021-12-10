@@ -62,4 +62,7 @@ apiRouter.use("/categories", categoriesRouter);
 const cartRouter = require("./cartRouter.js");
 apiRouter.use("/cart", cartRouter);
 
+const searchRouter = require("./search");
+apiRouter.use("/search", searchRouter)
+
 module.exports = apiRouter;

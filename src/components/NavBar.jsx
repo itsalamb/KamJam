@@ -3,23 +3,30 @@ import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import { CartContext } from "./CartProvider";
 import "material-icons/iconfont/material-icons.css";
+import logo from "./images/logo.png";
 
-const NavBar = ({ isLoggedIn, setIsLoggedIn, name }) => {
+const NavBar = ({ isLoggedIn, setIsLoggedIn, name, setName, setIsLoading }) => {
   // const { cart, refreshCart, isLoading } = useContext(CartContext);
 
   const handleClick = () => {
     localStorage.clear();
     setIsLoggedIn(false);
+    setName(null);
   };
 
   return (
     <nav className="navbar">
-      <div className="logo">
-        <h2>KamJam logo here!</h2>
+      <div className="logoDiv">
+        <Link to="/">
+          <img src={logo} className="logo" />
+        </Link>
       </div>
       <div className="nav-main">
-        <SearchBar className="search-bar" />
+        <SearchBar className="search-bar" setIsLoading={setIsLoading} />
         <div className="links">
+          <Link to="/" className="navlinks">
+            Home
+          </Link>
           <Link to="/Guitars/products" className="navlinks">
             Guitars
           </Link>
@@ -43,11 +50,14 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn, name }) => {
       <div className="right-nav">
         <div className="cart-icon">
           <p>Hello, {name ? name : `guest`}</p>
-          {/* {console.log("NAMEEEE:", user.name)} */}
-          <Link to="/cart">
-            <span class="material-icons">shopping_cart</span>
-            <p>View cart (0))</p>
-          </Link>
+          <div className="view-cart">
+            <Link to="/cart">
+              <span class="material-icons">shopping_cart</span>
+            </Link>
+            <Link to="/cart">
+              <p>View cart (0)</p>
+            </Link>
+          </div>
         </div>
         <div>
           {isLoggedIn ? (

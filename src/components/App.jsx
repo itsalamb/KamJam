@@ -10,9 +10,12 @@ import CategoryProducts from "./CategoryProducts";
 import ProductDetails from "./ProductDetails";
 import ProductsProvider from "./ProductsProvider";
 import CartProvider from "./CartProvider";
+import ThankYou from "./ThankYou";
+import NotFound from "./NotFound";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
 
@@ -39,40 +42,47 @@ const App = () => {
     <Router>
       <CartProvider>
         <ProductsProvider>
-      <div className="App">
-        <NavBar
-          isLoggedIn={isLoggedIn}
-          setIsLoggedIn={setIsLoggedIn}
-          name={name}
-        />
-        <div className="content">
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/register">
-              <Register setIsLoggedIn={setIsLoggedIn} />
-            </Route>
-            <Route path="/login">
-              <LoginForm setIsLoggedIn={setIsLoggedIn} />
-            </Route>
-            <Route path="/cart">
-              <Cart setIsLoggedIn={setIsLoggedIn} />
-            </Route>
-            <Route path="/products/:productId">
-              <ProductDetails />
-            </Route>
-            <Route path="/products">
-              <AllProducts />
-            </Route>
-            <Route path="/:categoryName/products">
-              <CategoryProducts />
-            </Route>
-            
-          </Switch>
-        </div>
-      </div>
-      </ProductsProvider>
+          <div className="App">
+            <NavBar
+              isLoggedIn={isLoggedIn}
+              setIsLoggedIn={setIsLoggedIn}
+              setIsLoading={setIsLoading}
+              name={name}
+              setName={setName}
+            />
+            <div className="content">
+              <Switch>
+                <Route exact path="/">
+                  <Home />
+                </Route>
+                <Route path="/register">
+                  <Register setIsLoggedIn={setIsLoggedIn} />
+                </Route>
+                <Route path="/login">
+                  <LoginForm setIsLoggedIn={setIsLoggedIn} />
+                </Route>
+                <Route path="/cart">
+                  <Cart setIsLoggedIn={setIsLoggedIn} />
+                </Route>
+                <Route path="/products/:productId">
+                  <ProductDetails />
+                </Route>
+                <Route path="/products">
+                  <AllProducts />
+                </Route>
+                <Route path="/:categoryName/products">
+                  <CategoryProducts />
+                </Route>
+                <Route path="/thankyou">
+                  <ThankYou />
+                </Route>
+                <Route path="*">
+                  <NotFound />
+                </Route>
+              </Switch>
+            </div>
+          </div>
+        </ProductsProvider>
       </CartProvider>
     </Router>
   );
