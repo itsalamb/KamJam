@@ -10,6 +10,8 @@ import CategoryProducts from "./CategoryProducts";
 import ProductDetails from "./ProductDetails";
 import ProductsProvider from "./ProductsProvider";
 import CartProvider from "./CartProvider";
+import ThankYou from "./ThankYou";
+import NotFound from "./NotFound";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -69,6 +71,12 @@ const App = () => {
                 </Route>
                 <Route path="/:categoryName/products">
                   <CategoryProducts />
+                </Route>
+                <Route path="/thankyou">
+                  <ThankYou />
+                </Route>
+                <Route path="*">
+                  <NotFound />
                 </Route>
               </Switch>
             </div>
