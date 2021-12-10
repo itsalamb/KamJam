@@ -18,6 +18,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+  const [userId, setUserId] = useState(null);
 
   useEffect(() => {
     const TOKEN = window.localStorage.getItem("token");
@@ -34,6 +35,8 @@ const App = () => {
       if (data.success === true) {
         setIsLoggedIn(true);
         setName(data.user.name);
+        setUserId(data.user.id);
+        console.log("IDDDDDDD:", data.user.id);
       }
     };
     checkAuth();
@@ -49,6 +52,7 @@ const App = () => {
               setIsLoading={setIsLoading}
               name={name}
               setName={setName}
+              userId={userId}
             />
             <div className="content">
               <Switch>
@@ -61,8 +65,12 @@ const App = () => {
                 <Route path="/login">
                   <LoginForm setIsLoggedIn={setIsLoggedIn} />
                 </Route>
-                <Route path="/cart">
-                  <Cart setIsLoggedIn={setIsLoggedIn} />
+                <Route path="/cart/userid/:userid">
+                  <Cart
+                    isLoggedIn={isLoggedIn}
+                    setIsLoggedIn={setIsLoggedIn}
+                    userId={userId}
+                  />
                 </Route>
                 <Route path="/products/:productId">
                   <ProductDetails />

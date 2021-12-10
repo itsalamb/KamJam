@@ -42,19 +42,44 @@ async function updateQuantityInCart({ cartId, productId, quantity }) {
   );
 }
 
-async function getCart({ cartId, productId, quantity }) {
+async function getCartById(cartId) {
   try {
-    const {
-      rows: [cart],
-    } = await client.query(`
+    const { rows: cart } = await client.query(
+      `
   SELECT *
   FROM cart
-  `);
+  WHERE id=$1
+  `,
+      [cartId]
+    );
 
-    return rows;
+    return cart;
   } catch (error) {
     throw error;
   }
 }
 
-module.exports = { addToCart, removeFromCart, updateQuantityInCart, getCart };
+async function getCartByUserId(userId) {
+  try {
+    const { rows: cart } = await client.query(
+      `
+  SELECT *
+  FROM cart
+  WHERE "userId"=$1
+  `,
+      [userId]
+    );
+
+    return cart;
+  } catch (error) {
+    throw error;
+  }
+}
+
+module.exports = {
+  addToCart,
+  removeFromCart,
+  updateQuantityInCart,
+  getCartById,
+  getCartByUserId,
+};
