@@ -13,7 +13,7 @@ const SearchBar = ({ setIsLoading }) => {
         event.preventDefault();
         setIsLoading(true);
         try {
-          const results = await fetchQueryResults({});
+          const results = await getSearchResults({});
           setSearchResults(results);
         } catch (error) {
           console.error(error);
