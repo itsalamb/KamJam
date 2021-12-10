@@ -48,6 +48,7 @@ const App = () => {
               setIsLoggedIn={setIsLoggedIn}
               setIsLoading={setIsLoading}
               name={name}
+              setName={setName}
             />
             <div className="content">
               <Switch>

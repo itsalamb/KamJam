@@ -5,12 +5,13 @@ import { CartContext } from "./CartProvider";
 import "material-icons/iconfont/material-icons.css";
 import logo from "./images/logo.png";
 
-const NavBar = ({ isLoggedIn, setIsLoggedIn, name, setIsLoading }) => {
+const NavBar = ({ isLoggedIn, setIsLoggedIn, name, setName, setIsLoading }) => {
   // const { cart, refreshCart, isLoading } = useContext(CartContext);
 
   const handleClick = () => {
     localStorage.clear();
     setIsLoggedIn(false);
+    setName(null);
   };
 
   return (
