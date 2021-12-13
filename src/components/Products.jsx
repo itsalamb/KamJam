@@ -1,7 +1,8 @@
 import AddToCartButton from "./AddToCartButton";
+import { useHistory } from "react-router";
 
 const Products = ({ title, products }) => {
-
+    const history = useHistory();
 
     return (
         <>
