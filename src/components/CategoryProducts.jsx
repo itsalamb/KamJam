@@ -5,10 +5,10 @@ import AddToCartButton from "./AddToCartButton";
 
 const CategoryProducts = (categoryName, setCategoryName) => {
   const params = useParams();
-  const history = useHistory()
+  const history = useHistory();
   const [catProducts, setCatProducts] = useState([]);
 
-    console.log(params.categoryName);
+  console.log(params.categoryName);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -22,8 +22,6 @@ const CategoryProducts = (categoryName, setCategoryName) => {
         }
       );
       const data = await resp.json();
-
-      console.log("this is the data", data);
       setCatProducts(data);
     };
     fetchProducts();
@@ -39,8 +37,16 @@ const CategoryProducts = (categoryName, setCategoryName) => {
             <img className="product-image" src={product.imageurl} />
             <p className="price">$ {product.price}</p>
             <span>
-            <AddToCartButton />
-            <button type="button" className="details-button" onClick={() => {history.push(`/products/${product.id}`)}}>See Details</button>
+              <AddToCartButton />
+              <button
+                type="button"
+                className="details-button"
+                onClick={() => {
+                  history.push(`/products/${product.id}`);
+                }}
+              >
+                See Details
+              </button>
             </span>
           </div>
         ))}

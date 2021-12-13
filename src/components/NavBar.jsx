@@ -4,14 +4,13 @@ import SearchBar from "./SearchBar";
 import { CartContext } from "./CartProvider";
 import "material-icons/iconfont/material-icons.css";
 import logo from "./images/logo.png";
+import { AuthContext } from "./AuthProvider";
 
-const NavBar = ({ isLoggedIn, setIsLoggedIn, name, setName, setIsLoading }) => {
-  // const { cart, refreshCart, isLoading } = useContext(CartContext);
-
+const NavBar = ({ isLoggedIn, setIsLoggedIn, user, setUser, setIsLoading }) => {
   const handleClick = () => {
     localStorage.clear();
     setIsLoggedIn(false);
-    setName(null);
+    setUser(null);
   };
 
   return (
@@ -49,7 +48,7 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn, name, setName, setIsLoading }) => {
       </div>
       <div className="right-nav">
         <div className="cart-icon">
-          <p>Hello, {name ? name : `guest`}</p>
+          <p>Hello, {user ? user : `guest`}</p>
           <div className="view-cart">
             <Link to="/cart/userid/:userId">
               <span class="material-icons">shopping_cart</span>

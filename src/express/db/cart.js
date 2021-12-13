@@ -46,9 +46,11 @@ async function getCartById(cartId) {
   try {
     const { rows: cart } = await client.query(
       `
-  SELECT *
-  FROM cart
-  WHERE id=$1
+      SELECT products.name, products.description, products.imageurl, products.price
+      FROM cart
+      JOIN products
+      ON "productId" = products.id
+      WHERE cart.id=$1
   `,
       [cartId]
     );
@@ -63,9 +65,11 @@ async function getCartByUserId(userId) {
   try {
     const { rows: cart } = await client.query(
       `
-  SELECT *
-  FROM cart
-  WHERE "userId"=$1
+      SELECT products.name, products.imageurl, products.price
+      FROM cart
+      JOIN products
+      ON "productId" = products.id
+      WHERE "userId"=$1
   `,
       [userId]
     );
