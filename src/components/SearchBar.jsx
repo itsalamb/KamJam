@@ -1,15 +1,16 @@
 import React from "react";
 import { useState } from "react";
+import { useHistory } from "react-router";
 
 const SearchBar = ({ setIsLoading }) => {
   const [term, setTerm] = useState("");
-  const [searchResults, setSearchResults] = useState(null);
+  // const [searchResults, setSearchResults] = useState(null);
+  const history = useHistory()
 
   const query = new URLSearchParams({
     term
   })
-
-  console.log()
+ 
 
   return (
     <form
@@ -18,19 +19,21 @@ const SearchBar = ({ setIsLoading }) => {
       onSubmit={async (event) => {
         event.preventDefault();
         setIsLoading(true);
-        try {
-          const results = await fetch ( `/api/search?${query.toString()}`,{
-            method: "GET",
-            headers:{
-              "Content-Type": "application/json",
-            }
-          });
-          setSearchResults(results);
-        } catch (error) {
-          console.error(error);
-        } finally {
-          setIsLoading(false);
-        }
+        history.push(`/search?${query.toString()}`)
+        // try {
+        //   const results = await fetch ( `/api/search?${query.toString()}`,{
+        //     method: "GET",
+        //     headers:{
+        //       "Content-Type": "application/json",
+        //     }
+        //   });
+        //   console.log('results', results)
+        //   // setSearchResults(results);
+        // } catch (error) {
+        //   console.error(error);
+        // } finally {
+        //   setIsLoading(false);
+        // }
       }}
     >
       <fieldset>
@@ -44,7 +47,7 @@ const SearchBar = ({ setIsLoading }) => {
           onChange={(e) => setTerm(e.target.value)}
         />
       </fieldset>
-      <button className="search-button">SEARCH</button>
+      <button className="search-button" onClick={() => {history.push(`/search?term=${term}`)}}>SEARCH</button>
     </form>
   );
 };
