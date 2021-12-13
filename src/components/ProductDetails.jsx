@@ -25,13 +25,14 @@ const ProductDetails = ({}) => {
   return (
     <>
       <h1>Product</h1>
-      <div className="product-container">
+      <div className="single-product-container">
         
       {product.length > 0 ? product.map((product) => (
-          <div className="product-details-card" key={product.id}>
-            <h3 className="product-name">{product.name}</h3>
-            <img className="product-image" src={product.imageurl} />
-            <p className="price">$ {product.price}</p>
+          <div className="single-product-details-card" key={product.id}>
+            <h3 className="single-product-name">{product.name}</h3>
+            <h4 className="single-product-description">{product.description}</h4>
+            <img className="single-product-image" src={product.imageurl} />
+            <p className="single-price">$ {product.price}</p>
             <AddToCartButton />
           </div>
         )): 

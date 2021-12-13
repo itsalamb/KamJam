@@ -13,10 +13,10 @@ const Products = ({ title, products }) => {
                         <h3 className="product-name">{product.name}</h3>
                         <img className="product-image" src={product.imageurl} />
                         <p className="price">$ {product.price}</p>
-                        <span>
+                        <div className="product-buttons">
                             <AddToCartButton />
                             <button type="button" className="details-button" onClick={() => { history.push(`/products/${product.id}`) }}>See Details</button>
-                        </span>
+                        </div>
                     </div>
                 ))}
             </div>
