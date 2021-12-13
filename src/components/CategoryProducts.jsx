@@ -8,8 +8,6 @@ const CategoryProducts = (categoryName, setCategoryName) => {
   const history = useHistory()
   const [catProducts, setCatProducts] = useState([]);
 
-    console.log('params', params);
-
   useEffect(() => {
     const fetchProducts = async () => {
       const resp = await fetch(
@@ -22,8 +20,6 @@ const CategoryProducts = (categoryName, setCategoryName) => {
         }
       );
       const data = await resp.json();
-
-      console.log("this is the data", data);
       setCatProducts(data);
     };
     fetchProducts();

@@ -6,7 +6,6 @@ const SearchResults = () => {
     const location = useLocation()
     const history = useHistory();
     const [searchResults, setSearchResults] = useState([]);
-    console.log('location', location)
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -17,7 +16,6 @@ const SearchResults = () => {
                 }
             });
             const data = await results.json()
-            console.log('data', data)
             setSearchResults(data.products)
         }
         fetchProducts()
