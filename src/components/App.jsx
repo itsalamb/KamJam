@@ -5,13 +5,14 @@ import Home from "./Home";
 import NavBar from "./NavBar";
 import Register from "./Register";
 import Cart from "./Cart";
-import AllProducts from "./Products";
+import AllProducts from "./AllProducts";
 import CategoryProducts from "./CategoryProducts";
 import ProductDetails from "./ProductDetails";
 import ProductsProvider from "./ProductsProvider";
 import CartProvider from "./CartProvider";
 import ThankYou from "./ThankYou";
 import NotFound from "./NotFound";
+import SearchResults from "./SearchResults";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -72,6 +73,9 @@ const App = () => {
                 </Route>
                 <Route path="/:categoryName/products">
                   <CategoryProducts />
+                </Route>
+                <Route path="/search">
+                  <SearchResults />
                 </Route>
                 <Route path="/thankyou">
                   <ThankYou />
