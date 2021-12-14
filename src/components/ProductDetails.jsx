@@ -1,10 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router";
 import AddToCartButton from "./AddToCartButton";
+import { ProductsContext } from "./ProductsProvider";
 
 const ProductDetails = ({}) => {
   const [product, setProduct] = useState([]);
   const params = useParams();
+  const { products } = useContext(ProductsContext);
+  const productId = params.productId;
+  console.log("PRODUCTS HERE HERE!!!!!:", productId);
 
   useEffect(() => {
     const fetchProduct = async () => {
