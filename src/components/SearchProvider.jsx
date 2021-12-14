@@ -3,10 +3,10 @@ import { createContext, useState } from "react";
 export const SearchContext = createContext();
 
 const SearchProvider = ({ children }) => {
-  const [products, setProducts] = useState([]);
+  const [searchProducts, setSearchProducts] = useState([]);
 
   const contextValue = {
-    products,
+    searchProducts,
   };
 
   return (

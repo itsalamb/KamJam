@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { useHistory } from "react-router";
-import AddToCartButton from "./AddToCartButton";
+import Products from "./Products";
 
 const CategoryProducts = (categoryName, setCategoryName) => {
   const params = useParams();
@@ -9,6 +9,7 @@ const CategoryProducts = (categoryName, setCategoryName) => {
   const [catProducts, setCatProducts] = useState([]);
 
   console.log(params.categoryName);
+    console.log('params', params);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -28,6 +29,7 @@ const CategoryProducts = (categoryName, setCategoryName) => {
   }, [params.categoryName]);
 
   return (
+/* Double check this part */
     <>
       <h1>Products</h1>
       <div className="product-container">
@@ -52,6 +54,8 @@ const CategoryProducts = (categoryName, setCategoryName) => {
         ))}
       </div>
     </>
+/* Do we need both the above and below? */
+    <Products title={params.categoryName} products={catProducts} />
   );
 };
 
