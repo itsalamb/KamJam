@@ -14,7 +14,6 @@ import ThankYou from "./ThankYou";
 import NotFound from "./NotFound";
 import AuthProvider from "./AuthProvider";
 import SearchResults from "./SearchResults";
-import AddToCartButton from "./AddToCartButton";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -50,7 +49,6 @@ const App = () => {
           <ProductsProvider>
             <div className="App">
               <NavBar setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} />
-              <AddToCartButton userId={userId} />
               <div className="content">
                 <Switch>
                   <Route exact path="/">
@@ -85,7 +83,10 @@ const App = () => {
                     <ThankYou />
                   </Route>
                   <Route path="*">
-                    <NotFound title="Page not found" description="Whoops! Looks like we jammed a little too hard." />
+                    <NotFound
+                      title="Page not found"
+                      description="Whoops! Looks like we jammed a little too hard."
+                    />
                   </Route>
                 </Switch>
               </div>
