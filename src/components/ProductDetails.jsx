@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import AddToCartButton from "./AddToCartButton";
 
-const ProductDetails = ({}) => {
+const ProductDetails = ({ }) => {
   const [product, setProduct] = useState([]);
   const params = useParams();
 
@@ -24,21 +24,21 @@ const ProductDetails = ({}) => {
   console.log("product", product);
   return (
     <>
-      <h1>Product</h1>
       <div className="single-product-container">
-        
-      {product.length > 0 ? product.map((product) => (
+        {product.length > 0 ? product.map((product) => (
           <div className="single-product-details-card" key={product.id}>
-            <h3 className="single-product-name">{product.name}</h3>
-            <h4 className="single-product-description">{product.description}</h4>
+            <h1 className="single-product-name">{product.name}</h1>
+            <h2 className="single-product-description">{product.description}</h2>
             <img className="single-product-image" src={product.imageurl} />
-            <p className="single-price">$ {product.price}</p>
-            <AddToCartButton />
+            <div className="price-cart-box">
+              <p className="single-price">$ {product.price}</p>
+              <AddToCartButton />
+            </div>
           </div>
-        )): 
-        <h2>Product Cannot Be Found</h2>}
-        </div>
-      </>
+        )) :
+          <h2>Product Cannot Be Found</h2>}
+      </div>
+    </>
   )
 }
 

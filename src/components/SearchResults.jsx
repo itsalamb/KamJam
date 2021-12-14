@@ -19,7 +19,7 @@ const SearchResults = () => {
             setSearchResults(data.products)
         }
         fetchProducts()
-    }, [])
+    }, [location.search])
 
     return (
         <Products title='Search Results' products={searchResults}  />

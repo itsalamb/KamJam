@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { App } from "./components";
 import "./navbar.css";
 import "./index.css";
-import "./productsboxes.css"
+import "./productsboxes.css";
+import "./productDetails.css";
 
 ReactDOM.render(<App />, document.getElementById("root"));
