@@ -21,7 +21,7 @@ const ProductDetails = ({}) => {
     fetchProduct();
   }, []);
 
-    console.log('product', product)
+  console.log("product", product);
   return (
     <>
       <h1>Product</h1>

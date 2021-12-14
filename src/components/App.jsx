@@ -12,13 +12,15 @@ import ProductsProvider from "./ProductsProvider";
 import CartProvider from "./CartProvider";
 import ThankYou from "./ThankYou";
 import NotFound from "./NotFound";
+import AuthProvider from "./AuthProvider";
 import SearchResults from "./SearchResults";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
+  const [user, setUser] = useState("");
+  const [userId, setUserId] = useState(null);
 
   useEffect(() => {
     const TOKEN = window.localStorage.getItem("token");
@@ -34,61 +36,70 @@ const App = () => {
 
       if (data.success === true) {
         setIsLoggedIn(true);
-        setName(data.user.name);
+        setUser(data.user.name);
+        setUserId(data.user.id);
+        console.log("IDDDDDDD:", data.user.id);
       }
     };
     checkAuth();
   }, [isLoggedIn]);
   return (
-    <Router>
-      <CartProvider>
-        <ProductsProvider>
-          <div className="App">
-            <NavBar
-              isLoggedIn={isLoggedIn}
-              setIsLoggedIn={setIsLoggedIn}
-              setIsLoading={setIsLoading}
-              name={name}
-              setName={setName}
-            />
-            <div className="content">
-              <Switch>
-                <Route exact path="/">
-                  <Home />
-                </Route>
-                <Route path="/register">
-                  <Register setIsLoggedIn={setIsLoggedIn} />
-                </Route>
-                <Route path="/login">
-                  <LoginForm setIsLoggedIn={setIsLoggedIn} />
-                </Route>
-                <Route path="/cart">
-                  <Cart setIsLoggedIn={setIsLoggedIn} />
-                </Route>
-                <Route path="/products/:productId">
-                  <ProductDetails />
-                </Route>
-                <Route path="/products">
-                  <AllProducts />
-                </Route>
-                <Route path="/:categoryName/products">
-                  <CategoryProducts />
-                </Route>
+    <AuthProvider>
+      <Router>
+        <CartProvider>
+          <ProductsProvider>
+            <div className="App">
+              <NavBar
+                isLoggedIn={isLoggedIn}
+                setIsLoggedIn={setIsLoggedIn}
+                setIsLoading={setIsLoading}
+                user={user}
+                setUser={setUser}
+                userId={userId}
+              />
+              <div className="content">
+                <Switch>
+                  <Route exact path="/">
+                    <Home />
+                  </Route>
+                  <Route path="/register">
+                    <Register setIsLoggedIn={setIsLoggedIn} />
+                  </Route>
+                  <Route path="/login">
+                    <LoginForm setIsLoggedIn={setIsLoggedIn} />
+                  </Route>
+                  <Route path="/cart/userid/:userid">
+                    <Cart
+                      isLoggedIn={isLoggedIn}
+                      setIsLoggedIn={setIsLoggedIn}
+                      userId={userId}
+                    />
+                  </Route>
+                  <Route path="/products/:productId">
+                    <ProductDetails />
+                  </Route>
+                  <Route path="/products">
+                    <AllProducts />
+                  </Route>
+                  <Route path="/:categoryName/products">
+                    <CategoryProducts />
+                  </Route>
                 <Route path="/search">
                   <SearchResults />
                 </Route>
-                <Route path="/thankyou">
-                  <ThankYou />
-                </Route>
-                <Route path="*">
-                  <NotFound />
-                </Route>
-              </Switch>
+                  <Route path="/thankyou">
+                    <ThankYou />
+                  </Route>
+                  <Route path="*">
+                    <NotFound />
+                  </Route>
+                </Switch>
+              </div>
             </div>
-          </div>
-        </ProductsProvider>
-      </CartProvider>
-    </Router>
+          </ProductsProvider>
+        </CartProvider>
+      </Router>
+    </AuthProvider>
   );
 };
 

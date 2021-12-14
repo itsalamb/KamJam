@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-const AddToCartButton = () => {
-  const [userId, setUserId] = useState("");
+const AddToCartButton = ({ userId }) => {
   const [productId, setProductId] = useState("");
   const [quantity, setQuantity] = useState(1);
+  console.log("USERIDDDDDD:", userId);
 
   const handleClick = async (event) => {
     event.preventDefault();
@@ -12,7 +12,7 @@ const AddToCartButton = () => {
 
     const response = await fetch(
       `
-        /api/cart
+        /api/cart/userid/${userId}
         `,
       {
         method: "POST",

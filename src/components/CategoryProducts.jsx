@@ -3,9 +3,9 @@ import { useParams } from "react-router";
 import { useHistory } from "react-router";
 import Products from "./Products";
 
-const CategoryProducts = (categoryName, setCategoryName) => {
+const CategoryProducts = (userId, categoryName, setCategoryName) => {
   const params = useParams();
-  const history = useHistory()
+  const history = useHistory();
   const [catProducts, setCatProducts] = useState([]);
 
   useEffect(() => {
@@ -26,8 +26,9 @@ const CategoryProducts = (categoryName, setCategoryName) => {
   }, [params.categoryName]);
 
   return (
-    <Products title={params.categoryName} products={catProducts} />
-  );
+   
+  <Products title={params.categoryName} products={catProducts} />
+  )
 };
 
 export default CategoryProducts;

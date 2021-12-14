@@ -21,6 +21,13 @@
   font-family: "Ranchers";
 }
 
+/* Cart styles */
+
+.cart-image {
+  height: 50px;
+  width: 50px;
+}
+
 /* Not Found style */
 
 .not-found {
