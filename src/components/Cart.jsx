@@ -7,8 +7,11 @@
 import { response } from "msw";
 import { useState, useContext, useEffect } from "react";
 import { useHistory } from "react-router";
+import { AuthContext } from "./AuthProvider";
 
-const Cart = ({ userId, isLoggedIn, setIsLoggedIn }) => {
+const Cart = () => {
+  const { user, isLoggedIn } = useContext(AuthContext);
+  const userId = user.id;
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
@@ -21,9 +24,7 @@ const Cart = ({ userId, isLoggedIn, setIsLoggedIn }) => {
       });
 
       const data = await resp.json();
-      console.log("DATAAAA HEREEE:", data);
       const currentCart = Array.from(data.currentCart);
-      console.log("CURRENT CART YOOO:", currentCart);
       setCart(currentCart);
     };
     fetchCart(userId);

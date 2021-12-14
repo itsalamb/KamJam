@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { AuthContext } from "./AuthProvider";
+import { ProductsContext } from "./ProductsProvider";
 
-const AddToCartButton = ({ userId }) => {
+const AddToCartButton = () => {
+  const { user, isLoggedIn } = useContext(AuthContext);
+  const { products } = useContext(ProductsContext);
   const [productId, setProductId] = useState("");
   const [quantity, setQuantity] = useState(1);
-  console.log("USERIDDDDDD:", userId);
+  const userId = user.id;
 
   const handleClick = async (event) => {
     event.preventDefault();
