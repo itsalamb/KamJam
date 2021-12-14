@@ -33,7 +33,7 @@ const AddToCartButton = ({ userId }) => {
 
   return (
     <>
-      <button onClick={handleClick}>Add to Cart</button>
+      <button className="add-to-cart-button" onClick={handleClick}>Add to Cart</button>
     </>
   );
 };

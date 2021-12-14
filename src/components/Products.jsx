@@ -1,32 +1,27 @@
-// import AddToCartButton from "./AddToCartButton";
+import AddToCartButton from "./AddToCartButton";
+import { useHistory } from "react-router";
 
 const Products = ({ title, products }) => {
-  return (
-    <>
-      <h1>{title}</h1>
-      <div className="product-container">
-        {products.map((product) => (
-          <div className="product-card" key={product.id}>
-            <h3 className="product-name">{product.name}</h3>
-            <img className="product-image" src={product.imageurl} />
-            <p className="price">$ {product.price}</p>
-            <span>
-              {/* <AddToCartButton /> */}
-              <button
-                type="button"
-                className="details-button"
-                onClick={() => {
-                  history.push(`/products/${product.id}`);
-                }}
-              >
-                See Details
-              </button>
-            </span>
-          </div>
-        ))}
-      </div>
-    </>
-  );
-};
+    const history = useHistory();
 
-export default Products;
+    return (
+        <>
+            <h1 className="product-title">{title}</h1>
+            <div className="product-container">
+                {products.map((product) => (
+                    <div className="product-card" key={product.id} onClick={() => { history.push(`/products/${product.id}`) }}>
+                        <h3 className="product-name">{product.name}</h3>
+                        <img className="product-image" src={product.imageurl} />
+                        <div className="product-buttons">
+                            <button type="button" className="details-button" onClick={() => { history.push(`/products/${product.id}`) }}>See Details</button>
+                            <AddToCartButton />
+                            <p className="price">$ {product.price}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </>
+    );
+}
+
+export default Products
