@@ -1,4 +1,20 @@
-/* .home-img {
-    height: 200px;
-    width: 200px
-  } */
+.hometitle {
+  display: flex;
+  justify-content: center;
+}
+
+.rowOne {
+  display: flex;
+  align-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.rowTwo {
+  display: flex;
+  align-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
