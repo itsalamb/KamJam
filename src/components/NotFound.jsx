@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function NotFound() {
+const NotFound = ({title, description}) => {
   return (
     <div className="not-found">
-      <h1>Page not found</h1>
+      <h1>{title}</h1>
       <br />
-      <h2>Whoops! Looks like we jammed a little too hard.</h2>
+      <h2>{description}</h2>
       <br />
       <iframe
         src="https://giphy.com/embed/sIHj7Sm43H30s"
@@ -25,3 +25,5 @@ export default function NotFound() {
     </div>
   );
 }
+
+export default NotFound
