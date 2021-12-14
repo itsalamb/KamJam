@@ -9,50 +9,72 @@
 
 * {
     box-sizing: border-box;
-    margin: 2px;
+    margin: 0px;
     font-family: "Chicle";
 }
 
 .product-container {
     display: flex;
+    margin: 0;
     flex-wrap: wrap;
-    width: 90vw;
-    
+    justify-content: space-around;
+    background-color: var(--orange);
 }
 
 .product-card {
+    display: flex;
+    flex-wrap: wrap;
     margin: 2vw;
-    width: 25vw;
+    width: 400px;
     background-color: var(--teal);
+    justify-content: center;
 }
 
 .price {
-    color: var(--orange);
+    font-size:16pt;
+    text-align: end;
+    /* margin-right: 20px; */
 }
 
 .product-image {
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 300px;
     image-rendering: -webkit-optimize-contrast;
     object-fit:scale-down;
+    
 }
 
 .product-name {
     background-color: var(--yellow);
     margin: 0px;
+    text-align: center;
+    font-size: 22pt;
+    width: 400px;
 }
 
 .product-buttons {
+    display: flex;
     background: var(--yellow);
     margin: 0%;
     padding: 5px;
+    justify-content: space-between;
+    width: 400px;
+    align-items: center;
 }
 
 .details-button {
     padding: 2px;
+    font-size: 16pt;
 }
 
 .add-to-cart-button {
     padding: 2px;
     margin-right: 5vw;
+    font-size: 16pt;
+}
+
+.product-title {
+    background-color: var(--orange);
+    text-align: center;
+    font-size: 40pt;
 }
