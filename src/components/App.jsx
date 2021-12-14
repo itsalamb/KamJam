@@ -24,7 +24,6 @@ const App = () => {
 
   useEffect(() => {
     const TOKEN = window.localStorage.getItem("token");
-    console.log("TOKENNNNN:", TOKEN);
     const checkAuth = async () => {
       const response = await fetch(`api/users/authenticate`, {
         headers: {
@@ -49,14 +48,7 @@ const App = () => {
         <CartProvider>
           <ProductsProvider>
             <div className="App">
-              <NavBar
-                isLoggedIn={isLoggedIn}
-                setIsLoggedIn={setIsLoggedIn}
-                setIsLoading={setIsLoading}
-                user={user}
-                setUser={setUser}
-                userId={userId}
-              />
+              <NavBar setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} />
               <div className="content">
                 <Switch>
                   <Route exact path="/">
@@ -76,22 +68,25 @@ const App = () => {
                     />
                   </Route>
                   <Route path="/products/:productId">
-                    <ProductDetails />
+                    <ProductDetails userId={userId} />
                   </Route>
                   <Route path="/products">
                     <AllProducts />
                   </Route>
                   <Route path="/:categoryName/products">
-                    <CategoryProducts />
+                    <CategoryProducts userId={userId} s />
                   </Route>
-                <Route path="/search">
-                  <SearchResults />
-                </Route>
+                  <Route path="/search">
+                    <SearchResults />
+                  </Route>
                   <Route path="/thankyou">
                     <ThankYou />
                   </Route>
                   <Route path="*">
-                    <NotFound />
+                    <NotFound
+                      title="Page not found"
+                      description="Whoops! Looks like we jammed a little too hard."
+                    />
                   </Route>
                 </Switch>
               </div>

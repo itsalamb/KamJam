@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
-import { NavLink, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 
-const LoginForm = ({ setIsLoggedIn }) => {
-  const { setToken, setUser, user } = useContext(AuthContext);
+const LoginForm = ({ isLoggedIn, setIsLoggedIn }) => {
+  const { token, setToken, user, setUser } = useContext(AuthContext);
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -30,11 +30,14 @@ const LoginForm = ({ setIsLoggedIn }) => {
     setToken(data.token);
 
     if (data.token) {
-      setIsLoggedIn(true);
       setSuccessMessage("Welcome back!");
-      console.log("USERRRRR:", user);
+      setUser(user);
+      setIsLoggedIn(true);
+      console.log("from AUTH??? USERRRRR:", user);
+      console.log("from AUTH??? TOKEN:", token);
+      console.log("from AUTH??? isLoggedIn:", isLoggedIn);
 
-      // history.push("/");
+      history.push("/");
     } else {
       setErrorMessage(data.message);
     }

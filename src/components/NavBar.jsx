@@ -1,16 +1,23 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import SearchBar from "./SearchBar";
-import { CartContext } from "./CartProvider";
+// import { CartContext } from "./CartProvider";
 import "material-icons/iconfont/material-icons.css";
 import logo from "./images/logo.png";
 import { AuthContext } from "./AuthProvider";
+import { CartContext } from "./CartProvider";
 
-const NavBar = ({ isLoggedIn, setIsLoggedIn, user, setUser, setIsLoading }) => {
+const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
+  const { user, setUser } = useContext(AuthContext);
+  const { cart } = useContext(CartContext);
+  const history = useHistory();
+  console.log("CART FROM CART CONTEXT???:", cart);
+
   const handleClick = () => {
     localStorage.clear();
     setIsLoggedIn(false);
-    setUser(null);
+    setUser("guest");
+    history.push("/login");
   };
 
   return (
@@ -21,7 +28,7 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn, user, setUser, setIsLoading }) => {
         </Link>
       </div>
       <div className="nav-main">
-        <SearchBar className="search-bar" setIsLoading={setIsLoading} />
+        <SearchBar className="search-bar" />
         <div className="links">
           <Link to="/" className="navlinks">
             Home
@@ -48,13 +55,13 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn, user, setUser, setIsLoading }) => {
       </div>
       <div className="right-nav">
         <div className="cart-icon">
-          <p>Hello, {user ? user : `guest`}</p>
+          <p>Hello, {user.name ? user.name : `guest`}</p>
           <div className="view-cart">
             <Link to="/cart/userid/:userId">
               <span class="material-icons">shopping_cart</span>
             </Link>
             <Link to="/cart/userid/:userId">
-              <p>View cart (0)</p>
+              <p>View cart ({cart.length})</p>
             </Link>
           </div>
         </div>
