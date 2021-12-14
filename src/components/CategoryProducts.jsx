@@ -9,7 +9,7 @@ const CategoryProducts = (categoryName, setCategoryName) => {
   const [catProducts, setCatProducts] = useState([]);
 
   console.log(params.categoryName);
-    console.log('params', params);
+  console.log("params", params);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -29,7 +29,7 @@ const CategoryProducts = (categoryName, setCategoryName) => {
   }, [params.categoryName]);
 
   return (
-/* Double check this part */
+    /* Double check this part */
     <>
       <h1>Products</h1>
       <div className="product-container">
@@ -54,9 +54,9 @@ const CategoryProducts = (categoryName, setCategoryName) => {
         ))}
       </div>
     </>
-/* Do we need both the above and below? */
-    <Products title={params.categoryName} products={catProducts} />
+    /* Do we need both the above and below? */
   );
+  <Products title={params.categoryName} products={catProducts} />;
 };
 
 export default CategoryProducts;
