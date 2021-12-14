@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { NavLink, useHistory } from "react-router-dom";
+import { AuthContext } from "./AuthProvider";
 
 const LoginForm = ({ setIsLoggedIn }) => {
+  const { setToken, setUser } = useContext(AuthContext);
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -24,8 +26,8 @@ const LoginForm = ({ setIsLoggedIn }) => {
       }),
     });
     const data = await response.json();
-    window.localStorage.setItem("token", data.token);
-    setName(name);
+    console.log(data);
+    setToken(data.token);
 
     if (data.token) {
       setIsLoggedIn(true);

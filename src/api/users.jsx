@@ -31,11 +31,10 @@ export const login = async (email, password, name) => {
     }),
   });
 
-  const { token, message, name } = await response.json();
+  const { token, message } = await response.json();
   if (!response.ok) {
     throw {
       message,
-      name,
     };
   }
   return token;
