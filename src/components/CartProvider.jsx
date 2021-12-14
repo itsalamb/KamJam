@@ -1,29 +1,31 @@
-import { createContext, useState, useEffect } from "react";
-import { getCart } from "../api/cart";
+import { createContext, useContext, useState, useEffect } from "react";
+import { AuthContext } from "./AuthProvider";
+
 export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
+  const { user } = useContext(AuthContext);
+  const userId = user.id;
   const [cart, setCart] = useState([]);
-  const [refresh, setRefresh] = useState(true);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if (refresh) {
-      (async () => {
-        const cart = await getCart();
-        setCart(cart);
-        setRefresh(false);
-        setIsLoading(false);
-      })();
-    }
-  }, [refresh]);
+    const fetchCart = async () => {
+      const resp = await fetch(`/api/cart/userid/${userId}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      const data = await resp.json();
+      const currentCart = Array.from(data.currentCart);
+      setCart(currentCart);
+    };
+    fetchCart(userId);
+  }, [userId]);
 
   const contextValue = {
     cart,
-    refreshCart() {
-      setRefresh(true);
-    },
-    isLoading,
   };
 
   return (

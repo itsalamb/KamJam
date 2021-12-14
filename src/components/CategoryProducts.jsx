@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { useHistory } from "react-router";
 import Products from "./Products";
 
-const CategoryProducts = (userId, categoryName, setCategoryName) => {
+const CategoryProducts = () => {
   const params = useParams();
   const history = useHistory();
   const [catProducts, setCatProducts] = useState([]);
