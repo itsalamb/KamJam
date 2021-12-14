@@ -3,7 +3,7 @@
 }
 
 .single-product-detials-card {
-   
+
 }
 
 .single-product-name {
@@ -19,7 +19,8 @@
 .single-product-image {
     height: 50vh;
     width: 50vw;
-    
+    image-rendering: -webkit-optimize-contrast;
+    object-fit:scale-down;
 }
 
 .single-price {

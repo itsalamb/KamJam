@@ -91,7 +91,7 @@ const App = () => {
                     <ThankYou />
                   </Route>
                   <Route path="*">
-                    <NotFound />
+                    <NotFound title="Page not found" description="Whoops! Looks like we jammed a little too hard." />
                   </Route>
                 </Switch>
               </div>

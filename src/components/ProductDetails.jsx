@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import AddToCartButton from "./AddToCartButton";
+import NotFound from "./NotFound";
 
 const ProductDetails = ({ }) => {
   const [product, setProduct] = useState([]);
@@ -36,7 +37,7 @@ const ProductDetails = ({ }) => {
             </div>
           </div>
         )) :
-          <h2>Product Cannot Be Found</h2>}
+          <NotFound title="No Product Found" description={"This Product Does Not Exist"} />}
       </div>
     </>
   )
