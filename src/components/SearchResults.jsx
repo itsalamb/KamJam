@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useHistory, useLocation } from "react-router";
 import Products from "./Products";
+import NotFound from "./NotFound";
 
 const SearchResults = () => {
     const location = useLocation()
     const history = useHistory();
     const [searchResults, setSearchResults] = useState([]);
-    console.log('location', location)
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -17,14 +17,21 @@ const SearchResults = () => {
                 }
             });
             const data = await results.json()
-            console.log('data', data)
             setSearchResults(data.products)
+
         }
         fetchProducts()
-    }, [])
+    }, [location.search])
+
+    console.log(searchResults)
 
     return (
-        <Products title='Search Results' products={searchResults}  />
+        <>
+            {searchResults.length === 0 ?
+                <NotFound title="No Search Results" description={"Try searching a different word/phrase"} />
+                : <Products title='Search Results' products={searchResults} />
+            }
+        </>
     )
 
 }

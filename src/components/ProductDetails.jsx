@@ -2,8 +2,10 @@ import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router";
 import AddToCartButton from "./AddToCartButton";
 import { ProductsContext } from "./ProductsProvider";
+import NotFound from "./NotFound";
 
-const ProductDetails = ({}) => {
+
+const ProductDetails = ({ }) => {
   const [product, setProduct] = useState([]);
   const params = useParams();
   const { products } = useContext(ProductsContext);
@@ -28,23 +30,22 @@ const ProductDetails = ({}) => {
   console.log("product", product);
   return (
     <>
-      <h1>Product</h1>
-      <div className="product-container">
-        {product.length > 0 ? (
-          product.map((product) => (
-            <div className="product-details-card" key={product.id}>
-              <h3 className="product-name">{product.name}</h3>
-              <img className="product-image" src={product.imageurl} />
-              <p className="price">$ {product.price}</p>
+      <div className="single-product-container">
+        {product.length > 0 ? product.map((product) => (
+          <div className="single-product-details-card" key={product.id}>
+            <h1 className="single-product-name">{product.name}</h1>
+            <h2 className="single-product-description">{product.description}</h2>
+            <img className="single-product-image" src={product.imageurl} />
+            <div className="price-cart-box">
+              <p className="single-price">$ {product.price}</p>
               <AddToCartButton />
             </div>
-          ))
-        ) : (
-          <h2>Product Cannot Be Found</h2>
-        )}
+          </div>
+        )) :
+          <NotFound title="No Product Found" description={"This Product Does Not Exist"} />}
       </div>
     </>
-  );
-};
+  )
+}
 
 export default ProductDetails;

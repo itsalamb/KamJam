@@ -16,7 +16,6 @@ const AllProducts = () => {
       });
       const data = await resp.json();
       const newdata = Array.from(data.products);
-      console.log("this is the data", newdata);
       setProducts(newdata);
     };
     fetchProducts();

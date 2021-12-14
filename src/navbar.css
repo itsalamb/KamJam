@@ -21,7 +21,6 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin: 10px;
   background-image: url("./components/images/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
