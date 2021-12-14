@@ -21,24 +21,26 @@ const ProductDetails = ({}) => {
     fetchProduct();
   }, []);
 
-    console.log('product', product)
+  console.log("product", product);
   return (
     <>
       <h1>Product</h1>
       <div className="product-container">
-        
-      {product.length > 0 ? product.map((product) => (
-          <div className="product-details-card" key={product.id}>
-            <h3 className="product-name">{product.name}</h3>
-            <img className="product-image" src={product.imageurl} />
-            <p className="price">$ {product.price}</p>
-            <AddToCartButton />
-          </div>
-        )): 
-        <h2>Product Cannot Be Found</h2>}
-        </div>
-      </>
-  )
-}
+        {product.length > 0 ? (
+          product.map((product) => (
+            <div className="product-details-card" key={product.id}>
+              <h3 className="product-name">{product.name}</h3>
+              <img className="product-image" src={product.imageurl} />
+              <p className="price">$ {product.price}</p>
+              <AddToCartButton />
+            </div>
+          ))
+        ) : (
+          <h2>Product Cannot Be Found</h2>
+        )}
+      </div>
+    </>
+  );
+};
 
 export default ProductDetails;

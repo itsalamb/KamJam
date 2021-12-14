@@ -3,7 +3,7 @@ import { NavLink, useHistory } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 
 const LoginForm = ({ setIsLoggedIn }) => {
-  const { setToken, setUser } = useContext(AuthContext);
+  const { setToken, setUser, user } = useContext(AuthContext);
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -32,8 +32,9 @@ const LoginForm = ({ setIsLoggedIn }) => {
     if (data.token) {
       setIsLoggedIn(true);
       setSuccessMessage("Welcome back!");
+      console.log("USERRRRR:", user);
 
-      history.push("/");
+      // history.push("/");
     } else {
       setErrorMessage(data.message);
     }

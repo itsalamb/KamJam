@@ -34,9 +34,11 @@ const Cart = ({ userId, isLoggedIn, setIsLoggedIn }) => {
       <h1>Here is your cart good sir</h1>
       {cart.map((myCart) => (
         <div className="mycart" key={myCart.id}>
-          <h3 className="cart-name">{myCart.name}</h3>
+          <h3 className="cart-info">{myCart.name}</h3>
           <img className="cart-image" src={myCart.imageurl} />
-          <p className="cart-price">$ {myCart.price}</p>
+          <p className="cart-info">$ {myCart.price}</p>
+          <p cart-info>Quantity: {myCart.quantity}</p>
+          <br />
         </div>
       ))}
     </>

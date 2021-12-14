@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { authenticate } from "../api/users";
 
-export const AuthContext = createContext();
+export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem("token"));

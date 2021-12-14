@@ -3,13 +3,14 @@ import { useParams } from "react-router";
 import { useHistory } from "react-router";
 import Products from "./Products";
 
-const CategoryProducts = (categoryName, setCategoryName) => {
+const CategoryProducts = (userId, categoryName, setCategoryName) => {
   const params = useParams();
   const history = useHistory();
   const [catProducts, setCatProducts] = useState([]);
 
   console.log(params.categoryName);
   console.log("params", params);
+  console.log("USERIDDDD:", userId);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -39,7 +40,7 @@ const CategoryProducts = (categoryName, setCategoryName) => {
             <img className="product-image" src={product.imageurl} />
             <p className="price">$ {product.price}</p>
             <span>
-              <AddToCartButton />
+              {/* <AddToCartButton /> */}
               <button
                 type="button"
                 className="details-button"
