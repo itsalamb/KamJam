@@ -1,18 +1,43 @@
 const express = require("express");
-const cartRouter = express.Router();
 const {
   addToCart,
+  getCartById,
   removeFromCart,
   updateQuantityInCart,
+  getCartByUserId,
 } = require("../db/cart");
+const cartRouter = express.Router();
 
-// Add new item to cart
+cartRouter.use((req, res, next) => {
+  console.log("A request is being made to /cart");
 
-cartRouter.post("/", async (req, res, next) => {
+  next();
+});
+
+cartRouter.get("/cartid/:cartId", async (req, res) => {
+  const cartId = req.params.cartId;
+  const currentCart = await getCartById(cartId);
+  res.send({
+    currentCart,
+  });
+});
+
+cartRouter.get("/userid/:userId", async (req, res) => {
+  const userId = req.params.userId;
+  const currentCart = await getCartByUserId(userId);
+  res.send({
+    currentCart,
+  });
+});
+
+cartRouter.post("/userid/:userId", async (req, res, next) => {
+  const { userId, productId, quantity } = req.body;
+  const cartItem = { userId, productId, quantity };
+
   try {
-    const cart = await addToCart(req.body);
+    const cart = await addToCart(cartItem);
 
-    res.send(cart);
+    res.send({ cart });
   } catch (error) {
     next(error);
   }
@@ -43,3 +68,5 @@ cartRouter.patch("/", async (req, res, next) => {
     next(error);
   }
 });
+
+module.exports = cartRouter;

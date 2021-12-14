@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { useHistory } from "react-router";
-import AddToCartButton from "./AddToCartButton";
+import Products from "./Products";
 
-const CategoryProducts = (categoryName, setCategoryName) => {
+const CategoryProducts = (userId, categoryName, setCategoryName) => {
   const params = useParams();
-  const history = useHistory()
+  const history = useHistory();
   const [catProducts, setCatProducts] = useState([]);
 
-    console.log(params.categoryName);
+  console.log(params.categoryName);
+  console.log("params", params);
+  console.log("USERIDDDD:", userId);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -22,14 +24,13 @@ const CategoryProducts = (categoryName, setCategoryName) => {
         }
       );
       const data = await resp.json();
-
-      console.log("this is the data", data);
       setCatProducts(data);
     };
     fetchProducts();
   }, [params.categoryName]);
 
   return (
+    /* Double check this part */
     <>
       <h1>Products</h1>
       <div className="product-container">
@@ -39,14 +40,24 @@ const CategoryProducts = (categoryName, setCategoryName) => {
             <img className="product-image" src={product.imageurl} />
             <p className="price">$ {product.price}</p>
             <span>
-            <AddToCartButton />
-            <button type="button" className="details-button" onClick={() => {history.push(`/products/${product.id}`)}}>See Details</button>
+              {/* <AddToCartButton /> */}
+              <button
+                type="button"
+                className="details-button"
+                onClick={() => {
+                  history.push(`/products/${product.id}`);
+                }}
+              >
+                See Details
+              </button>
             </span>
           </div>
         ))}
       </div>
     </>
+    /* Do we need both the above and below? */
   );
+  <Products title={params.categoryName} products={catProducts} />;
 };
 
 export default CategoryProducts;

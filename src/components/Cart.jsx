@@ -1,96 +1,81 @@
-// cart, edit cart, remove from cart, checkout
+// to do:
+// delete from cart,
+// increase quantity,
+// decrease quantity,
+// link to checkout component
 
-import { useState, useEffect } from "react";
+import { response } from "msw";
+import { useState, useContext, useEffect } from "react";
 import { useHistory } from "react-router";
 
-const Cart = ({ cartId }) => {
-  const [userId, setUserId] = useState([]);
-  const [productId, setProductId] = useState([]);
-  const [quantity, setQuantity] = useState([]);
+const Cart = ({ userId, isLoggedIn, setIsLoggedIn }) => {
+  const [cart, setCart] = useState([]);
 
-  // useEffect(() => {
-  //   const getCart = async () => {
-  //     const response = await fetch();
-  //     // 'api route here'
-  //     const data = await response.json();
-  //     setProductId(data);
-  //   };
-  //   getCart();
-  // });
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const TOKEN = window.localStorage.getItem("token");
-
-    const response = await fetch(
-      //   `API route here`,
-      {
-        method: "POST",
+  useEffect(() => {
+    const fetchCart = async () => {
+      const resp = await fetch(`/api/cart/userid/${userId}`, {
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${TOKEN}`,
         },
-        body: JSON.stringify({
-          productId,
-          quantity,
-        }),
-      }
-    );
-    const data = await response.json();
-    console.log(productId);
-    history.push("/products");
-  };
+      });
 
-  return <h1>this will be your shopping cart</h1>;
+      const data = await resp.json();
+      console.log("DATAAAA HEREEE:", data);
+      const currentCart = Array.from(data.currentCart);
+      console.log("CURRENT CART YOOO:", currentCart);
+      setCart(currentCart);
+    };
+    fetchCart(userId);
+  }, [userId]);
 
-  //   return (
-  //     <>
-  //       <div className="addActivity">
-  //         <h1>Let's attach activities to your routine</h1>
-
-  //         <form onSubmit={handleSubmit}>
-  //           <h3>Select an activity:</h3>
-  //           <select
-  //             value={activities}
-  //             onChange={(e) => setActivityId(e.target.value)}
-  //           >
-  //             {activities.map((activity) => (
-  //               <option value={activity.id}>{activity.name}</option>
-  //             ))}
-  //           </select>
-  //           <br />
-  //           <br />
-  //           <label>
-  //             Number of Reps:
-  //             <br />
-  //             <input
-  //               type="text"
-  //               required
-  //               name="count"
-  //               value={count}
-  //               placeholder="set desired count"
-  //               onChange={(e) => setCount(e.target.value)}
-  //             />
-  //           </label>
-  //           <br />
-  //           <label>
-  //             Duration:
-  //             <br />
-  //             <input
-  //               type="text"
-  //               required
-  //               name="duration"
-  //               value={duration}
-  //               placeholder="set desired duration"
-  //               onChange={(e) => setDuration(e.target.value)}
-  //             />
-  //           </label>
-  //           <br />
-  //           {/* <button type="submit">Add Activity</button> */}
-  //           <input type="submit" value="Add Activity" />
-  //         </form>
-  //       </div>
-  //     </>
-  //   );
+  return (
+    <>
+      <h1>Here is your cart good sir</h1>
+      {cart.map((myCart) => (
+        <div className="mycart" key={myCart.id}>
+          <h3 className="cart-info">{myCart.name}</h3>
+          <img className="cart-image" src={myCart.imageurl} />
+          <p className="cart-info">$ {myCart.price}</p>
+          <p cart-info>Quantity: {myCart.quantity}</p>
+          <br />
+        </div>
+      ))}
+    </>
+  );
 };
+
 export default Cart;
+
+// const [userId, setUserId] = useState([]);
+//   const [productId, setProductId] = useState([]);
+//   const [quantity, setQuantity] = useState([]);
+
+//   const {cart} = useContext(CartContext);
+
+//   const removeFromCart = async (event) => {
+//     event.removeFromCart();
+//     const TOKEN = window.localStorage.getItem("token");
+
+//     const response = await delete(
+//         `/api/cart`,
+//       {
+//         method: "DELETE",
+//         headers: {
+//           "Content-Type": "application/json",
+//           Authorization: `Bearer ${TOKEN}`,
+//         },
+//         body: JSON.stringify({
+//           productId,
+//           quantity,
+//         }),
+//       }
+//     );
+//     const data = await response.json();
+//     console.log(cart);
+//   };
+
+//   const cartItem = [
+//     CartContext.productId
+// ]
+// console.log(cartItem);
