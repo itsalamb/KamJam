@@ -30,20 +30,18 @@ cartRouter.get("/userid/:userId", async (req, res) => {
   });
 });
 
-/* NOT DONE 
+cartRouter.post("/userid/:userId", async (req, res, next) => {
+  const { userId, productId, quantity } = req.body;
+  const cartItem = { userId, productId, quantity };
 
-cartRouter.post("/", async (req, res, next) => {
   try {
-    const { userId, productId, quantity } = req.body;
+    const cart = await addToCart(cartItem);
 
-
-    res.send(cart);
+    res.send({ cart });
   } catch (error) {
     next(error);
   }
 });
-
-*/
 
 // Delete item from cart
 
