@@ -73,7 +73,7 @@ const App = () => {
                   <Route path="/login">
                     <LoginForm setIsLoggedIn={setIsLoggedIn} />
                   </Route>
-                  <Route path="/cart/userid/:userid">
+                  <Route path="/cart">
                     <Cart
                       isLoggedIn={isLoggedIn}
                       setIsLoggedIn={setIsLoggedIn}

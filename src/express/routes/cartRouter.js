@@ -15,24 +15,23 @@ cartRouter.use((req, res, next) => {
   next();
 });
 
-cartRouter.get("/userid/:userId", async (req, res) => {
-  const userId = req.params.userId;
+cartRouter.get("/", requireUser, async (req, res, next) => {
+  const { id } = req.user;
+  console.log("USERRRRR:", id);
 
   try {
-    const currentCart = await getCartByUserId(userId);
-    res.send({
-      currentCart,
-    });
+    const currentCart = await getCartByUserId(id);
+    res.send(currentCart);
   } catch (error) {
     console.error(error);
     next({
       name: "GetCartByUserIdError",
-      message: `Could not get ${userId}s cart`,
+      message: `Could not get your cart`,
     });
   }
 });
 
-cartRouter.post("/", async (req, res, next) => {
+cartRouter.post("/", requireUser, async (req, res, next) => {
   const { userId, productId, quantity } = req.body;
   const cartItem = { userId, productId, quantity };
 
@@ -41,7 +40,11 @@ cartRouter.post("/", async (req, res, next) => {
 
     res.send({ cart });
   } catch (error) {
-    next(error);
+    console.error(error);
+    next({
+      name: "AddToCartError",
+      message: "Error adding item to cart",
+    });
   }
 });
 
@@ -77,7 +80,11 @@ cartRouter.patch("/", async (req, res, next) => {
     const updatedQty = await updateQuantityInCart(req.body);
     res.send(updatedQty);
   } catch (error) {
-    next(error);
+    console.error(error);
+    next({
+      name: "UpdateQtyError",
+      message: "Error updating the quantity in cart",
+    });
   }
 });
 
