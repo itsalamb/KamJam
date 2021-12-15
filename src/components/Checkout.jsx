@@ -1,9 +1,13 @@
 import React from "react";
 
-export default function Checkout() {
+const Checkout = () => {
   return (
-    <div>
+    <>
+    <div className="checkout">
       <p>Return cart with total price and link to payment</p>
     </div>
+    </>
   );
 }
+
+export default Checkout;
