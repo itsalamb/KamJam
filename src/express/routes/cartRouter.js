@@ -50,28 +50,24 @@ cartRouter.post("/", requireUser, async (req, res, next) => {
 
 // Delete item from cart
 
-cartRouter.delete(
-  "/:userId/:productId",
-  requireUser,
-  async (req, res, next) => {
-    const { userId, productId } = req.body;
+cartRouter.delete("/:productId", requireUser, async (req, res, next) => {
+  const { userId, productId } = req.body;
 
-    try {
-      const deletedItem = await removeFromCart(userId, productId);
-      if (deletedItem) {
-        res.send(deletedItem);
-      } else {
-        next({ name: "NoItemError", message: "No item found" });
-      }
-    } catch (error) {
-      console.error(error);
-      next({
-        name: "DeleteCartItemError",
-        message: "Could not remove item from cart",
-      });
+  try {
+    const deletedItem = await removeFromCart(userId, productId);
+    if (deletedItem) {
+      res.send(deletedItem);
+    } else {
+      next({ name: "NoItemError", message: "No item found" });
     }
+  } catch (error) {
+    console.error(error);
+    next({
+      name: "DeleteCartItemError",
+      message: "Could not remove item from cart",
+    });
   }
-);
+});
 
 // Update quantity in cart
 

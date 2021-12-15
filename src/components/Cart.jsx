@@ -11,6 +11,7 @@ import { AuthContext } from "./AuthProvider";
 
 const Cart = () => {
   const { user, token, isLoggedIn } = useContext(AuthContext);
+  const history = useHistory();
   const userId = user.id;
   const [productId, setProductId] = useState(null);
   const [cart, setCart] = useState([]);
@@ -36,13 +37,13 @@ const Cart = () => {
       setCart(data);
     };
     fetchCart(userId);
-  }, [userId]);
+  }, []);
 
   const handleDeleteFromCart = async (userId, productId) => {
     console.log("HERE IS THE PRODUCT ID:", productId);
     const response = await fetch(
       `
-    /api/cart/${userId}/${productId}`,
+    /api/cart/${productId}`,
       {
         method: "DELETE",
         headers: {
@@ -57,7 +58,12 @@ const Cart = () => {
     );
     console.log("HERE IS RESPONSE:", response);
     const parsedResponse = await response.json();
-    console.log(parsedResponse);
+    console.log(parsedResponse.id);
+    if (parsedResponse.id) {
+      const newCart = cart.filter((product) => product.productId !== productId);
+      setCart(newCart);
+      console.log(newCart);
+    }
   };
 
   return (
