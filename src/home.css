@@ -1,5 +1,6 @@
 .homepage {
   background-color: #f5f5dc;
+  min-height: 85vh
 }
 
 .hometitle {
@@ -8,6 +9,7 @@
   border-style: solid;
   border-width: 1px;
   border-color: #e1b10f;
+  background-color: beige;
 }
 
 .tileContainer {
