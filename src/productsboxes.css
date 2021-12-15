@@ -1,83 +1,83 @@
 :root {
-    --teal: #4dacb4;
-    --blue: #064a5a;
-    --pink: #fb9ab6;
-    --orange: #f4473a;
-    --yellow: #e1b10f;
-    --navy: #2e465e;
-  }
+  --teal: #4dacb4;
+  --blue: #064a5a;
+  --pink: #fb9ab6;
+  --orange: #f4473a;
+  --yellow: #e1b10f;
+  --navy: #2e465e;
+}
 
 * {
-    box-sizing: border-box;
-    margin: 0px;
-    font-family: "Chicle";
+  box-sizing: border-box;
+  margin: 0px;
+  font-family: "Chicle";
 }
 
 .product-container {
-    display: flex;
-    margin: 0;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    background-color: beige;
+  display: flex;
+  margin: 0;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: beige;
 }
 
 .product-card {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 2vw;
-    width: 400px;
-    background-color: tan;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2vw;
+  width: 400px;
+  background-color: tan;
+  justify-content: center;
 }
 
 .price {
-    font-size:16pt;
-    text-align: end;
+  font-size: 16pt;
+  text-align: end;
 }
 
 .product-image {
-    height: 300px;
-    width: 300px;
-    image-rendering: -webkit-optimize-contrast;
-    object-fit:scale-down;
-    cursor: pointer;
+  height: 300px;
+  width: 300px;
+  image-rendering: -webkit-optimize-contrast;
+  object-fit: scale-down;
+  cursor: pointer;
 }
 
 .product-name {
-    background-color: var(--yellow);
-    margin: 0px;
-    text-align: center;
-    font-size: 22pt;
-    width: 400px;
-    cursor: pointer;
+  background-color: var(--yellow);
+  margin: 0px;
+  text-align: center;
+  font-size: 22pt;
+  width: 400px;
+  cursor: pointer;
 }
 
 .product-buttons {
-    display: flex;
-    background: var(--yellow);
-    margin: 0%;
-    padding: 5px;
-    justify-content: space-between;
-    width: 400px;
-    align-items: center;
+  display: flex;
+  background: var(--yellow);
+  margin: 0%;
+  padding: 5px;
+  justify-content: space-between;
+  width: 400px;
+  align-items: center;
 }
 
 .details-button {
-    padding: 2px;
-    font-size: 16pt;
-    margin-left: 20px;
-    cursor: pointer;
+  padding: 2px;
+  font-size: 16pt;
+  margin-left: 20px;
+  cursor: pointer;
 }
 
 .add-to-cart-button {
-    padding: 2px;
-    margin-right: 5vw;
-    font-size: 16pt;
-    cursor: pointer;
+  padding: 2px;
+  margin-right: 5vw;
+  font-size: 16pt;
+  cursor: pointer;
 }
 
 .product-title {
-    background-color: beige;
-    text-align: center;
-    font-size: 40pt;
+  background-color: beige;
+  text-align: center;
+  font-size: 40pt;
 }

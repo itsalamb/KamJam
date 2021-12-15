@@ -21,9 +21,13 @@ const App = () => {
   const [email, setEmail] = useState("");
   const [user, setUser] = useState("");
   const [userId, setUserId] = useState(null);
+  const TOKEN = window.localStorage.getItem("token");
 
   useEffect(() => {
-    const TOKEN = window.localStorage.getItem("token");
+    if (!TOKEN) {
+      return;
+    }
+
     console.log("TOKENNNNN:", TOKEN);
     const checkAuth = async () => {
       const response = await fetch(`api/users/authenticate`, {
@@ -84,9 +88,9 @@ const App = () => {
                   <Route path="/:categoryName/products">
                     <CategoryProducts />
                   </Route>
-                <Route path="/search">
-                  <SearchResults />
-                </Route>
+                  <Route path="/search">
+                    <SearchResults />
+                  </Route>
                   <Route path="/thankyou">
                     <ThankYou />
                   </Route>

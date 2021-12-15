@@ -55,7 +55,7 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
       </div>
       <div className="right-nav">
         <div className="cart-icon">
-          <p>Hello, {user.name ? user.name : `guest`}</p>
+          {user.name ? <p>Hello, {user.name}</p> : <p>Hello guest</p>}
           <div className="view-cart">
             <Link to="/cart/userid/:userId">
               <span class="material-icons">shopping_cart</span>
@@ -66,7 +66,7 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
           </div>
         </div>
         <div>
-          {isLoggedIn ? (
+          {user.id ? (
             <Link className="login-links" to="/login" onClick={handleClick}>
               Logout
             </Link>

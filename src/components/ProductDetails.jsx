@@ -45,9 +45,13 @@ const ProductDetails = ({}) => {
                 <AddToCartButton />
               </div>
             </div>
-          </div>
-        )) :
-          <NotFound title="No Product Found" description="This Product Does Not Exist" />}
+          ))
+        ) : (
+          <NotFound
+            title="No Product Found"
+            description="This Product Does Not Exist"
+          />
+        )}
       </div>
     </>
   );
