@@ -19,7 +19,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     background-color: beige;
-    min-height: 75vh;
+    min-height: 80vh;
 }
 
 .product-card {
@@ -82,5 +82,6 @@
     background-color: beige;
     text-align: center;
     font-size: 40pt;
-    height: 10vh;
+    height: 5vh;
+    align-content: flex-end;
 }
