@@ -5,7 +5,7 @@ const products = [
     description:
       "The Gibson Les Paul™ Classic combines the early 60's style Les Paul model with some functional and time-tested modifications. As expected, the LP Classic is crafted with a mahogany back and maple top coupled with a slim taper mahogany neck and bound, rosewood fingerboard. BurstBucker™ 61R & 61T zebra, open-coil pickups provide classic Gibson tones from the era with a bit of extra punch thanks to the open coils. The control assembly features 4 push-pull pots which provide choices of coil tapping, phase switching, and pure bypassing for functional and versatile sonic variety.",
     imageurl:
-      "https://static.gibson.com/product-images/USA/USAI9Q269/Translucent%20Cherry/front-banner-1600_900.png",
+      "https://cdn.imgbin.com/12/7/5/imgbin-gibson-les-paul-studio-gibson-brands-inc-gibson-les-paul-classic-guitar-guitar-cQLT15wpC5nnM31mtXEBhajE5.jpg",
     categoryName: "Guitars",
     condition: "New",
     inventory: 1,
@@ -27,11 +27,110 @@ const products = [
     description:
       "The Jason Isbell Custom Telecaster is visually striking – the Chocolate Sunburst pops against the cream double-binding of the ‘59-style Telecaster Custom body while Fender’s Road Worn® aging process gives it the look and feel of a well-used instrument. The vintage-inspired mid-’60s “C”-shaped maple neck and 21-fret rosewood fingerboard combines with the sparkling, fiery tones of the custom Jason Isbell Telecaster Pickups and the chicken-pickin’ playability of the modified bridge to create a guitar that sounds and plays as a good as it looks.",
     imageurl:
-      "https://www.fmicassets.com/Damroot/GuitarVertDesktopJpg/10001/0140320364_fen_ins_frt_1_rr.jpg",
+      "https://cdn.shopify.com/s/files/1/0956/3980/products/0140320364_fen_ins_frt_1_rr_2400x787.png?v=1610375728",
     categoryName: "Guitars",
     condition: "New",
     inventory: 1,
     price: 1545,
+  },
+  {
+    name: "Fender Player Stratocaster Electric Guitar",
+    description:
+      "The inspiring sound of a Stratocaster is one of the foundations of Fender. Featuring this classic sound—bell-like high end, punchy mids and robust low end, combined with crystal-clear articulation—the Player Stratocaster is packed with authentic Fender feel and style. It’s ready to serve your musical vision, it’s versatile enough to handle any style of music and it’s the perfect platform for creating your own sound.",
+    imageurl:
+      "https://www.kindpng.com/picc/m/772-7727562_fender-player-stratocaster-electric-guitar-hd-png.png",
+    categoryName: "Guitars",
+    condition: "New",
+    inventory: 1,
+    price: 899,
+  },
+  {
+    name: "Diamon Guitars Barchetta STF",
+    description:
+      "The BARCHETTA combines a classic style with a modern update. Beautiful enough to be classic, modern enough to be aggressive, the BARCHETTA has a wide variety of colors and configurations to go from casual, to black tie, to black t-shirt. The BARCHETTA is what happens when a guitar grows up. The pinnacle of refinement and power, it's the S-Class AMG of guitars. Sleek, elegant, and FAST.The LT models afford you the opportunity for a guitar built to the same quality as our highest end guitars but at a more affordable price-point. Features a bolt-on neck and Diamond Custom Pickups optimized for our guitars and for the best amplifier performance.",
+    imageurl:
+      "https://images.squarespace-cdn.com/content/v1/578da7ec197aea33c80451b5/1480452419314-RWI5XZV84U2C8FCHYIX4/image-asset.png",
+    categoryName: "Guitars",
+    condition: "New",
+    inventory: 10,
+    price: 749,
+  },
+  {
+    name: "Lakland USA Series 65-T Guitar",
+    description:
+      "The Lakland USA 65-T Deluxe Sweetwater Exclusive is handcrafted in America to deliver elegant vintage visuals and optimized playing feel while its state-of-the-art electronics serve up the versatile tonal range today’s guitarists demand. This impeccable solidbody electric guitar is an instant classic constructed from premium tonewoods, including a swamp ash body topped with eye-popping flame maple and a roasted quartersawn maple neck crowned with a ebony fingerboard.",
+    imageurl:
+      "https://www.lakland.com/wp-content/uploads/2018/12/65-T-Tranlucent-Red_clipped_rev_2.png",
+    categoryName: "Guitars",
+    condition: "New",
+    inventory: 10,
+    price: 2400,
+  },
+  {
+    name: "Martin Guitars Road Series | GPC-11E",
+    description:
+      "With a gorgeous glossed Sitka spruce top and sapele back and sides, this solid wood Grand Performance model with cutaway is a great sounding guitar at an affordable price. New to this model are stunning mother-of-pearl pattern fingerboard and rosette inlays with a multi-stripe rosette border. It has an FSC® Certified Richlite® fingerboard and bridge, satin finish body, and a hand-rubbed neck finish. Also new to this model is the Fishman® MX-T electronics package with a built-in soundhole tuner that auto mutes the audio output so you can tune up any time without using a pedal.",
+    imageurl:
+      "https://www.martinguitar.com/dw/image/v2/BGJT_PRD/on/demandware.static/-/Library-Sites-MartinSharedLibrary/default/dw535a639b/images/homepage/guitar-guide/road-series.png",
+    categoryName: "Guitars",
+    condition: "New",
+    inventory: 10,
+    price: 999,
+  },
+  {
+    name: "Reverend Charger 290",
+    description:
+      "Fat, raw and bluesy but with just the right amount of bite to cut through the mix. This is the workhorse guitar that is clean and twangy enough for country, but thick enough for rock.",
+    imageurl:
+      "https://reverendguitars.com/wp-content/uploads/2021/07/reverend_charger-290_midnight_black_guitar_front.png",
+    categoryName: "Guitars",
+    condition: "New",
+    inventory: 10,
+    price: 1199,
+  },
+  {
+    name: "Gretsch Guitars G5420T Electromatic® Hollow Body Single-Cut with Bigsby®",
+    description:
+      "Alive and resonant, the G5420T has fully hollow build with a true Filter'Tron™ voice that explodes with huge punch and clear, strong presence. Like all Electromatic guitars, it delivers the fearless and electrifying authenticity that has set Gretsch apart as the quintessential rock ‘n’ roll guitars from the very beginning. It’s the sound of honor itself—play proud.",
+    imageurl:
+      "https://e7.pngegg.com/pngimages/124/653/png-clipart-gretsch-g5420t-electromatic-semi-acoustic-guitar-electric-guitar-gretsch-guitar-accessory-gretsch.png",
+    categoryName: "Guitars",
+    condition: "New",
+    inventory: 10,
+    price: 850,
+  },
+  {
+    name: "Knaggs Tier 2 Severn Chocolate / Creme",
+    description:
+      "Classic, time-honored appeal with an innovative, modern spin: that's what Joe Knaggs is all about. With 20 years under his belt as the head of the R & D and the Private Stock Department at Paul Reed Smith, it's no wonder that Knaggs guitars are hand-built perfection. The first thing we always notice is the sheer attention to detail -- not a single facet of these instruments goes overlooked. The craftsmanship is first rate. Plug it in, and it only gets better; these guitars maintain all the vintage tones you need, handle modern gain like you'd expect and sustain for days thanks to the exceptional Alder body and Flame Maple top. Outfitted with top-quality Seymour Duncan pickups in a SSS configuration, the tonal possibilities are limitless. You've got to play one!",
+    imageurl:
+      "https://www.guitar-planet.co.uk/wp-content/uploads/2016/08/Knaggs-Severn-T2-Trem-Hollowbody-Chocolate-Creme.png",
+    categoryName: "Guitars",
+    condition: "New",
+    inventory: 10,
+    price: 5750,
+  },
+  {
+    name: "Jackson Warrior JS32 Electric Guitar",
+    description:
+      "The formidable Warrior™ JS32 has a poplar body and a bolt-on maple speed neck with graphite reinforcement for rock-solid stability. Hosting 24 jumbo frets and pearloid sharkfin inlays, the 12”-16” compound radius fully bound rosewood fingerboard creates the ideal playing surface for fat riffs and easy chording near the nut while gradually flattening in the upper registers for lightning-quick solos and wide bends without fear of fretting out.A pair of Jackson high-output humbucking pickups with ceramic magnets cranks out clear tone with plenty of girth, and can be shaped with a three-way toggle switch and single volume and tone controls. The Warrior JS32 also features a Jackson-branded Floyd Rose double-locking tremolo bridge and die-cast tuners.",
+    imageurl:
+      "https://cdn.imgbin.com/25/13/7/imgbin-jackson-dinky-jackson-king-v-jackson-kelly-jackson-rhoads-jackson-guitars-guitar-iw7Y8x7sQVrs8h4Vyg1wtKJDS.jpg",
+    categoryName: "Guitars",
+    condition: "New",
+    inventory: 10,
+    price: 350,
+  },
+  {
+    name: "Jackson X Series Kelly KEX Electric Guitar",
+    description:
+      "X Series Kelly models exude metal sophistication, while also delivering massive sound and reliable performance at an exceptional value.The KEX features lightwood and resonant poplar body-wings, one-piece through-body maple neck with graphite reinforcement and scarf joint, and a 12”-16” compound radius laurel fingerboard with 24 jumbo frets and pearloid sharkfin inlays.Ready to roar, the KEX is also equipped with a pair of volcanic Jackson high-output humbucking pickups, single volume and tone controls, three-way toggle switch and a Floyd Rose Special double-locking tremolo system, providing amazing tone, exceptional dynamic response and reliable performance.The KEX is available in Gloss Black with eye-catching gold hardware and white binding along the body, neck and Jackson pointed 6-in-line headstock. Case sold separately.",
+    imageurl:
+      "https://w7.pngwing.com/pngs/148/125/png-transparent-jackson-guitars-jackson-dinky-jackson-js22-jackson-js32-dinky-dka-jackson-soloist-electric-guitar-guitar-accessory-string-instrument-acoustic-electric-guitar.png",
+    categoryName: "Guitars",
+    condition: "New",
+    inventory: 10,
+    price: 699,
   },
   //drums
   {
