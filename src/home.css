@@ -1,0 +1,39 @@
+* {
+  background-color: #f5f5dc;
+}
+
+.hometitle {
+  display: flex;
+  justify-content: center;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e1b10f;
+}
+
+.rowOne {
+  display: flex;
+  align-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.rowTwo {
+  display: flex;
+  align-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.homepageTiles {
+  display: flex;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e1b10f;
+}
+
+.homeWelcome {
+  display: flex;
+  align-items: center;
+}

@@ -2,37 +2,50 @@
 //all images need to be resized and links pointed to routers when completed
 
 import React from "react";
+import accTile from "./images/accpic2.png";
+import bandTile from "./images/bandpic2.png";
+import clusterTile from "./images/clusterpic2.png";
+import drumTile from "./images/Drumspic2.png";
+import guitarTile from "./images/guitarpic2.png";
+import keysTile from "./images/keyspic2.png";
 
 const Home = () => {
     return (
         <>
           <div className="homepage">
               <h1 className="hometitle">Welcome to KamJam</h1>
-              {/* replace test links below */}
-              <a href="https://www.fender.com/en-US/electric-guitars/telecaster/jason-isbell-custom-telecaster/0140320364.html">
-                  <img src="https://www.fmicassets.com/Damroot/GuitarVertDesktopJpg/10001/0140320364_fen_ins_frt_1_rr.jpg"/>
-                  <h2>Guitars</h2>
-              </a>
-              <a href="https://en.wikipedia.org/wiki/Drum">
-                  <img src="https://www.gretschdrums.com/sites/default/files/styles/portfolio_portrait_full/public/drums/usa-custom-gallery/USACustomCaribbeanTwilight.png?itok=QpWiOXTx"/>
-                  <h2>Drums</h2>
-              </a>
-              <a href="https://en.wikipedia.org/wiki/Orchestra">
-                  <img src="https://www.conn-selmer.com/application/files/8815/0722/9036/18037.png"/>
-                  <h2>Band and Orchestra</h2>
-              </a>
-              <a href="https://www.logitech.com/en-us/products/keyboards.html">
-                  <img src="https://www.nordkeyboards.com/sites/default/files/files/products/nord-stage-3/images/models-stage3-88-revb.jpg"/>
-                  <h2>Keyboards and Synths</h2>
-              </a>
-              <a href="https://www.boss.info/us/products/db-90/">
-                  <img src="https://media.guitarcenter.com/is/image/MMGS7/213017000000000-00-2000x2000.jpg"/>
-                  <h2>Accessories</h2>
-              </a>
-              <a href="https://en.wikipedia.org/wiki/The_Beatles">
-                  <img src="https://www.yamaha.com/yamahavgn/PIM/Images/CEL-56P_540x540_735x735_d5dd4b16e6705e566f63a43cc7c0af46.jpg"/>
-                  <h2>See All Products</h2>
-              </a>
+              <br/>
+              <span className="rowOne">
+                {/* replace test links below */}
+                {/* guitars */}
+                <a href="/guitars/products">
+                <img src={guitarTile} className="homepageTiles" row="rowOne"/>
+                </a>
+                {/* drums */}
+                <a href="/drums/products">
+                <img src={drumTile} className="homepageTiles" row="rowOne"/>
+                </a>
+                {/* Band and orchestra */}
+                <a href="/band/products">
+                <img src={bandTile} className="homepageTiles" row="rowOne"/>
+                </a>
+              </span>
+              <br/>
+              <span class="rowTwo">
+                {/* keys and synths */}
+                <a href="/keyboards/products">
+                <img src={keysTile} className="homepageTiles" row="rowTwo"/>
+                </a>
+                {/* Accesories */}
+                <a href="/accessories/products">
+                  <img src={accTile} className="homepageTiles" row="rowTwo"/>
+                </a>
+                {/* all products */}
+                <a href="/products">
+                <img src={clusterTile} className="homepageTiles" row="rowTwo"/>
+                </a>
+              </span>
+              <br/>
           </div>
         </>
     );

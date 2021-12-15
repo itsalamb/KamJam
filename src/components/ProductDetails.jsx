@@ -6,6 +6,7 @@ import NotFound from "./NotFound";
 
 const ProductDetails = ({}) => {
   const [product, setProduct] = useState([]);
+
   const params = useParams();
   const { products } = useContext(ProductsContext);
   const productId = params.productId;
@@ -44,13 +45,9 @@ const ProductDetails = ({}) => {
                 <AddToCartButton />
               </div>
             </div>
-          ))
-        ) : (
-          <NotFound
-            title="No Product Found"
-            description={"This Product Does Not Exist"}
-          />
-        )}
+          </div>
+        )) :
+          <NotFound title="No Product Found" description="This Product Does Not Exist" />}
       </div>
     </>
   );
