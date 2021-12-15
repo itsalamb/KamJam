@@ -55,16 +55,17 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
       </div>
       <div className="right-nav">
         <div className="cart-icon">
-          {user.name ? <p>Hello, {user.name}</p> : <p>Hello guest</p>}
-          <div className="view-cart">
-            <Link to="/cart/userid/:userId">
+          {user.name ? <p>Hello, {user.name}!</p> : <p>Hello guest!</p>}
+          {/* <div className="view-cart">
+            <Link to="/cart">
               <span class="material-icons">shopping_cart</span>
             </Link>
-            <Link to="/cart/userid/:userId">
+            <Link to="/cart">
               <p>View cart ({cart.length})</p>
             </Link>
-          </div>
+          </div> */}
         </div>
+        <br />
         <div>
           {user.id ? (
             <Link className="login-links" to="/login" onClick={handleClick}>
@@ -80,8 +81,8 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
               </Link>
             </>
           )}
-          <Link to="/" className="login-links">
-            Checkout
+          <Link to="/cart" className="login-links">
+            View Cart
           </Link>
         </div>
       </div>

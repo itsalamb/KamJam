@@ -22,16 +22,17 @@ const Cart = () => {
     }
 
     const fetchCart = async () => {
-      const resp = await fetch(`/api/cart/userid/${userId}`, {
+      const resp = await fetch(`/api/cart`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
       });
 
       const data = await resp.json();
-      const currentCart = Array.from(data.currentCart);
-      setCart(currentCart);
+      console.log(data);
+      setCart(data);
     };
     fetchCart(userId);
   }, [userId]);

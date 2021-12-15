@@ -64,6 +64,5 @@ module.exports = {
   addToCart,
   removeFromCart,
   updateQuantityInCart,
-  getCartById,
   getCartByUserId,
 };
