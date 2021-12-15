@@ -37,16 +37,29 @@ const Register = ({ setIsLoggedIn }) => {
         }
     }
     return <>
-        <h1>Create Your Account</h1>
-        <div className='registerform'>
-            {errorMessage ? <h4>{errorMessage}</h4> : null}
-            {successMessage ? <h4>{successMessage}</h4> : null}
-            <form onSubmit={handleSubmit}>
-                <input type='text' required={true} placeholder='Email' value={email} onChange={(event) => setEmail(event.target.value)}></input>
-                <input type='text' required={true} placeholder='Name' value={name} onChange={(event) => setName(event.target.value)}></input>
-                <input type='password' required={true} placeholder='Password' value={password} onChange={(event) => setPassword(event.target.value)}></input>
-                <button type='submit'>Create Account!</button>
-            </form>
+        <div className="loginPage">
+            <h2 className="welcome-back">Welcome to KamJam!</h2>
+            <div >
+                {errorMessage ? <h4>{errorMessage}</h4> : null}
+                {successMessage ? <h4>{successMessage}</h4> : null}
+                <form className='loginForm' onSubmit={handleSubmit}>
+                    <h2 className="login-to">Create Your Account</h2>
+                    <br />
+                    <label>
+                    <input className="email" type='text' required={true} placeholder='Email' value={email} onChange={(event) => setEmail(event.target.value)}></input>
+                    </label>
+                    <br />
+                    <label>
+                    <input className="email" type='text' required={true} placeholder='Name' value={name} onChange={(event) => setName(event.target.value)}></input>
+                    </label>
+                    <br />
+                    <label>
+                    <input className="password" type='password' required={true} placeholder='Password' value={password} onChange={(event) => setPassword(event.target.value)}></input>
+                    </label>
+                    <br />
+                    <button className="to-register" type='submit'>Create Account!</button>
+                </form>
+            </div>
         </div>
     </>
 }
