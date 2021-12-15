@@ -1,8 +1,8 @@
 const express = require("express");
 const {
   addToCart,
-  getCartById,
   removeFromCart,
+  clearCart,
   updateQuantityInCart,
   getCartByUserId,
 } = require("../db/cart");
@@ -50,21 +50,45 @@ cartRouter.post("/", requireUser, async (req, res, next) => {
 
 // Delete item from cart
 
-cartRouter.delete("/:productId", requireUser, async (req, res, next) => {
-  const { userId, productId } = req.body;
+cartRouter.delete(
+  "/product/:productId",
+  requireUser,
+  async (req, res, next) => {
+    const { userId, productId } = req.body;
+
+    try {
+      const deletedItem = await removeFromCart(userId, productId);
+      if (deletedItem) {
+        res.send(deletedItem);
+      } else {
+        next({ name: "NoItemError", message: "No item found" });
+      }
+    } catch (error) {
+      console.error(error);
+      next({
+        name: "DeleteCartItemError",
+        message: "Could not remove item from cart",
+      });
+    }
+  }
+);
+
+cartRouter.delete("/", requireUser, async (req, res, next) => {
+  const { id } = req.user;
 
   try {
-    const deletedItem = await removeFromCart(userId, productId);
-    if (deletedItem) {
-      res.send(deletedItem);
+    const emptyCart = await clearCart(id);
+    console.log("EMPTY CARTTTTTT:", emptyCart);
+    if (emptyCart) {
+      res.send(emptyCart);
     } else {
-      next({ name: "NoItemError", message: "No item found" });
+      next({ name: "NoCartError", message: "No cart found" });
     }
   } catch (error) {
     console.error(error);
     next({
       name: "DeleteCartItemError",
-      message: "Could not remove item from cart",
+      message: "Could not clear the cart",
     });
   }
 });

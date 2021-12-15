@@ -42,7 +42,7 @@ const Cart = () => {
     console.log("HERE IS THE PRODUCT ID:", productId);
     const response = await fetch(
       `
-    /api/cart/${productId}`,
+    /api/cart/product/${productId}`,
       {
         method: "DELETE",
         headers: {
@@ -55,14 +55,29 @@ const Cart = () => {
         }),
       }
     );
-    console.log("HERE IS RESPONSE:", response);
     const parsedResponse = await response.json();
-    console.log(parsedResponse.id);
     if (parsedResponse.id) {
       const newCart = cart.filter((product) => product.productId !== productId);
       setCart(newCart);
       console.log(newCart);
     }
+  };
+
+  const handleCheckout = async (userId) => {
+    const response = await fetch(
+      `
+    /api/cart`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    const emptyCart = await response.json();
+    setCart([]);
+    history.push("/ThankYou");
   };
 
   return (
@@ -81,12 +96,15 @@ const Cart = () => {
           </button>
           <br />
           <br />
-          {myCart.length < 1 ? null
-            : <button className="place-order" onClick={() => {
-              history.push("/ThankYou");
+          {myCart.length < 1 ? null : (
+            <button
+              className="place-order"
+              onClick={handleCheckout}
               // delete all items from cart
-              }}>Place Order</button>
-          }
+            >
+              Place Order
+            </button>
+          )}
         </div>
       ))}
     </>
