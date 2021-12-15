@@ -55,6 +55,7 @@
   font-size: 22pt;
   width: 400px;
   cursor: pointer;
+  min-height: 72px;
 }
 
 .product-buttons {

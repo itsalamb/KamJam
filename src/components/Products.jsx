@@ -6,18 +6,20 @@ const Products = ({ title, products }) => {
 
   return (
     <>
+    
       <h1 className="product-title">{title}</h1>
       <div className="product-container">
         {products.map((product) => (
           <div
             className="product-card"
             key={product.id}
-            onClick={() => {
-              history.push(`/products/${product.id}`);
-            }}
           >
-            <h3 className="product-name">{product.name}</h3>
-            <img className="product-image" src={product.imageurl} />
+            <h3 className="product-name" onClick={() => {
+              history.push(`/products/${product.id}`);
+            }}>{product.name}</h3>
+            <img className="product-image" onClick={() => {
+              history.push(`/products/${product.id}`);
+            }} src={product.imageurl} />
             <div className="product-buttons">
               <button
                 type="button"
