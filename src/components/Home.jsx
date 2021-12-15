@@ -1,6 +1,3 @@
-// home page (displays categories)
-//all images need to be resized and links pointed to routers when completed
-
 import React from "react";
 import { Link } from "react-router-dom";
 import accTile from "./images/accpic2.png";
@@ -15,37 +12,34 @@ const Home = () => {
         <>
           <div className="homepage">
               <h1 className="hometitle">Welcome to KamJam</h1>
-              <br/>
-              <span className="rowOne">
+              <div className="tileContainer">
+              <div className="homeTiles">
                 {/* guitars */}
                 <Link to="/guitars/products">
-                <img src={guitarTile} className="homepageTiles" row="rowOne"/>
+                <img src={guitarTile} className="singleTile"/>
                 </Link>
                 {/* drums */}
                 <Link to="/drums/products">
-                <img src={drumTile} className="homepageTiles" row="rowOne"/>
+                <img src={drumTile} className="singleTile"/>
                 </Link>
                 {/* Band and orchestra */}
                 <Link to="/band/products">
-                <img src={bandTile} className="homepageTiles" row="rowOne"/>
+                <img src={bandTile} className="singleTile"/>
                 </Link>
-              </span>
-              <br/>
-              <span class="rowTwo">
                 {/* keys and synths */}
                 <Link to="/keyboards/products">
-                <img src={keysTile} className="homepageTiles" row="rowTwo"/>
+                <img src={keysTile} className="singleTile"/>
                 </Link>
                 {/* Accesories */}
                 <Link to="/accessories/products">
-                  <img src={accTile} className="homepageTiles" row="rowTwo"/>
+                  <img src={accTile} className="singleTile"/>
                 </Link>
                 {/* all products */}
                 <Link to="/products">
-                <img src={clusterTile} className="homepageTiles" row="rowTwo"/>
+                <img src={clusterTile} className="singleTile"/>
                 </Link>
-              </span>
-              <br/>
+              </div>
+              </div>
           </div>
         </>
     );
