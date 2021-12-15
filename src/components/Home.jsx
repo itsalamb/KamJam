@@ -2,6 +2,7 @@
 //all images need to be resized and links pointed to routers when completed
 
 import React from "react";
+import { Link } from "react-router-dom";
 import accTile from "./images/accpic2.png";
 import bandTile from "./images/bandpic2.png";
 import clusterTile from "./images/clusterpic2.png";
@@ -16,34 +17,33 @@ const Home = () => {
               <h1 className="hometitle">Welcome to KamJam</h1>
               <br/>
               <span className="rowOne">
-                {/* replace test links below */}
                 {/* guitars */}
-                <a href="/guitars/products">
+                <Link to="/guitars/products">
                 <img src={guitarTile} className="homepageTiles" row="rowOne"/>
-                </a>
+                </Link>
                 {/* drums */}
-                <a href="/drums/products">
+                <Link to="/drums/products">
                 <img src={drumTile} className="homepageTiles" row="rowOne"/>
-                </a>
+                </Link>
                 {/* Band and orchestra */}
-                <a href="/band/products">
+                <Link to="/band/products">
                 <img src={bandTile} className="homepageTiles" row="rowOne"/>
-                </a>
+                </Link>
               </span>
               <br/>
               <span class="rowTwo">
                 {/* keys and synths */}
-                <a href="/keyboards/products">
+                <Link to="/keyboards/products">
                 <img src={keysTile} className="homepageTiles" row="rowTwo"/>
-                </a>
+                </Link>
                 {/* Accesories */}
-                <a href="/accessories/products">
+                <Link to="/accessories/products">
                   <img src={accTile} className="homepageTiles" row="rowTwo"/>
-                </a>
+                </Link>
                 {/* all products */}
-                <a href="/products">
+                <Link to="/products">
                 <img src={clusterTile} className="homepageTiles" row="rowTwo"/>
-                </a>
+                </Link>
               </span>
               <br/>
           </div>
