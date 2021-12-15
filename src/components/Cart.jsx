@@ -10,9 +10,11 @@ import { useHistory } from "react-router";
 import { AuthContext } from "./AuthProvider";
 
 const Cart = () => {
-  const { user, isLoggedIn } = useContext(AuthContext);
+  const { user, token, isLoggedIn } = useContext(AuthContext);
   const userId = user.id;
+  const [productId, setProductId] = useState(null);
   const [cart, setCart] = useState([]);
+  console.log(token);
 
   useEffect(() => {
     const fetchCart = async () => {
@@ -30,15 +32,43 @@ const Cart = () => {
     fetchCart(userId);
   }, [userId]);
 
+  const handleDeleteFromCart = async (userId, productId) => {
+    console.log("HERE IS THE PRODUCT ID:", productId);
+    const response = await fetch(
+      `
+    /api/cart/${userId}/${productId}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          userId,
+          productId,
+        }),
+      }
+    );
+    console.log("HERE IS RESPONSE:", response);
+    const parsedResponse = await response.json();
+    console.log(parsedResponse);
+  };
+
   return (
     <>
       <h1>Here is your cart good sir</h1>
       {cart.map((myCart) => (
-        <div className="mycart" key={myCart.id}>
+        <div className="mycart" key={myCart.productId}>
           <h3 className="cart-info">{myCart.name}</h3>
           <img className="cart-image" src={myCart.imageurl} />
           <p className="cart-info">$ {myCart.price}</p>
           <p cart-info>Quantity: {myCart.quantity}</p>
+          <button
+            onClick={() => handleDeleteFromCart(userId, myCart.productId)}
+          >
+            Remove from cart
+          </button>
+          <br />
           <br />
         </div>
       ))}
@@ -47,36 +77,3 @@ const Cart = () => {
 };
 
 export default Cart;
-
-// const [userId, setUserId] = useState([]);
-//   const [productId, setProductId] = useState([]);
-//   const [quantity, setQuantity] = useState([]);
-
-//   const {cart} = useContext(CartContext);
-
-//   const removeFromCart = async (event) => {
-//     event.removeFromCart();
-//     const TOKEN = window.localStorage.getItem("token");
-
-//     const response = await delete(
-//         `/api/cart`,
-//       {
-//         method: "DELETE",
-//         headers: {
-//           "Content-Type": "application/json",
-//           Authorization: `Bearer ${TOKEN}`,
-//         },
-//         body: JSON.stringify({
-//           productId,
-//           quantity,
-//         }),
-//       }
-//     );
-//     const data = await response.json();
-//     console.log(cart);
-//   };
-
-//   const cartItem = [
-//     CartContext.productId
-// ]
-// console.log(cartItem);
