@@ -12,30 +12,28 @@
   background-color: beige;
 }
 
-.rowOne {
+.tileContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.homeTiles {
   display: flex;
   align-content: space-around;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
+  flex-wrap: wrap;
+  max-width: 796px;
+  gap: 20px;
 }
 
-.rowTwo {
-  display: flex;
-  align-content: space-around;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.homepageTiles {
+.singleTile {
   display: flex;
   border-style: solid;
   border-width: 1px;
   border-color: #e1b10f;
-}
-
-.homeWelcome {
-  display: flex;
-  align-items: center;
 }
