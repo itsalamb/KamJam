@@ -14,20 +14,22 @@
 }
 
 .product-container {
-  display: flex;
-  margin: 0;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  background-color: beige;
+    display: flex;
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: beige;
+    min-height: 80vh;
 }
 
 .product-card {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 2vw;
-  width: 400px;
-  background-color: tan;
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2vw;
+    width: 400px;
+    height: 400px;
+    background-color: tan;
+    justify-content: center;
 }
 
 .price {
@@ -77,7 +79,9 @@
 }
 
 .product-title {
-  background-color: beige;
-  text-align: center;
-  font-size: 40pt;
+    background-color: beige;
+    text-align: center;
+    font-size: 40pt;
+    height: 5vh;
+    align-content: flex-end;
 }

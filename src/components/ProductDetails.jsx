@@ -48,15 +48,8 @@ const ProductDetails = ({ }) => {
               <p className="single-price">$ {product.price}</p>
               <AddToCartButton />
             </div>
-          ))
-        ) : (
-          <NotFound
-            title="No Product Found"
-            description="This Product Does Not Exist"
-          />
-        )}
           </div>
-        ))}
+          ))}
       </div>
     </>
   );
