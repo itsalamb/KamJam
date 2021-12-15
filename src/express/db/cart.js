@@ -22,7 +22,7 @@ async function removeFromCart(userId, productId) {
     `
     DELETE
     FROM cart
-    WHERE cart.id=$1 and cart."productId"=$2
+    WHERE "userId"=$1 and cart."productId"=$2
     RETURNING *;
     `,
     [userId, productId]
