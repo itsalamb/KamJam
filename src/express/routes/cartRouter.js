@@ -6,6 +6,7 @@ const {
   updateQuantityInCart,
   getCartByUserId,
 } = require("../db/cart");
+const { requireUser } = require("./utils");
 const cartRouter = express.Router();
 
 cartRouter.use((req, res, next) => {
@@ -30,7 +31,7 @@ cartRouter.get("/userid/:userId", async (req, res) => {
   });
 });
 
-cartRouter.post("/userid/:userId", async (req, res, next) => {
+cartRouter.post("/", async (req, res, next) => {
   const { userId, productId, quantity } = req.body;
   const cartItem = { userId, productId, quantity };
 
@@ -45,18 +46,28 @@ cartRouter.post("/userid/:userId", async (req, res, next) => {
 
 // Delete item from cart
 
-cartRouter.delete("/:cartId/:productId", async (req, res, next) => {
-  try {
-    const deletedItem = await removeFromCart({
-      cartId: req.params.cartId,
-      productId: req.params.productId,
-    });
+cartRouter.delete(
+  "/:userId/:productId",
+  requireUser,
+  async (req, res, next) => {
+    const { userId, productId } = req.body;
 
-    res.send(deletedItem);
-  } catch (error) {
-    next(error);
+    try {
+      const deletedItem = await removeFromCart(userId, productId);
+      if (deletedItem) {
+        res.send(deletedItem);
+      } else {
+        next({ name: "NoItemError", message: "No item found" });
+      }
+    } catch (error) {
+      console.error(error);
+      next({
+        name: "DeleteCartItemError",
+        message: "Could not remove item from cart",
+      });
+    }
   }
-});
+);
 
 // Update quantity in cart
 

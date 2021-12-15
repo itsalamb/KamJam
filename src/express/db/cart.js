@@ -15,17 +15,20 @@ async function addToCart({ userId, productId, quantity }) {
   return cart;
 }
 
-async function removeFromCart({ cartId, productId }) {
-  const { rows } = await client.query(
+async function removeFromCart(userId, productId) {
+  const {
+    rows: [cart],
+  } = await client.query(
     `
-    DELETE FROM cart
+    DELETE
+    FROM cart
     WHERE cart.id=$1 and cart."productId"=$2
-    RETURNING *
+    RETURNING *;
     `,
-    [cartId, productId]
+    [userId, productId]
   );
 
-  return rows[0];
+  return cart;
 }
 
 async function updateQuantityInCart({ cartId, productId, quantity }) {
@@ -65,7 +68,7 @@ async function getCartByUserId(userId) {
   try {
     const { rows: cart } = await client.query(
       `
-      SELECT products.name, products.imageurl, products.price, quantity
+      SELECT "productId", products.name, products.imageurl, products.price, quantity
       FROM cart
       JOIN products
       ON "productId" = products.id

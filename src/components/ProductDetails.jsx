@@ -4,13 +4,11 @@ import AddToCartButton from "./AddToCartButton";
 import { ProductsContext } from "./ProductsProvider";
 import NotFound from "./NotFound";
 
-
-const ProductDetails = ({ }) => {
+const ProductDetails = ({}) => {
   const [product, setProduct] = useState([]);
   const params = useParams();
   const { products } = useContext(ProductsContext);
   const productId = params.productId;
-  console.log("PRODUCTS HERE HERE!!!!!:", productId);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -21,31 +19,41 @@ const ProductDetails = ({ }) => {
         },
       });
       const data = await resp.json();
-      console.log("this is the data", data);
       setProduct(data.product);
     };
     fetchProduct();
   }, []);
 
-  console.log("product", product);
   return (
     <>
       <div className="single-product-container">
-        {product.length > 0 ? product.map((product) => (
-          <div className="single-product-details-card" key={product.id}>
-            <h1 className="single-product-name">{product.name}</h1>
-            <h2 className="single-product-description">{product.description}</h2>
-            <img className="single-product-image" src={product.imageurl} />
-            <div className="price-cart-box">
-              <p className="single-price">$ {product.price}</p>
-              <AddToCartButton />
+        {product.length > 0 ? (
+          product.map((product) => (
+            <div className="single-product-details-card" key={product.id}>
+              {console.log("THIS IS PRODUCT:", product)}
+              <h1 className="single-product-name">{product.name}</h1>
+              <h2 className="single-product-description">
+                {product.description}
+              </h2>
+              <img className="single-product-image" src={product.imageurl} />
+              <div className="price-cart-box">
+                <p className="single-product-stock">
+                  No. in stock: {product.inventory}
+                </p>
+                <p className="single-price">$ {product.price}</p>
+                <AddToCartButton />
+              </div>
             </div>
-          </div>
-        )) :
-          <NotFound title="No Product Found" description={"This Product Does Not Exist"} />}
+          ))
+        ) : (
+          <NotFound
+            title="No Product Found"
+            description={"This Product Does Not Exist"}
+          />
+        )}
       </div>
     </>
-  )
-}
+  );
+};
 
 export default ProductDetails;
