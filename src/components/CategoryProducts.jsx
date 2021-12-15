@@ -25,8 +25,6 @@ const CategoryProducts = () => {
     fetchProducts();
   }, [params.categoryName]);
 
-  console.log(catProducts)
-
   return (
    
   <Products title={params.categoryName} products={catProducts} />
