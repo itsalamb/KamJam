@@ -157,8 +157,9 @@ async function seedData() {
       { userId: 2, productId: 4, quantity: 1 },
       { userId: 3, productId: 5, quantity: 1 },
       { userId: 4, productId: 2, quantity: 1 },
-      { userId: 4, productId: 1, quantity: 2 },
-      { userId: 4, productId: 4, quantity: 3 },
+      { userId: 4, productId: 1, quantity: 1 },
+      { userId: 4, productId: 4, quantity: 1 },
+      { userId: 4, productId: 6, quantity: 3 },
     ];
 
     for (const cart of carts) {

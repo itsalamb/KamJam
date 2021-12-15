@@ -4,7 +4,7 @@ export const authenticate = async (token) => {
   }
 
   try {
-    const response = await fetch("api/users/authenticate", {
+    const response = await fetch("/api/users/authenticate", {
       headers: {
         Authorization: `Bearer ${token}`,
       },

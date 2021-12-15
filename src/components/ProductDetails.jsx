@@ -4,14 +4,12 @@ import AddToCartButton from "./AddToCartButton";
 import { ProductsContext } from "./ProductsProvider";
 import NotFound from "./NotFound";
 
-
-const ProductDetails = ({ }) => {
+const ProductDetails = ({}) => {
   const [product, setProduct] = useState([]);
 
   const params = useParams();
   const { products } = useContext(ProductsContext);
   const productId = params.productId;
-  console.log("PRODUCTS HERE HERE!!!!!:", productId);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -22,13 +20,11 @@ const ProductDetails = ({ }) => {
         },
       });
       const data = await resp.json();
-      console.log("this is the data", data);
       setProduct(data.product);
     };
     fetchProduct();
   }, []);
 
-  console.log("product", product);
   return (
     <>
       <div className="single-product-container">
@@ -47,7 +43,7 @@ const ProductDetails = ({ }) => {
           <NotFound title="No Product Found" description="This Product Does Not Exist" />}
       </div>
     </>
-  )
-}
+  );
+};
 
 export default ProductDetails;
