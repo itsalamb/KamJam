@@ -14,6 +14,7 @@ import ThankYou from "./ThankYou";
 import NotFound from "./NotFound";
 import AuthProvider from "./AuthProvider";
 import SearchResults from "./SearchResults";
+import Checkout from "./Checkout";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -21,9 +22,13 @@ const App = () => {
   const [email, setEmail] = useState("");
   const [user, setUser] = useState("");
   const [userId, setUserId] = useState(null);
+  const TOKEN = window.localStorage.getItem("token");
 
   useEffect(() => {
-    const TOKEN = window.localStorage.getItem("token");
+    if (!TOKEN) {
+      return;
+    }
+
     console.log("TOKENNNNN:", TOKEN);
     const checkAuth = async () => {
       const response = await fetch(`api/users/authenticate`, {
@@ -68,7 +73,7 @@ const App = () => {
                   <Route path="/login">
                     <LoginForm setIsLoggedIn={setIsLoggedIn} />
                   </Route>
-                  <Route path="/cart/userid/:userid">
+                  <Route path="/cart">
                     <Cart
                       isLoggedIn={isLoggedIn}
                       setIsLoggedIn={setIsLoggedIn}
@@ -84,9 +89,9 @@ const App = () => {
                   <Route path="/:categoryName/products">
                     <CategoryProducts />
                   </Route>
-                <Route path="/search">
-                  <SearchResults />
-                </Route>
+                  <Route path="/search">
+                    <SearchResults />
+                  </Route>
                   <Route path="/thankyou">
                     <ThankYou />
                   </Route>

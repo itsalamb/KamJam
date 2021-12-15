@@ -40,11 +40,12 @@ const ProductDetails = ({ }) => {
         {product.map((product) => (
           <div className="single-product-details-card" key={product.id}>
             <h1 className="single-product-name">{product.name}</h1>
-            <h2 className="single-product-description">{product.description}</h2>
-            <img className="single-product-image" src={product.imageurl} />
+            <div className="img-description">
+              <img className="single-product-image" src={product.imageurl} />
+              <h2 className="single-product-description">Description: {product.description}</h2>
+            </div>
             <div className="price-cart-box">
-              <p className="single-product-stock">No. in stock: {product.inventory}</p>
-              <p className="product-condition">{product.condition}</p>
+              <p className="product-condition">Condition :{product.condition}</p>
               <p className="single-price">$ {product.price}</p>
               <AddToCartButton />
             </div>

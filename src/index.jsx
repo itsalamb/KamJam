@@ -6,5 +6,6 @@ import "./index.css";
 import "./productsboxes.css";
 import "./productDetails.css";
 import "./home.css";
+import "./ThankYou.css";
 
 ReactDOM.render(<App />, document.getElementById("root"));
