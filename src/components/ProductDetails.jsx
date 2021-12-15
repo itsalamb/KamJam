@@ -34,6 +34,7 @@ const ProductDetails = ({}) => {
             <h2 className="single-product-description">{product.description}</h2>
             <img className="single-product-image" src={product.imageurl} />
             <div className="price-cart-box">
+            <p className="single-product-stock">No. in stock: {product.inventory}</p>
               <p className="product-condition">{product.condition}</p>
               <p className="single-price">$ {product.price}</p>
               <AddToCartButton />
