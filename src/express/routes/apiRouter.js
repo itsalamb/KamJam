@@ -1,7 +1,6 @@
 const express = require("express");
 const apiRouter = require("express").Router();
 
-
 const jwt = require("jsonwebtoken");
 const { getUserById } = require("../db/users.js");
 const { JWT_SECRET } = process.env;
@@ -42,14 +41,6 @@ apiRouter.use((req, res, next) => {
   next();
 });
 
-apiRouter.use((error, req, res, next) => {
-  console.error(error);
-  res.status(500).send({
-    name: error.name,
-    message: error.message,
-  });
-});
-
 const usersRouter = require("./users");
 apiRouter.use("/users", usersRouter);
 
@@ -63,6 +54,14 @@ const cartRouter = require("./cartRouter.js");
 apiRouter.use("/cart", cartRouter);
 
 const searchRouter = require("./search");
-apiRouter.use("/search", searchRouter)
+apiRouter.use("/search", searchRouter);
+
+apiRouter.use((error, req, res, next) => {
+  console.error(error);
+  res.status(500).send({
+    name: error.name,
+    message: error.message,
+  });
+});
 
 module.exports = apiRouter;

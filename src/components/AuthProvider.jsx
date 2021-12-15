@@ -7,8 +7,13 @@ const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [user, setUser] = useState({});
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  console.log("USERRRRR HEREEEEEE:", user);
 
   useEffect(() => {
+    if (!user) {
+      return;
+    }
+
     (async () => {
       const user = await authenticate(token);
       if (!user) {

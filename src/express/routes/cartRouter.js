@@ -15,20 +15,21 @@ cartRouter.use((req, res, next) => {
   next();
 });
 
-cartRouter.get("/cartid/:cartId", async (req, res) => {
-  const cartId = req.params.cartId;
-  const currentCart = await getCartById(cartId);
-  res.send({
-    currentCart,
-  });
-});
-
 cartRouter.get("/userid/:userId", async (req, res) => {
   const userId = req.params.userId;
-  const currentCart = await getCartByUserId(userId);
-  res.send({
-    currentCart,
-  });
+
+  try {
+    const currentCart = await getCartByUserId(userId);
+    res.send({
+      currentCart,
+    });
+  } catch (error) {
+    console.error(error);
+    next({
+      name: "GetCartByUserIdError",
+      message: `Could not get ${userId}s cart`,
+    });
+  }
 });
 
 cartRouter.post("/", async (req, res, next) => {

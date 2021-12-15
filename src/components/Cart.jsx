@@ -17,6 +17,10 @@ const Cart = () => {
   console.log(token);
 
   useEffect(() => {
+    if (!token) {
+      return;
+    }
+
     const fetchCart = async () => {
       const resp = await fetch(`/api/cart/userid/${userId}`, {
         method: "GET",

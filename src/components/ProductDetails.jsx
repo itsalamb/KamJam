@@ -49,7 +49,7 @@ const ProductDetails = ({ }) => {
               <AddToCartButton />
             </div>
           </div>
-        ))}
+          ))}
       </div>
     </>
   );
