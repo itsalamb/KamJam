@@ -3,15 +3,16 @@ import { Link } from "react-router-dom";
 
 export default function ThankYou() {
   return (
-    <div>
-      <h1>Get ready to Jam!</h1>
-      <h3>Order #:</h3>
-      <p>Thank you for ordering from KamJam!</p>
-      <p>
-        You'll receive an email shortly with a summary of your order and
+    <div className="thank-page">
+      <h1 className="thank-title">Get ready to Jam!</h1>
+      <p className="thank-description">Thank you for ordering from KamJam! Looks like a jam session is soon to come.</p>
+      <p className="thank-email">
+        You will receive an email shortly with a summary of your order and
         shipping information when it becomes available
       </p>
-      <Link to="/">Keep Jamming</Link>
+      <p className="jam-button">
+      <Link className="keep-jamming" to="/">Keep Jamming</Link>
+      </p>
     </div>
   );
 }
