@@ -16,7 +16,6 @@ const Cart = () => {
   const [productId, setProductId] = useState(null);
   const [cart, setCart] = useState([]);
   console.log(token);
-  const history = useHistory();
 
   useEffect(() => {
     if (!token) {
