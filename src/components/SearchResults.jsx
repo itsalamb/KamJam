@@ -7,6 +7,7 @@ const SearchResults = () => {
     const location = useLocation()
     const history = useHistory();
     const [searchResults, setSearchResults] = useState([]);
+    const [validSearch, setValidSearch] = useState(true)
     console.log(location)
 
     useEffect(() => {
@@ -22,15 +23,22 @@ const SearchResults = () => {
 
         }
         fetchProducts()
+        if (searchResults.length > 0) {
+            setValidSearch(true)
+        } else {
+            setValidSearch(false)
+        }console.log(searchResults ,validSearch)
     }, [location.search])
 
-    console.log(searchResults)
+
+
+    
 
     return (
         <>
-            {searchResults.length === 0 ?
-                <NotFound title="No Search Results" description={"Try searching a different word/phrase"} />
-                : <Products title='Search Results' products={searchResults} />
+            {searchResults.length > 0  ?
+                <Products title='Search Results' products={searchResults} />
+                : <NotFound title="No Search Results" description={"Try searching a different word/phrase"} />
             }
         </>
     )

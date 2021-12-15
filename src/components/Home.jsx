@@ -17,25 +17,25 @@ const Home = () => {
               <span className="rowOne">
                 {/* replace test links below */}
                 {/* guitars */}
-                <a href="/guitars/products">
+                <a href="/Guitars/products">
                 <img src={guitarTile} className="homepageTiles" row="rowOne"/>
                 </a>
                 {/* drums */}
-                <a href="/drums/products">
+                <a href="/Drums/products">
                 <img src={drumTile} className="homepageTiles" row="rowOne"/>
                 </a>
                 {/* Band and orchestra */}
-                <a href="/band/products">
+                <a href="/Band/products">
                 <img src={bandTile} className="homepageTiles" row="rowOne"/>
                 </a>
               </span>
               <span class="rowTwo">
                 {/* keys and synths */}
-                <a href="/keyboards/products">
+                <a href="/Keyboards/products">
                 <img src={keysTile} className="homepageTiles" row="rowTwo"/>
                 </a>
                 {/* Accesories */}
-                <a href="/accessories/products">
+                <a href="/Accessories/products">
                   <img src={accTile} className="homepageTiles" row="rowTwo"/>
                 </a>
                 {/* all products */}

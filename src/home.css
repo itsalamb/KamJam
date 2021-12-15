@@ -1,6 +1,6 @@
-* {
+/* * {
   background-color: beige;
-}
+} */
 
 .hometitle {
   display: flex;
@@ -8,6 +8,7 @@
   border-style: solid;
   border-width: 1px;
   border-color: #e1b10f;
+  background-color: beige;
 }
 
 .rowOne {
@@ -16,7 +17,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  
+  background-color: beige;
+
 }
 
 .rowTwo {
@@ -25,4 +27,5 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
+  background-color: beige;
 }

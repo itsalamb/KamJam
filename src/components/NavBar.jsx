@@ -80,9 +80,9 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
               </Link>
             </>
           )}
-          <Link to="/" className="login-links">
+          {/* <Link to="/" className="login-links">
             Checkout
-          </Link>
+          </Link> */}
         </div>
       </div>
     </nav>
