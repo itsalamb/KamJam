@@ -4,11 +4,15 @@ import { AuthContext } from "./AuthProvider";
 export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
-  const { user } = useContext(AuthContext);
+  const { user, token } = useContext(AuthContext);
   const userId = user.id;
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
+    if (!user) {
+      return;
+    }
+
     const fetchCart = async () => {
       const resp = await fetch(`/api/cart/userid/${userId}`, {
         method: "GET",
