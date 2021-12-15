@@ -15,23 +15,23 @@ const Home = () => {
               <div className="tileContainer">
               <div className="homeTiles">
                 {/* guitars */}
-                <Link to="/guitars/products">
+                <Link to="/Guitars/products">
                 <img src={guitarTile} className="singleTile"/>
                 </Link>
                 {/* drums */}
-                <Link to="/drums/products">
+                <Link to="/Drums/products">
                 <img src={drumTile} className="singleTile"/>
                 </Link>
                 {/* Band and orchestra */}
-                <Link to="/band/products">
+                <Link to="/Band/products">
                 <img src={bandTile} className="singleTile"/>
                 </Link>
                 {/* keys and synths */}
-                <Link to="/keyboards/products">
+                <Link to="/Keyboards/products">
                 <img src={keysTile} className="singleTile"/>
                 </Link>
                 {/* Accesories */}
-                <Link to="/accessories/products">
+                <Link to="/Accessories/products">
                   <img src={accTile} className="singleTile"/>
                 </Link>
                 {/* all products */}
