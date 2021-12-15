@@ -4,7 +4,6 @@ import { useHistory } from "react-router";
 
 const SearchBar = ({ setIsLoading }) => {
   const [term, setTerm] = useState("");
-  // const [searchResults, setSearchResults] = useState(null);
   const history = useHistory()
 
   const query = new URLSearchParams({
@@ -18,22 +17,7 @@ const SearchBar = ({ setIsLoading }) => {
       id="search"
       onSubmit={async (event) => {
         event.preventDefault();
-        setIsLoading(true);
         history.push(`/search?${query.toString()}`)
-        // try {
-        //   const results = await fetch ( `/api/search?${query.toString()}`,{
-        //     method: "GET",
-        //     headers:{
-        //       "Content-Type": "application/json",
-        //     }
-        //   });
-        //   console.log('results', results)
-        //   // setSearchResults(results);
-        // } catch (error) {
-        //   console.error(error);
-        // } finally {
-        //   setIsLoading(false);
-        // }
       }}
     >
       <fieldset>
