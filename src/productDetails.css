@@ -1,5 +1,6 @@
 .single-product-container {
     background-color: beige;
+    min-height: 85vh;
 }
 
 .single-product-detials-card {

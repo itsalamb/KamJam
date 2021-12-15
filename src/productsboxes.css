@@ -19,6 +19,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     background-color: beige;
+    min-height: 75vh;
 }
 
 .product-card {
@@ -26,6 +27,7 @@
     flex-wrap: wrap;
     margin: 2vw;
     width: 400px;
+    height: 400px;
     background-color: tan;
     justify-content: center;
 }
@@ -80,4 +82,5 @@
     background-color: beige;
     text-align: center;
     font-size: 40pt;
+    height: 10vh;
 }
