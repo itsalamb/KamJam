@@ -166,6 +166,105 @@ const products = [
     inventory: 1,
     price: 1011,
   },
+  {
+    name: "Yamaha Stage Custom Birch 5pc Drum Shell Pack",
+    description:
+      "The ultimate in tone and value for more than 30 years, the Stage Custom Birch series is great for the beginner or the working professional. The shell is a key factor in a drum's ability to 'rumble', or resonate. Accordingly, the Stage Custom employs 100% birch - a classic in the realm of high-class drum kits. With its beautiful high-gloss lacquer finish and six-ply structure, the Stage Custom Birch accurately conveys the vibrations produced at the impact surface, achieving performance that overwhelms anything in its class.",
+    imageurl:
+      "https://img.favpng.com/2/15/20/yamaha-stage-custom-birch-yamaha-drums-yamaha-corporation-png-favpng-54iCADnn6YSq2WC8CEn5tzZLS.jpg",
+    categoryName: "Drums",
+    condition: "New",
+    inventory: 1,
+    price: 709,
+  },
+  {
+    name: "Alesis Nitro Mesh Electronic Drum Set",
+    description:
+      "The latest installment in Alesis’s value-packed Nitro series of electronic drums, the Alesis Nitro Mesh Kit, features a full set of tunable mesh drumheads to deliver a custom playing experience — a rare feat for an electric drum kit at this price point. Forty ready-made drum kits and 385 customizable drum/cymbal sounds, along with 60 play-along backing tracks and an aux input for mobile devices, make the Alesis Nitro Mesh Kit an excellent practice tool and the ultimate low-volume jamming solution. All drum stands, pedals, hardware, cables — even drumsticks — are included to have you set up and drumming in no time. Other highlights of the Alesis Nitro Mesh Kit include virtual instrument compatibility via USB and MIDI ports and a dual-zone snare pad with separate head and rim zones.",
+    imageurl:
+      "https://www.percussionsource.com/product/image/medium/spc47182_0.png",
+    categoryName: "Drums",
+    condition: "New",
+    inventory: 1,
+    price: 379,
+  },
+  {
+    name: "Alesis Drums Command Mesh Kit",
+    description:
+      'The Command Mesh Kit features all mesh-head pads that deliver an authentic drumming experience. This kit includes an 8"mesh kick with pedal, a 10" dual-zone mesh snare drum, and three 8" dual-zone mesh toms. The set also features a 10" ride cymbal with choke, a 10" crash with choke, and a 10" hi-hat with foot pedal. The included Command Advanced Drum Module features 74 drum kits (54 preset, 20 user) with 671 sounds. You can build a custom kit from your own sounds by loading them via a USB thumb drive. Plus, with 60 play-along tracks and a built-in performance recorder, you will have an endless source of fun and creativity. All of this mounts to a premium 4-post chrome rack with non-slip clamps, providing a durable foundation that is easy to set up and move.',
+    imageurl:
+      "https://alesis.com/images/uploads/product-overview-images/CommandMeshKit_Ortho_web_01.png",
+    categoryName: "Drums",
+    condition: "New",
+    inventory: 1,
+    price: 799,
+  },
+  {
+    name: 'Mapex Storm 20" Deep Black Drum-Set',
+    description:
+    "The Mapex-Storm series offers complete sets for the first-time player. But it is also suitable for the performing drummer who needs a second drum set that is easy to transport, easy to assemble and has a very good sound. The Mapex-Storm series, with the boilers made of poplar wood, is equipped with the Mapex SONIClear™ and therefore easy to tune. It gives the drums a lot of expression and sound at the same time. The bass drums deliver a powerful bass, while the small toms provide attack and clarity. All of the hardware in the Mapex-Storm series is double-braced and, together with the drums, offers one of the best guarantees in the industry",
+    imageurl:
+      "https://sc1.musik-produktiv.com/pic-010096310xl/mapex-storm-20-deep-black-drum-set.jpg",
+    categoryName: "Drums",
+    condition: "New",
+    inventory: 1,
+    price: 759,
+  },
+  {
+    name: 'Vintage Singerland',
+    description:
+    "1970's Slingerland Player's Kit with original cases & Tama snare drum. Replaced front kick drum legs with Ludwig legs. Replaced cymbal holders on bass drum with DW holders. Replaced lug screws & washers on bass drum. Plays excellent.  Heads are in excellent shape.",
+    imageurl:
+      "https://3.bp.blogspot.com/-v19tgVQcIhA/U7xslidx8DI/AAAAAAAAAc4/yzYxy27mxXA/s1600/Slingerland+front+view+3.png",
+    categoryName: "Drums",
+    condition: "Used",
+    inventory: 1,
+    price: 1500,
+  },
+  {
+    name: 'Ludwig Vistalite 1970s clear acrylic',
+    description:
+    "This Used 70's Era Ludwig Clear Vistalite Drum Set (UL4PCVC) has acrylic shells with triple flanged hoops. This Ludwig Drum Set features internal dampners on both batter and resonant heads, 2-cymbal mount brackets in the kickdrum, single sided large classic lugs in 6 lug configurations on the rack toms, an 8 lug configurtion on the floor tom, and a 10 lug configuration on the kick, and the set comes included with tom arms and floor tom legs. The kit displays chrome hardware, a clear acrylic finish, and the blue and olive ludgwig badge.",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--Lv_tLgzB--/f_auto,t_large/v1626917962/xnzigndavpdhmjimhbh5.jpg",
+    categoryName: "Drums",
+    condition: "Used",
+    inventory: 1,
+    price: 3000,
+  },
+  {
+    name: 'TAMA Starclassic Walnut Birch Molten Brown Burst 3 piece WBS32RZS MBR Kit',
+    description:
+    "The evolution of Starclassic from maple, birch, bubinga, birch/bubinga continues, and now - after intense analysis, rigorous research, development and product testing - TAMA has arrived at the latest Starclassic modern development, Starclassic Walnut/Birch.TAMA discovered the perfect ratio of walnut to birch that produced a superior quality of low-to-mid frequency warmth that perfectly complemented the clear attack and higher frequency projection of birch. The sound is familiar, but distinctively different from TAMA sounds of the past.",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--ZjyJr00u--/f_auto,t_large/v1639521922/ngb685txwqisrfpvfrlu.jpg",
+    categoryName: "Drums",
+    condition: "New",
+    inventory: 1,
+    price: 1499,
+  },
+  {
+    name: 'Woods Custom Drums 12/14/20 Maple/Poplar/Maple Wood Hoop Drum Set 2021',
+    description:
+    "Proudly made in Canada, Woods Custom Drums feature in-house drum shells and reinforcement rings from premium quality materials. Jeff Woods prefers to make his shells the classic way: thin and resonant with rerings for focus and added rigidity. Every fine detail embodies handmade, hand-selected, expertly crafted quality.",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--jAlRDcbs--/f_auto,t_large/v1639515194/zj5ywrnsqskuttxphqjm.jpg",
+    categoryName: "Drums",
+    condition: "New",
+    inventory: 1,
+    price: 2700,
+  },
+  {
+    name: 'Ludwig Breakbeats by Questlove 4pc Shell Pack',
+    description:
+    "Take your drums anywhere with Ludwig's Breakbeats. Designed with help from Questlove, this shell kit is perfect for drummers without a lot of room to spare.",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--1xg-ZYUI--/f_auto,t_large/v1538594353/ujeonuytzfstdjrhvhbt.jpg",
+    categoryName: "Drums",
+    condition: "New",
+    inventory: 1,
+    price: 399,
+  },
   // Band / Orchestra
   {
     name: "Bach 18037 Professional Bb Trumpet",
@@ -200,6 +299,105 @@ const products = [
     inventory: 1,
     price: 975,
   },
+  {
+    name: "Stentor 1500-4/4 Student II Violin Outfit- Size 4/4",
+    description:
+      "Hand crafted with fine-grained solid spruce top, solid maple back and sides, inlaid purfling, full ebony fittings, hardwood chin rest, super sensitive red label strings, alloy tailpiece with four string adjusters, nylon tailpiece loop. polished warm brown laquer finish. outfits include octagonal wood horsehair bow with ebony frog, lightweight canvas covered case with instrument blanket and exterior shoulder rest pocket(violin/viola) or padded backpack bag (cello/bass)",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--JwF-71S8--/a_exif,c_thumb,f_auto,fl_progressive,g_south,h_296,q_auto:eco,w_296/v1462130543/l4lpfldfiebf0zrxjbvq.jpg",
+    categoryName: "Band",
+    condition: "New",
+    inventory: 1,
+    price: 195,
+  },
+  {
+    name: "Gemeinhardt 2SP Artisan Student Flute with NG1 Headjoint",
+    description:
+      "The Gemeinhardt 2SP student flute has been the standard and reliable choice for student flutists for decades. The 2SP features the classic J1 headjoint, plateau keys, offset G, C footjoint, and durable sterling silver plating.",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--43Q215Oi--/f_auto,t_large/v1609197582/tpnirizttuw0ihknjfws.jpg",
+    categoryName: "Band",
+    condition: "New",
+    inventory: 1,
+    price: 479,
+  },
+  {
+    name: "Selmer 1492B Student Oboe",
+    description:
+      "Featuring a high-impact plastic body, the 1492 is great for the beginning oboist. The silver plated, basic conservatory key system with newly designed French arms is fluid, light to the touch and easily maintained. The addition of highly contoured cork pads make for a student level oboe with response like no other. Range to low B.",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--LTAl4mCU--/a_exif,c_limit,e_unsharp_mask:80,f_auto,fl_progressive,g_south,h_1600,q_80,w_1600/v1503034732/sqm3veh6on5xbezov2nv.jpg",
+    categoryName: "Band",
+    condition: "New",
+    inventory: 1,
+    price: 2200,
+  },
+  {
+    name: "Yamaha Ysl354 Standard Trombone",
+    description:
+      "Yamaha standard trombones have laser fused pluzuma welded bells for continuous, even bell vibrations. The inner slide is drawn from chrome-plated nickel-silver for better durability and response. The outer slide is one piece drawn brass for accurate diameter and better resonance. Yamaha's unique slide lock design safely locks the slide in place.",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--e1AWtoil--/f_auto,t_large/v1519753637/whpvrjzqa8vteecmjeyr.jpg",
+    categoryName: "Band",
+    condition: "New",
+    inventory: 1,
+    price: 1428,
+  },
+  {
+    name: "Yamaha YEP-321S Bb 4-valve Euphonium - Silver Plated",
+    description:
+      "Get Rich, Bold Tones With The Yamaha YEP-321S B-Flat 4-valve Euphonium,The Yamaha YEP-321S Euphonium Is A Responsive Horn Perfect For The Beginning Student Player. The 321 features a strong warm tone, and is easy to play, with accurate intonation.",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--qiPRan1P--/f_auto,t_large/v1590603577/qaukfa8noxxervwqqlua.jpg",
+    categoryName: "Band",
+    condition: "New",
+    inventory: 1,
+    price: 2909,
+  },
+  {
+    name: 'Knilling Sebastian 15.5" Viola Outfit',
+    description:
+      'Sebastian instruments are notable for their exceptional construction, seasoned tonewoods, quality ebony fittings, and an attractive yet durable finish. The complete outfit includes shaped case with zippered cover and wood bow with genuine horsehair. The 15.5" body is the perfect "one-size-fits-all".',
+    imageurl:
+      "https://images.reverb.com/image/upload/s--cKziMQMY--/f_auto,t_large/v1637697237/kahdcqf8wcr6zjs5darp.jpg",
+    categoryName: "Band",
+    condition: "New",
+    inventory: 1,
+    price: 399,
+  },
+  {
+    name: 'Scherl & Roth Model R66E3 3/4 Size Upright Bass',
+    description:
+      "Here's a brand new Scherl & Roth 3/4 size upright bass. Please note that this listing includes bass only - no case or strings with this one.. A great smaller bass with a lot of power!",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--M242cijT--/f_auto,t_large/v1636991254/a89gqdlh4bgchztbfkqo.jpg",
+    categoryName: "Band",
+    condition: "New",
+    inventory: 1,
+    price: 2249,
+  },
+  {
+    name: "Holton Model H179 'Farkas' Professional Double French Horn",
+    description:
+      "Holton horns offer an alternative in design that creates a great experience for the young or advanced players. This Farkas model offers independent tuning for convenience allowing the player to tune the Bb side of the horn separately from the F side.",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--lesSvPQl--/f_auto,t_large/v1620759679/qkmxjvwbgub0ukmubgyd.jpg",
+    categoryName: "Band",
+    condition: "New",
+    inventory: 1,
+    price: 5059,
+  },
+  {
+    name: "Yamaha YBB-641 BBb Professional Rotary Tuba",
+    description:
+      "The 641 professional BBb tuba features a rotary valve configuration for a traditional Teutonic sound with the kind of precise intonation and easy playability only made possible by modern engineering expertise. It is characterized by a warm dark sound with an abundance of tonal colors.",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--KqJT6Icv--/f_auto,t_large/v1617206917/fkf0thdxrhptglasplep.jpg",
+    categoryName: "Band",
+    condition: "New",
+    inventory: 1,
+    price: 10443,
+  },
   // keyboard / synths
   {
     name: "Nord Stage 3 Keyboard",
@@ -232,6 +430,96 @@ const products = [
     condition: "New",
     inventory: 1,
     price: 33280,
+  },
+  {
+    name: "Sequential Take 5 Compact Five-Voice Poly Synth Synthesizer Keyboard",
+    description: "A full-featured subtractive synthesizer, the Take 5 sports two VCOs and a sub oscillator per voice, a classic 4-pole, resonant analog filter from the Prophet-5 Rev 4 design, 44 full-size keys, and a premium Fatar keybed. Its clever key-split feature gives players access to a wider playable range than many other compact synths by enabling players to divide the 3.5 octave keyboard into two separate performance zones. Dual Digital effects and a dedicated overdrive, continuously variable wave shaping, and front-panel access to analog FM ensure the Take 5 can cover a wide range of sonic territory, from vintage to modern.",
+    imageurl:
+      "https://images.reverb.com/image/upload/s---CyJr1dK--/f_auto,t_large/v1630035057/rtolilz2qo4lraltbnt9.jpg",
+    categoryName: "Keyboards",
+    condition: "New",
+    inventory: 1,
+    price: 1499,
+  },
+  {
+    name: "Waldorf M Microwave Inspired Wavetable Desktop Synth",
+    description: "With M, we are musically returning to our roots by bringing back classic Microwave and ‘modern’ Microwave II tone generation as a new-generation classic hybrid wavetable synthesizer with an analogue lowpass 24 dB/Oct VCF — SSI 2144 Improved Ladder Type — with resonance and analogue saturation feature, true stereo analogue VCA with panning option, and much more to explore in a desktop-friendly form factor featuring a wide range of unique sounds. Plentiful presets — totalling 2,048 sound programs (divided into 16 banks, each with 128 sounds) — professionally programmed by world- renowned sound designers also include all of the classic Microwave sound sets, such as MW1 Factory Sound Set, MW1 Soundpool 1-5, the fat-sounding Analogue and Bassco, as well as PPG Wave 2.3 sounds cleverly converted for the original Microwave. Moreover, it also features freshly-programmed sounds utilising M’s myriad new features — from true hard Sync (when working in its Modern Microwave II/XT mode) to the ARP (arpeggiator) and MIDI-syncable global LFO (Low Frequency Oscillator). ",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--6vGmEu1_--/f_auto,t_large/v1633471407/uesbpabcj5hdxgmmcgxe.jpg",
+    categoryName: "Keyboards",
+    condition: "New",
+    inventory: 1,
+    price: 2499,
+  },
+  {
+    name: "Novation Circuit Tracks Standalone Groovebox with Synths, Drums and Sequencer",
+    description: "Circuit Tracks in an all-in-one studio with two synth tracks, two MIDI tracks and four drum tracks: everything you need to create and perform music. Designed for electronic and dance music producers, the agile groovebox lets you lose yourself in a hands-on production workflow. Let your creativity thrive with the acclaimed, hands-on sequencer, with which you can create 32-step patterns, chainable for up to 256 steps sequences per track. Go off-grid with microtiming, and keep your music evolving with probability and pattern mutate. ",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--AcrCXbAq--/f_auto,t_large/v1618343863/fkjcjxop4jtbafu3uc9q.jpg",
+    categoryName: "Keyboards",
+    condition: "New",
+    inventory: 1,
+    price: 399,
+  },
+  {
+    name: "Yamaha REFACE-CP reface CP 37-Key Electric Piano Synthesizer",
+    description: "Yamaha's reface series of mobile mini keyboards offer recreations of legendary Yamaha keyboards, in compact 37-key form factors. Thanks to their small size, the reface keyboards are easy to grab and take with you on the road so you're ready whenever inspiration strikes. Plus, reface keyboards feature Soundmondo integration, allowing you to discover, connect, and share reface voices with the world.",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--R9XXtWYq--/f_auto,t_large/v1474660223/snar6fjhtzkmvukrdwje.jpg",
+    categoryName: "Keyboards",
+    condition: "New",
+    inventory: 1,
+    price: 379,
+  },
+  {
+    name: "Schiller Performance Frankfurt Upright 46S Upright Piano – Ebony Satin",
+    description: "Professional Upright – All of the raw materials are perfectly selected and produced. Extended length and full leverage piano action keys with BASF finish. Powerful yet compact design with a warm and clear European tone.This piano has Roslau Blue Label Strings, Made in Germany, and German VGF Felt in which helps project a full and powerfull bass, plus a crisp treble sound.This instrument incorporates a Siberian Sitka Spruce Sounding Board.. German Roslau Strings, German VGF Felt, a Friedrich Action™ and a High Specific Gravity Rim which allows the piano to emit a beautiful singing sound.",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--FIKrmKZP--/f_auto,t_supersize/v1631540667/ybbryr2rft2mrqqhv9aw.jpg",
+    categoryName: "Keyboards",
+    condition: "New",
+    inventory: 1,
+    price: 3885,
+  },
+  {
+    name: "Schiller Serenity Grand Piano Mahogany Polish",
+    description: "A piano built with the highest quality during every production step. Big projection from this 5’8″ grand and an increased string length along with a Siberian Spruce sounding board make for effortless playing. Great for larger rooms and worship settings.This instrument incorporates a Siberian Sitka Spruce Sounding Board.. German Roslau Strings, German VGF Felt, a Friedrich Action™ and a High Specific Gravity Rim which allows the piano to emit a beautiful singing sound. ",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--n0D1bi78--/f_auto,t_large/v1631513922/sakbc7vcurmweitewtxt.jpg",
+    categoryName: "Keyboards",
+    condition: "New",
+    inventory: 1,
+    price: 7485,
+  },
+  {
+    name: "Behringer 2600 Semi-Modular Analog Synthesizer",
+    description: "Few synthesizers are as celebrated as the original 2600, and now Behringer has brought the venerable semi-modular workhorse to the masses in an affordable 8U rackmountable format. Teeming with vintage vibe and old-school analog flair, the Behringer 2600 leans into its normalled signal path and patch-point architecture to provide intrepid synthesists with a powerful sound creation platform. Whether you’re chasing classic synth sounds or concocting future-facing musical manifestations, the Behringer 2600 arms you with a wealth of audio design tools, including three beefy VCOs, a multimode VCF, mountains of modulation, and inexhaustible routing options. With 78 faders and switches, 93 patch points, and Eurorack compatibility, the Behringer 2600 has challenged synthesists at Sweetwater to tap out its creative potential. So far, we can’t! Totally authentic and absolutely absorbing, the Behringer 2600 is a sonic wonderland for analog aficionados and modular marauders alike!",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--zKje6dD4--/f_auto,t_large/v1629987105/fstqhjbzkeupkxjycxlg.png",
+    categoryName: "Keyboards",
+    condition: "New",
+    inventory: 1,
+    price: 706,
+  },
+  {
+    name: "Novation Launchpad MIDI Controller mkII",
+    description: "Launchpad X is the essential 64-pad MIDI grid controller for Ableton Live. It gives you everything you need to make music. Launch, play and perform your sounds and build your tracks using the large, super-sensitive RGB pads, dynamic note and scale modes, and mixer controls.",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--kOYEg8k9--/f_auto,t_large/v1639425612/ksjdjrm8aktvvxtdlcyp.jpg",
+    categoryName: "Keyboards",
+    condition: "Used",
+    inventory: 1,
+    price: 45,
+  },
+  {
+    name: "Wurlitzer 206A",
+    description: "Wurlitzer 206A in very nice cosmetic, fully functional conditionaction feels fantastic and the speakers sound massiveplays wonderfullya couple tears along the back",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--r1E7K8rv--/f_auto,t_large/v1639516217/jivrgqdvwczxmxadi6sf.jpg",
+    categoryName: "Keyboards",
+    condition: "Used",
+    inventory: 1,
+    price: 4000,
   },
   // accessories
   {
@@ -266,6 +554,116 @@ const products = [
     condition: "Used",
     inventory: 1,
     price: 8,
+  },
+  {
+    name: "Ernie Ball 2221 Regular Slinky Nickel Wound Guitar Strings - .010-.046",
+    description:
+      "Ernie Ball Nickel Wound Electric Guitar Strings are made from nickel plated steel wire wrapped around tin plated hex shaped steel core wire. The plain strings are made of specially tempered tin plated high carbon steel producing a well balanced tone for your guitar. Gauges .010, .013, .017, .026, .036, .046",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--xZPIFvw7--/f_auto,t_large/v1586538813/ksgt1yhxwxu0x1ve9eno.jpg",
+    categoryName: "Accessories",
+    condition: "New",
+    inventory: 100,
+    price: 7,
+  },
+  {
+    name: "Ernie Ball Super Slinky Nickel Wound Set, .009 - .042",
+    description:
+      "Ernie Ball Super Slinky Electric Strings are played by Jimmy Page, Jeff Beck, and Angus Young. These strings are precision manufactured to the highest standards and most exacting specifications to ensure consistency, optimum performance, and long life. Super Slinky wound strings are made from nickel plated steel wire wrapped around a hex shaped steel core wire.  The plain strings are made of specially tempered tin plated high carbon steel; producing a well balanced tone for your guitar. Gauges .009 .011 .016 .024w .032 .042. Part number 2223.",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--kiL3TEqq--/f_auto,t_large/v1593029607/uuxosn0vz1lxutwj0qsb.jpg",
+    categoryName: "Accessories",
+    condition: "New",
+    inventory: 100,
+    price: 7,
+  },
+  {
+    name: "Tama PC900S Iron Cobra Single Pedal Hard Case",
+    description:
+      "You know what pedals go through night after night. After being stomped on over and over, they get thrown in bags and roadcases where there's more hard rock and roll than the gig itself. That's why precision instruments like our Iron Cobras come with a specially designed protective carrying case. It's amazing no one thought of it before.PC900S for Iron Cobra Single Pedal",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--P6HYZcJF--/f_auto,t_large/v1639542903/q7phk0pzbj5amkdi46ho.jpg",
+    categoryName: "Accessories",
+    condition: "Used",
+    inventory: 1,
+    price: 35,
+  },
+  {
+    name: "RTOM Moongel Damper Pads - Pack of 6 - Blue",
+    description:
+      "When only the most effective means of controlling a percussion instrument’s sound will do, percussionists turn to the MoonGel Damper Pad.The self-adhesive gel sticks to the surface of drums, cymbals, and most percussion instruments. The possibilities are endless, by simply moving the damper pad around the surface, you can eliminate any unwanted resonance, and obtain the exact sound the situation demands.The damper pad is washable and will retain its stickiness for years of service.The MoonGel Damper Pad is made from a soft non-toxic gel, and is packaged in a durable plastic container. Drummers and sound studios around the world utilize this award-winning product.",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--yYtsXeON--/f_auto,t_large/v1493143438/zvshqqexgud7l8kvmg0v.jpg",
+    categoryName: "Accessories",
+    condition: "New",
+    inventory: 100,
+    price: 8,
+  },
+  {
+    name: "Vic Firth American Classic 5A Wood Tip Natural",
+    description:
+      'Vic Firth 5A Drumsticks are the best-selling sticks of all time and are perfect for any drummer. These sticks feature a tear drop tip and medium taper which make them great for all styles of music. Whether you are practicing rudiments on a drum pad, creating videos, performing in a stadium, the Vic Firth 5A is the "Perfect Pair". Vic Firth Drumsticks 5A are in the Vic Firth American Classic series, which are made from high-quality hickory. The hickory is very durable for wood drumsticks yet have a small amount of flex. The Vic Firth factory process produces straight sticks with an optimal moisture content to prevent warping. Whether you are buying a single pair or in bulk by the brick, these sticks are well worth the price.',
+    imageurl:
+      "https://images.reverb.com/image/upload/s--5EeuUdgf--/f_auto,t_large/v1587285093/k96bzsvfkf9erkepxy47.jpg",
+    categoryName: "Accessories",
+    condition: "New",
+    inventory: 100,
+    price: 12,
+  },
+  {
+    name: "Tama RoadPro Boom Cymbals Stands (PAIR) Chrome",
+    description:
+      "A pair of double-braced Tama Roadpro boom stands. I've polished them already, one has some small rust spots mostly on one leg but apart from that they are very clean. Tama is known for their tough and smartly designed hardware. These can also be used as straight stands.",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--soegNtXy--/f_auto,t_large/v1639546501/rcz5io6thqujjtgvjyjn.jpg",
+    categoryName: "Accessories",
+    condition: "Used",
+    inventory: 1,
+    price: 90,
+  },
+  {
+    name: "Drum Workshop 9000-Series DWCP9000 Single Bass Drum Pedal",
+    description:
+      '9000 Pedals offer drummers an unequaled combination of speed, feel and power. Since their inception, 9000 Series pedals with Floating Rotor and Infinitely Adjustable Cam technology have given players the flexibility and versatility to take their footwork to the next level. Even so, we thought it was time to make some improvements. Introducing the upgraded 9000 and 9002. Both pedals now feature our all-new Tri-Pivot Toe Clamp System and Non-Slip Rubber Grip Base Plate for increased stability and a stronger connection between the drummer and kick drum. In addition, we added an EZ Adjust Cam to allow drummers to switch from Accelerator® to Turbo®-style sprockets, or anywhere in between, in no time! The same unmistakable feel, playability and artist-approved features, only better.',
+    imageurl:
+      "https://images.reverb.com/image/upload/s--DT0N0W9J--/f_auto,t_large/v1610584016/fgbrer160v8zdatvo6rv.jpg",
+    categoryName: "Accessories",
+    condition: "New",
+    inventory: 100,
+    price: 379,
+  },
+  {
+    name: "Vandoren CR103 Traditional Bb Clarinet Reeds 3 Strength Box of 10",
+    description:
+      "The most widely played reeds in the world with a superiority proven over the years, these reeds suit all styles of music.Traditionals are known for their excellent response in all registers, allowing a pianissimo attack in even the highest notes.They are also extremely flexible, allowing the legato or staccato execution of large intervals while maintaining a richness of tone that gives body and clarity to the sound, which is a hallmark of Vandoren reeds.",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--3Lpm7MvJ--/f_auto,t_large/v1478126948/csiheeuc0noyuv1hairs.jpg",
+    categoryName: "Accessories",
+    condition: "New",
+    inventory: 100,
+    price: 28,
+  },
+  {
+    name: "University Series 1/2 Size Upright Bass Bag",
+    description:
+      "Our University Line bass bags feature 12mm high density foam padding, bow pocket, accessory compartments, and multiple double stitched handles for easy carrying. Fits a 1/2 size bass.",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--d3Hk6NzJ--/f_auto,t_large/v1573171076/bek0mwmfolveiu32l42x.jpg",
+    categoryName: "Accessories",
+    condition: "New",
+    inventory: 100,
+    price: 132,
+  },
+  {
+    name: "Bach Standard Series Trumpet Mouthpiece - Silver - 3C",
+    description:
+      "When selecting a mouthpiece, a brass instrumentalist should choose a solid, compact tone of large volume. A carefully selected Bach mouthpiece can help improve a players embouchure, attack, tonguing and endurance. Bach produces many different models so that each player can find the best mouthpiece for their individual embouchure.",
+    imageurl:
+      "https://images.reverb.com/image/upload/s--uaRMN_tS--/f_auto,t_large/v1554755373/ddtlbwoiah6gxsfznwth.jpg",
+    categoryName: "Accessories",
+    condition: "New",
+    inventory: 100,
+    price: 62,
   },
 ];
 
