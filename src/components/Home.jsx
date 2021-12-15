@@ -2,18 +2,19 @@
 //all images need to be resized and links pointed to routers when completed
 
 import React from "react";
-import accTile from "./images/accTile.jpeg";
-import bandTile from "./images/bandTile.jpeg";
-import clusterTile from "./images/clusterTile.jpeg";
-import drumTile from "./images/drumTile.jpeg";
-import guitarTile from "./images/guitarTile.jpeg";
-import keysTile from "./images/keysTile.jpeg";
+import accTile from "./images/accpic2.png";
+import bandTile from "./images/bandpic2.png";
+import clusterTile from "./images/clusterpic2.png";
+import drumTile from "./images/Drumspic2.png";
+import guitarTile from "./images/guitarpic2.png";
+import keysTile from "./images/keyspic2.png";
 
 const Home = () => {
     return (
         <>
           <div className="homepage">
               <h1 className="hometitle">Welcome to KamJam</h1>
+              <br/>
               <span className="rowOne">
                 {/* replace test links below */}
                 {/* guitars */}
@@ -29,6 +30,7 @@ const Home = () => {
                 <img src={bandTile} className="homepageTiles" row="rowOne"/>
                 </a>
               </span>
+              <br/>
               <span class="rowTwo">
                 {/* keys and synths */}
                 <a href="/keyboards/products">
@@ -43,6 +45,7 @@ const Home = () => {
                 <img src={clusterTile} className="homepageTiles" row="rowTwo"/>
                 </a>
               </span>
+              <br/>
           </div>
         </>
     );
