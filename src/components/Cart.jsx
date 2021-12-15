@@ -15,6 +15,7 @@ const Cart = () => {
   const [productId, setProductId] = useState(null);
   const [cart, setCart] = useState([]);
   console.log(token);
+  const history = useHistory();
 
   useEffect(() => {
     if (!token) {
@@ -75,6 +76,12 @@ const Cart = () => {
           </button>
           <br />
           <br />
+          {myCart.length < 1 ? null
+            : <button className="place-order" onClick={() => {
+              history.push("/ThankYou");
+              // delete all items from cart
+              }}>Place Order</button>
+          }
         </div>
       ))}
     </>
