@@ -19,19 +19,22 @@
 
 .navbar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   background-image: url("./components/images/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 15vh;
+  max-height: 15vh;
 }
 
 .nav-main {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: baseline;
   justify-content: center;
   align-content: space-between;
   gap: 20px;
@@ -40,9 +43,14 @@
 }
 
 .navlinks {
-  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: space-between;
+  justify-content: center;
+  /* width: fit-content; */
   background-color: var(--yellow);
-  padding: 5px;
+  /* padding: 5px; */
   border-radius: 10%;
   text-decoration: none;
   border: 2px solid black;
@@ -52,6 +60,14 @@
 .navlinks:hover {
   cursor: pointer;
   background-color: white;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: space-between;
+  justify-content: center;
 }
 
 .right-nav {
