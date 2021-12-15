@@ -14,6 +14,7 @@ import ThankYou from "./ThankYou";
 import NotFound from "./NotFound";
 import AuthProvider from "./AuthProvider";
 import SearchResults from "./SearchResults";
+import Checkout from "./Checkout";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
