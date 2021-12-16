@@ -95,18 +95,19 @@ const Cart = () => {
             Remove from cart
           </button>
           <br />
-          <br />
-          {myCart.length < 1 ? null : (
-            <button
-              className="place-order"
-              onClick={handleCheckout}
-              // delete all items from cart
-            >
-              Place Order
-            </button>
-          )}
+        
         </div>
       ))}
+      <br />
+      {cart.length < 1 ? null : (
+        <button
+          className="place-order"
+          onClick={handleCheckout}
+        // delete all items from cart
+        >
+          Place Order
+        </button>
+      )}
     </>
   );
 };
