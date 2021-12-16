@@ -20,11 +20,11 @@ const SearchBar = ({ setIsLoading }) => {
       }}
     >
       <fieldset>
-        <label className="search-label" htmlFor="keywords">
+        {/* <label className="search-label search-components search" htmlFor="keywords">
           Find your sound:{" "}
-        </label>
+        </label> */}
         <input
-          className="searchbar"
+          className="searchbar search-components search"
           id="keywords"
           type="text"
           placeholder="Search KamJam"
@@ -33,7 +33,7 @@ const SearchBar = ({ setIsLoading }) => {
         />
       </fieldset>
       <button
-        className="navlinks"
+        className="utility-links search-components search"
         onClick={() => {
           history.push(`/search?term=${term}`);
         }}
