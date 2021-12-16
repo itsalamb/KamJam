@@ -47,11 +47,12 @@ const LoginForm = ({ isLoggedIn, setIsLoggedIn }) => {
     <>
       <div className="loginPage">
         <h2 className="welcome-back">Welcome Back!</h2>
+        <p className="login-sub">You're looking groovy as always.</p>
         {errorMessage ? <h4>{errorMessage}</h4> : null}
         {successMessage ? <h4>{successMessage}</h4> : null}
         <form className="loginForm" onSubmit={handleSubmit}>
-        <h2 className="login-to">Log into KAMJAM:</h2>
-        <br />
+          <h2 className="login-to">Log into KAMJAM:</h2>
+          <br />
           <label>
             <input
               className="email"
@@ -76,8 +77,17 @@ const LoginForm = ({ isLoggedIn, setIsLoggedIn }) => {
           </label>
           <br />
           <input className="Login" type="submit" value="Log In" />
-          <h4 className="no-account">Don't have an account? Click below to sign up!</h4>
-          <button className="to-register" onClick={() => {history.push("/register");}}>Sign Up</button> 
+          <h4 className="no-account">
+            Don't have an account? Click below to sign up!
+          </h4>
+          <button
+            className="to-register"
+            onClick={() => {
+              history.push("/register");
+            }}
+          >
+            Sign Up
+          </button>
         </form>
         <h3>
           {/* NavLink can be reabled when other components are working */}
