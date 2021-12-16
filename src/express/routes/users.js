@@ -39,7 +39,7 @@ usersRouter.post("/login", async (req, res, next) => {
         },
         process.env.JWT_SECRET
       );
-      res.send({ message: "You're logged in!", token: token });
+      res.send({ user, message: "You're logged in!", token: token });
     } else {
       next({
         name: "IncorrectCredentialsError",
@@ -83,7 +83,7 @@ usersRouter.post("/register", async (req, res, next) => {
     );
 
     res.send({
-      name: newUser.name,
+      user: newUser,
       message: "Thank you for registering with KamJam!",
       token,
     });
