@@ -83,40 +83,47 @@ const Cart = () => {
   return (
     <>
       <div className="cart-page">
-      <div className="title-div">
-          <h1 className="product-title">Here is your cart good sir</h1>
+        <div className="title-div">
+          {user ? null : (
+            <h1 className="product-title">Log in to add items to your cart</h1>
+          )}
         </div>
         <div className="cart-product-container">
-          {cart.map((myCart) => (
-            <div className="mycart" key={myCart.productId}>
-              <div className="cart-card">
-                <img className="cart-image" src={myCart.imageurl} />
-                <h3 className="cart-name">{myCart.name}</h3>
-                <div className="cart-buttons">
-                  <p className="cart-info">$ {myCart.price}</p>
-                  <p className="cart-info">Quantity: {myCart.quantity}</p>
-                  <button
-                    onClick={() => handleDeleteFromCart(userId, myCart.productId)}
-                    className="remove-button"
-                  >
-                    Remove from cart
-                  </button>
+          {cart.length ? (
+            cart.map((myCart) => (
+              <div className="mycart" key={myCart.productId}>
+                <h1 className="product-title">Here is your cart good sir</h1>
+                <div className="cart-card">
+                  <img className="cart-image" src={myCart.imageurl} />
+                  <h3 className="cart-name">{myCart.name}</h3>
+                  <div className="cart-buttons">
+                    <p className="cart-info">$ {myCart.price}</p>
+                    <p className="cart-info">Quantity: {myCart.quantity}</p>
+                    <button
+                      onClick={() =>
+                        handleDeleteFromCart(userId, myCart.productId)
+                      }
+                      className="remove-button"
+                    >
+                      Remove from cart
+                    </button>
+                  </div>
                 </div>
               </div>
-
-
-            </div>
-          ))}
+            ))
+          ) : user ? (
+            <h1 className="product-title">Please add items to your cart</h1>
+          ) : null}
           <br />
           {cart.length < 1 ? null : (
             <div className="order-button-container">
-            <button
-              className="place-order"
-              onClick={handleCheckout}
-            // delete all items from cart
-            >
-              Place Order
-            </button>
+              <button
+                className="place-order"
+                onClick={handleCheckout}
+                // delete all items from cart
+              >
+                Place Order
+              </button>
             </div>
           )}
         </div>
