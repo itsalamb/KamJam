@@ -68,20 +68,20 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
         <br />
         <div>
           {user.id ? (
-            <Link className="login-links" to="/login" onClick={handleClick}>
+            <Link className="navlinks" to="/login" onClick={handleClick}>
               Logout
             </Link>
           ) : (
             <>
-              <Link className="login-links" to="/login">
+              <Link className="navlinks" to="/login">
                 Login
               </Link>
-              <Link className="login-links" to="/register">
+              <Link className="navlinks" to="/register">
                 Sign Up
               </Link>
             </>
           )}
-          <Link to="/cart" className="login-links">
+          <Link to="/cart" className="navlinks">
             View Cart
           </Link>
         </div>

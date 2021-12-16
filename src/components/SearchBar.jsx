@@ -4,12 +4,11 @@ import { useHistory } from "react-router";
 
 const SearchBar = ({ setIsLoading }) => {
   const [term, setTerm] = useState("");
-  const history = useHistory()
+  const history = useHistory();
 
   const query = new URLSearchParams({
-    term
-  })
- 
+    term,
+  });
 
   return (
     <form
@@ -17,11 +16,13 @@ const SearchBar = ({ setIsLoading }) => {
       id="search"
       onSubmit={async (event) => {
         event.preventDefault();
-        history.push(`/search?${query.toString()}`)
+        history.push(`/search?${query.toString()}`);
       }}
     >
       <fieldset>
-        <label htmlFor="keywords">Find your sound: </label>
+        <label className="search-label" htmlFor="keywords">
+          Find your sound:{" "}
+        </label>
         <input
           className="searchbar"
           id="keywords"
@@ -31,7 +32,14 @@ const SearchBar = ({ setIsLoading }) => {
           onChange={(e) => setTerm(e.target.value)}
         />
       </fieldset>
-      <button className="search-button" onClick={() => {history.push(`/search?term=${term}`)}}>SEARCH</button>
+      <button
+        className="navlinks"
+        onClick={() => {
+          history.push(`/search?term=${term}`);
+        }}
+      >
+        SEARCH
+      </button>
     </form>
   );
 };
