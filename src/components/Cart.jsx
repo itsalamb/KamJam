@@ -82,31 +82,45 @@ const Cart = () => {
 
   return (
     <>
-      <h1>Here is your cart good sir</h1>
-      {cart.map((myCart) => (
-        <div className="mycart" key={myCart.productId}>
-          <h3 className="cart-info">{myCart.name}</h3>
-          <img className="cart-image" src={myCart.imageurl} />
-          <p className="cart-info">$ {myCart.price}</p>
-          <p cart-info>Quantity: {myCart.quantity}</p>
-          <button
-            onClick={() => handleDeleteFromCart(userId, myCart.productId)}
-          >
-            Remove from cart
-          </button>
+      <div className="cart-page">
+      <div className="title-div">
+          <h1 className="product-title">Here is your cart good sir</h1>
+        </div>
+        <div className="product-container">
+          {cart.map((myCart) => (
+            <div className="mycart" key={myCart.productId}>
+              <div className="cart-card">
+                <h3 className="cart-name">{myCart.name}</h3>
+                <img className="cart-image" src={myCart.imageurl} />
+                <div className="cart-buttons">
+                  <p className="cart-info">$ {myCart.price}</p>
+                  <p cart-info>Quantity: {myCart.quantity}</p>
+                  <button
+                    onClick={() => handleDeleteFromCart(userId, myCart.productId)}
+                    className="remove-button"
+                  >
+                    Remove from cart
+                  </button>
+                </div>
+              </div>
+
+
+            </div>
+          ))}
           <br />
-          <br />
-          {myCart.length < 1 ? null : (
+          {cart.length < 1 ? null : (
+            <div className="order-button-container">
             <button
               className="place-order"
               onClick={handleCheckout}
-              // delete all items from cart
+            // delete all items from cart
             >
               Place Order
             </button>
+            </div>
           )}
         </div>
-      ))}
+      </div>
     </>
   );
 };

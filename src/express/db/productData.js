@@ -244,7 +244,7 @@ const products = [
     price: 1499,
   },
   {
-    name: 'Woods Custom Drums 12/14/20 Maple/Poplar/Maple Wood Hoop Drum Set 2021',
+    name: 'Woods Custom Drums 12/14/20 Maple/Poplar/Maple Wood Hoop Drum',
     description:
     "Proudly made in Canada, Woods Custom Drums feature in-house drum shells and reinforcement rings from premium quality materials. Jeff Woods prefers to make his shells the classic way: thin and resonant with rerings for focus and added rigidity. Every fine detail embodies handmade, hand-selected, expertly crafted quality.",
     imageurl:
@@ -452,7 +452,7 @@ const products = [
     price: 2499,
   },
   {
-    name: "Novation Circuit Tracks Standalone Groovebox with Synths, Drums and Sequencer",
+    name: "Novation Circuit Tracks Standalone Groovebox",
     description: "Circuit Tracks in an all-in-one studio with two synth tracks, two MIDI tracks and four drum tracks: everything you need to create and perform music. Designed for electronic and dance music producers, the agile groovebox lets you lose yourself in a hands-on production workflow. Let your creativity thrive with the acclaimed, hands-on sequencer, with which you can create 32-step patterns, chainable for up to 256 steps sequences per track. Go off-grid with microtiming, and keep your music evolving with probability and pattern mutate. ",
     imageurl:
       "https://images.reverb.com/image/upload/s--AcrCXbAq--/f_auto,t_large/v1618343863/fkjcjxop4jtbafu3uc9q.jpg",

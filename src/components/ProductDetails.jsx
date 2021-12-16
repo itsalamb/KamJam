@@ -4,7 +4,7 @@ import AddToCartButton from "./AddToCartButton";
 import { ProductsContext } from "./ProductsProvider";
 import NotFound from "./NotFound";
 
-const ProductDetails = ({}) => {
+const ProductDetails = ({ }) => {
   const [product, setProduct] = useState([]);
   const [productNotFound, setProductNotFound] = useState(false);
 
