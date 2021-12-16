@@ -16,7 +16,7 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
   const handleClick = () => {
     localStorage.clear();
     setIsLoggedIn(false);
-    setUser("guest");
+    setUser("");
     history.push("/login");
   };
 

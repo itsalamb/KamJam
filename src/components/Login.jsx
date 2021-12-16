@@ -27,6 +27,7 @@ const LoginForm = ({ isLoggedIn, setIsLoggedIn }) => {
       }),
     });
     const data = await response.json();
+    console.log("LOGIN DATA RIGHT HERE:", data);
     setToken(data.token);
 
     if (data.token) {
@@ -34,7 +35,7 @@ const LoginForm = ({ isLoggedIn, setIsLoggedIn }) => {
       setIsLoggedIn(true);
 
       history.push("/");
-      setUser(user);
+      setUser(data.user);
     } else {
       setErrorMessage(data.message);
     }
@@ -62,7 +63,7 @@ const LoginForm = ({ isLoggedIn, setIsLoggedIn }) => {
       setIsLoggedIn(true);
 
       history.push("/");
-      setUser(user);
+      setUser(data.user);
     } else {
       setErrorMessage(data.message);
     }
@@ -77,52 +78,54 @@ const LoginForm = ({ isLoggedIn, setIsLoggedIn }) => {
         {successMessage ? (
           <h4 className="login-sub">{successMessage}</h4>
         ) : null}
-        <form className="loginForm" onSubmit={handleSubmit}>
-          <h2 className="login-to">Log into Kam Jam</h2>
-          <br />
-          <label>
-            <input
-              className="login-info"
-              type="text"
-              name="name"
-              placeholder="Enter Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </label>
-          <br />
+        <div className="form-test">
+          <form className="loginForm" onSubmit={handleSubmit}>
+            <h2 className="login-to">Log into Kam Jam</h2>
+            <br />
+            <label>
+              <input
+                className="login-info"
+                type="text"
+                name="name"
+                placeholder="Enter Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </label>
+            <br />
 
-          <label>
-            <input
-              className="login-info"
-              type="password"
-              name="password"
-              placeholder="Enter Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </label>
-          <br />
-          <div>
-            <button className="login-links" type="submit">
-              Log In
+            <label>
+              <input
+                className="login-info"
+                type="password"
+                name="password"
+                placeholder="Enter Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </label>
+            <br />
+            <div>
+              <button className="login-links" type="submit">
+                Log In
+              </button>
+              <button className="login-links" onClick={handleDemo}>
+                Demo User login
+              </button>
+            </div>
+            <h4 className="no-account">
+              Don't have an account? Click below to sign up!
+            </h4>
+            <button
+              className="login-links"
+              onClick={() => {
+                history.push("/register");
+              }}
+            >
+              Sign Up
             </button>
-            <button className="login-links" onClick={handleDemo}>
-              Demo User login
-            </button>
-          </div>
-          <h4 className="no-account">
-            Don't have an account? Click below to sign up!
-          </h4>
-          <button
-            className="login-links"
-            onClick={() => {
-              history.push("/register");
-            }}
-          >
-            Sign Up
-          </button>
-        </form>
+          </form>
+        </div>
       </div>
     </>
   );

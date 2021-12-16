@@ -1,10 +1,13 @@
 import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 import AddToCartButton from "./AddToCartButton";
 import { ProductsContext } from "./ProductsProvider";
 import NotFound from "./NotFound";
+import { AuthContext } from "./AuthProvider";
 
-const ProductDetails = ({ }) => {
+const ProductDetails = ({}) => {
+  const { user } = useContext(AuthContext);
   const [product, setProduct] = useState([]);
   const [productNotFound, setProductNotFound] = useState(false);
 
@@ -56,7 +59,13 @@ const ProductDetails = ({ }) => {
                 Condition: {product.condition}
               </p>
               <p className="single-price">$ {product.price}</p>
-              <AddToCartButton />
+              {user ? (
+                <AddToCartButton />
+              ) : (
+                <Link to="/login" className="navlinks">
+                  Log in to buy
+                </Link>
+              )}
             </div>
           </div>
         ))}
