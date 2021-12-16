@@ -86,7 +86,7 @@ const Cart = () => {
       <div className="title-div">
           <h1 className="product-title">Here is your cart good sir</h1>
         </div>
-        <div className="product-container">
+        <div className="cart-product-container">
           {cart.map((myCart) => (
             <div className="mycart" key={myCart.productId}>
               <div className="cart-card">

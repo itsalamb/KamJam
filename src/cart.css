@@ -79,8 +79,10 @@
     align-content: center;
 }
 
-.product-container {
-    flex-direction: column;
+.cart-product-container {
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
 }
