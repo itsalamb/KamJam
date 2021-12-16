@@ -20,9 +20,9 @@ const SearchBar = ({ setIsLoading }) => {
       }}
     >
       <fieldset>
-        {/* <label className="search-label search-components search" htmlFor="keywords">
+        <label className="search-label search-components search" htmlFor="keywords">
           Find your sound:{" "}
-        </label> */}
+        </label>
         <input
           className="searchbar search-components search"
           id="keywords"
