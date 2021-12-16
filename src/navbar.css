@@ -77,17 +77,6 @@
   text-decoration: none;
 }
 
-.login-links {
-  background-color: var(--yellow);
-  padding: 5px;
-  border-radius: 10%;
-  text-decoration: none;
-  border: 2px solid black;
-  color: black;
-  font-size: 20px;
-  margin: 2px;
-}
-
 .login-links:hover {
   cursor: pointer;
   background-color: white;
