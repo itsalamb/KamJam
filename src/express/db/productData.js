@@ -45,7 +45,7 @@ const products = [
     price: 899,
   },
   {
-    name: "Diamon Guitars Barchetta STF",
+    name: "Diamond Guitars Barchetta STF",
     description:
       "The BARCHETTA combines a classic style with a modern update. Beautiful enough to be classic, modern enough to be aggressive, the BARCHETTA has a wide variety of colors and configurations to go from casual, to black tie, to black t-shirt. The BARCHETTA is what happens when a guitar grows up. The pinnacle of refinement and power, it's the S-Class AMG of guitars. Sleek, elegant, and FAST.The LT models afford you the opportunity for a guitar built to the same quality as our highest end guitars but at a more affordable price-point. Features a bolt-on neck and Diamond Custom Pickups optimized for our guitars and for the best amplifier performance.",
     imageurl:
