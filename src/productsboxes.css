@@ -39,7 +39,7 @@
 }
 
 .product-card {
-  background-color: beige;
+  background-color:#fcf1cc;
   display: flex;
   flex-wrap: wrap;
   margin: 2vw;
