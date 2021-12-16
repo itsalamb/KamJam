@@ -82,32 +82,34 @@ const Cart = () => {
 
   return (
     <>
-      <h1>Here is your cart good sir</h1>
-      {cart.map((myCart) => (
-        <div className="mycart" key={myCart.productId}>
-          <h3 className="cart-info">{myCart.name}</h3>
-          <img className="cart-image" src={myCart.imageurl} />
-          <p className="cart-info">$ {myCart.price}</p>
-          <p cart-info>Quantity: {myCart.quantity}</p>
+      <div className="cart-page">
+        <h1>Here is your cart good sir</h1>
+        {cart.map((myCart) => (
+          <div className="mycart" key={myCart.productId}>
+            <h3 className="cart-info">{myCart.name}</h3>
+            <img className="cart-image" src={myCart.imageurl} />
+            <p className="cart-info">$ {myCart.price}</p>
+            <p cart-info>Quantity: {myCart.quantity}</p>
+            <button
+              onClick={() => handleDeleteFromCart(userId, myCart.productId)}
+            >
+              Remove from cart
+            </button>
+            <br />
+
+          </div>
+        ))}
+        <br />
+        {cart.length < 1 ? null : (
           <button
-            onClick={() => handleDeleteFromCart(userId, myCart.productId)}
+            className="place-order"
+            onClick={handleCheckout}
+          // delete all items from cart
           >
-            Remove from cart
+            Place Order
           </button>
-          <br />
-        
-        </div>
-      ))}
-      <br />
-      {cart.length < 1 ? null : (
-        <button
-          className="place-order"
-          onClick={handleCheckout}
-        // delete all items from cart
-        >
-          Place Order
-        </button>
-      )}
+        )}
+      </div>
     </>
   );
 };
