@@ -44,8 +44,10 @@ const Register = ({ setIsLoggedIn }) => {
         <h2 className="welcome-back">Welcome to KamJam!</h2>
         <p className="login-sub">This one goes to 11.</p>
         <div>
-          {errorMessage ? <h4>{errorMessage}</h4> : null}
-          {successMessage ? <h4>{successMessage}</h4> : null}
+          {errorMessage ? <h4 className="login-sub">{errorMessage}</h4> : null}
+          {successMessage ? (
+            <h4 className="login-sub">{successMessage}</h4>
+          ) : null}
           <form className="loginForm" onSubmit={handleSubmit}>
             <h2 className="login-to">Create Your Account</h2>
             <br />
