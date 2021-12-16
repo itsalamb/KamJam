@@ -90,11 +90,11 @@ const Cart = () => {
           {cart.map((myCart) => (
             <div className="mycart" key={myCart.productId}>
               <div className="cart-card">
-                <h3 className="cart-name">{myCart.name}</h3>
                 <img className="cart-image" src={myCart.imageurl} />
+                <h3 className="cart-name">{myCart.name}</h3>
                 <div className="cart-buttons">
                   <p className="cart-info">$ {myCart.price}</p>
-                  <p cart-info>Quantity: {myCart.quantity}</p>
+                  <p className="cart-info">Quantity: {myCart.quantity}</p>
                   <button
                     onClick={() => handleDeleteFromCart(userId, myCart.productId)}
                     className="remove-button"
