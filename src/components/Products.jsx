@@ -31,7 +31,10 @@ const Products = ({ title, products }) => {
               >
                 See Details
               </button>
+              <div classname="price-con">
+              <p className="price">{product.condition}</p>
               <p className="price">$ {product.price}</p>
+              </div>
             </div>
           </div>
         ))}
