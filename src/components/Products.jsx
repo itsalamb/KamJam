@@ -5,19 +5,22 @@ const Products = ({ title, products }) => {
   const history = useHistory();
 
   return (
-    <>
-      <h1 className="product-title">{title}</h1>
+    <div className="product-page">
+      <div className="title-div">
+        <h1 className="product-title">{title}</h1>
+      </div>
       <div className="product-container">
         {products.map((product) => (
           <div
             className="product-card"
             key={product.id}
-            onClick={() => {
-              history.push(`/products/${product.id}`);
-            }}
           >
-            <h3 className="product-name">{product.name}</h3>
-            <img className="product-image" src={product.imageurl} />
+            <h3 className="product-name" onClick={() => {
+              history.push(`/products/${product.id}`);
+            }}>{product.name}</h3>
+            <img className="product-image" onClick={() => {
+              history.push(`/products/${product.id}`);
+            }} src={product.imageurl} />
             <div className="product-buttons">
               <button
                 type="button"
@@ -33,7 +36,7 @@ const Products = ({ title, products }) => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

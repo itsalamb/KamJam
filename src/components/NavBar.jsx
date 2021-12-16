@@ -22,14 +22,48 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
 
   return (
     <nav className="navbar">
-      <div className="logoDiv">
+      {/* logo, search, login, view cart */}
+      <div className="top-bar">
         <Link to="/">
           <img src={logo} className="logo" />
         </Link>
       </div>
+      <SearchBar className="top-bar"/>
+      <div className="right-nav">
+        <div className="cart-icon">
+          {user.name ? <p>Hello, {user.name}!</p> : <p>Hello guest!</p>}
+          {/* <div className="view-cart">
+            <Link to="/cart">
+              <span class="material-icons">shopping_cart</span>
+            </Link>
+            <Link to="/cart">
+              <p>View cart ({cart.length})</p>
+            </Link>
+          </div> */}
+        </div>
+        <div className="right-nav">
+          {user.id ? (
+            <Link className="utility-links" to="/login" onClick={handleClick}>
+              Logout
+            </Link>
+          ) : (
+            <>
+              <Link className="utility-links" to="/login">
+                Login
+              </Link>
+              <Link className="utility-links" to="/register">
+                Sign Up
+              </Link>
+            </>
+          )}
+          <Link to="/cart" className="utility-links">
+            View Cart
+          </Link>
+        </div>
+      </div>
       <div className="nav-main">
-        <SearchBar className="search-bar" />
-        <div className="links">
+        {/* product category links */}
+        <div className="links bottom-bar">
           <Link to="/" className="navlinks">
             Home
           </Link>
@@ -50,39 +84,6 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
           </Link>
           <Link to="/products" className="navlinks">
             See All Products
-          </Link>
-        </div>
-      </div>
-      <div className="right-nav">
-        <div className="cart-icon">
-          {user.name ? <p>Hello, {user.name}!</p> : <p>Hello guest!</p>}
-          {/* <div className="view-cart">
-            <Link to="/cart">
-              <span class="material-icons">shopping_cart</span>
-            </Link>
-            <Link to="/cart">
-              <p>View cart ({cart.length})</p>
-            </Link>
-          </div> */}
-        </div>
-        <br />
-        <div>
-          {user.id ? (
-            <Link className="login-links" to="/login" onClick={handleClick}>
-              Logout
-            </Link>
-          ) : (
-            <>
-              <Link className="login-links" to="/login">
-                Login
-              </Link>
-              <Link className="login-links" to="/register">
-                Sign Up
-              </Link>
-            </>
-          )}
-          <Link to="/cart" className="login-links">
-            View Cart
           </Link>
         </div>
       </div>

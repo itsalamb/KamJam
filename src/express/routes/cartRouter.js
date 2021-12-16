@@ -1,8 +1,8 @@
 const express = require("express");
 const {
   addToCart,
-  getCartById,
   removeFromCart,
+  clearCart,
   updateQuantityInCart,
   getCartByUserId,
 } = require("../db/cart");
@@ -51,7 +51,7 @@ cartRouter.post("/", requireUser, async (req, res, next) => {
 // Delete item from cart
 
 cartRouter.delete(
-  "/:userId/:productId",
+  "/product/:productId",
   requireUser,
   async (req, res, next) => {
     const { userId, productId } = req.body;
@@ -72,6 +72,26 @@ cartRouter.delete(
     }
   }
 );
+
+cartRouter.delete("/", requireUser, async (req, res, next) => {
+  const { id } = req.user;
+
+  try {
+    const emptyCart = await clearCart(id);
+    console.log("EMPTY CARTTTTTT:", emptyCart);
+    if (emptyCart) {
+      res.send(emptyCart);
+    } else {
+      next({ name: "NoCartError", message: "No cart found" });
+    }
+  } catch (error) {
+    console.error(error);
+    next({
+      name: "DeleteCartItemError",
+      message: "Could not clear the cart",
+    });
+  }
+});
 
 // Update quantity in cart
 

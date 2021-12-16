@@ -22,10 +22,26 @@ async function removeFromCart(userId, productId) {
     `
     DELETE
     FROM cart
-    WHERE cart.id=$1 and cart."productId"=$2
+    WHERE "userId"=$1 and cart."productId"=$2
     RETURNING *;
     `,
     [userId, productId]
+  );
+
+  return cart;
+}
+
+async function clearCart(userId) {
+  const {
+    rows: [cart],
+  } = await client.query(
+    `
+    DELETE
+    FROM cart
+    WHERE "userId"=$1
+    RETURNING *;
+    `,
+    [userId]
   );
 
   return cart;
@@ -63,6 +79,7 @@ async function getCartByUserId(userId) {
 module.exports = {
   addToCart,
   removeFromCart,
+  clearCart,
   updateQuantityInCart,
   getCartByUserId,
 };
