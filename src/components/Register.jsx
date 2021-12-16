@@ -1,7 +1,9 @@
-import react, { useState } from "react";
+import react, { useState, useContext } from "react";
 import { useHistory } from "react-router";
+import { AuthContext } from "./AuthProvider";
 
 const Register = ({ setIsLoggedIn }) => {
+  const { token, setToken, user, setUser } = useContext(AuthContext);
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -28,11 +30,10 @@ const Register = ({ setIsLoggedIn }) => {
 
     if (data.token) {
       setIsLoggedIn(true);
-      setSuccessMessage(`Welcome to KamJam ${data.name}`);
-
-      setTimeout(() => {
-        history.push("/");
-      }, 1500);
+      setUser(data.user);
+      setToken(token);
+      setSuccessMessage(`Welcome to KamJam ${data.user.name}`);
+      history.push("/");
     } else {
       setErrorMessage(data.message);
     }

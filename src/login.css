@@ -1,11 +1,15 @@
 .loginPage {
   height: 85vh;
-  background-color: beige;
+  background-image: url("./components/images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left bottom;
 }
 
 .loginForm {
   display: flex;
   flex-direction: column;
+  background-color: beige;
   flex: 1;
   align-items: center;
   justify-content: center;
@@ -15,10 +19,6 @@
   transform: translate(-50%, -50%);
   padding: 1.5rem;
   border: 1px solid #303036;
-  background-image: url("./components/images/background.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   height: 30vh;
   min-width: 40vw;
   gap: 0.5vh;

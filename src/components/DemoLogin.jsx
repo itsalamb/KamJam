@@ -1,9 +1,8 @@
-import React, { useState, useContext } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
-// import { getUserByEmail } from "../express/db/users";
 import { AuthContext } from "./AuthProvider";
 
-const LoginForm = ({ isLoggedIn, setIsLoggedIn }) => {
+export default function DemoLogin() {
   const { token, setToken, user, setUser } = useContext(AuthContext);
   const history = useHistory();
   const [email, setEmail] = useState("");
@@ -11,7 +10,6 @@ const LoginForm = ({ isLoggedIn, setIsLoggedIn }) => {
   const [name, setName] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState(null);
-
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -24,34 +22,6 @@ const LoginForm = ({ isLoggedIn, setIsLoggedIn }) => {
         email,
         password,
         name,
-      }),
-    });
-    const data = await response.json();
-    setToken(data.token);
-
-    if (data.token) {
-      setSuccessMessage("Welcome back!");
-      setIsLoggedIn(true);
-
-      history.push("/");
-      setUser(user);
-    } else {
-      setErrorMessage(data.message);
-    }
-  };
-
-  const handleDemo = async (event) => {
-    event.preventDefault();
-
-    const response = await fetch(`api/users/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: "demouser@gmail.com",
-        password: "demouser123",
-        name: "KamJam Demo",
       }),
     });
     const data = await response.json();
@@ -104,9 +74,6 @@ const LoginForm = ({ isLoggedIn, setIsLoggedIn }) => {
           </label>
           <br />
           <input className="Login" type="submit" value="Log In" />
-          <button className="demo" onClick={handleDemo}>
-            Demo User login
-          </button>
           <h4 className="no-account">
             Don't have an account? Click below to sign up!
           </h4>
@@ -126,6 +93,4 @@ const LoginForm = ({ isLoggedIn, setIsLoggedIn }) => {
       </div>
     </>
   );
-};
-
-export default LoginForm;
+}
