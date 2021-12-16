@@ -136,3 +136,7 @@
   border-radius: 8px;
   background-clip: padding-box;
 }
+
+.details-button:hover{
+  background-color: #4dacb4;
+}
