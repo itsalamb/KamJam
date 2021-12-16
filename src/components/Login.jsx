@@ -78,11 +78,11 @@ const LoginForm = ({ isLoggedIn, setIsLoggedIn }) => {
           <h4 className="login-sub">{successMessage}</h4>
         ) : null}
         <form className="loginForm" onSubmit={handleSubmit}>
-          <h2 className="login-to">Log into KAMJAM:</h2>
+          <h2 className="login-to">Log into Kam Jam</h2>
           <br />
           <label>
             <input
-              className="email"
+              className="login-info"
               type="text"
               name="name"
               placeholder="Enter Email"
@@ -94,7 +94,7 @@ const LoginForm = ({ isLoggedIn, setIsLoggedIn }) => {
 
           <label>
             <input
-              className="password"
+              className="login-info"
               type="password"
               name="password"
               placeholder="Enter Password"
@@ -103,15 +103,19 @@ const LoginForm = ({ isLoggedIn, setIsLoggedIn }) => {
             />
           </label>
           <br />
-          <input className="Login" type="submit" value="Log In" />
-          <button className="demo" onClick={handleDemo}>
-            Demo User login
-          </button>
+          <div>
+            <button className="login-links" type="submit">
+              Log In
+            </button>
+            <button className="login-links" onClick={handleDemo}>
+              Demo User login
+            </button>
+          </div>
           <h4 className="no-account">
             Don't have an account? Click below to sign up!
           </h4>
           <button
-            className="to-register"
+            className="login-links"
             onClick={() => {
               history.push("/register");
             }}
@@ -119,10 +123,6 @@ const LoginForm = ({ isLoggedIn, setIsLoggedIn }) => {
             Sign Up
           </button>
         </form>
-        <h3>
-          {/* NavLink can be reabled when other components are working */}
-          {/* Not a member yet? <NavLink to="/register">Register today!</NavLink> */}
-        </h3>
       </div>
     </>
   );
