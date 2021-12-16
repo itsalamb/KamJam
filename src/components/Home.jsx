@@ -8,41 +8,44 @@ import guitarTile from "./images/guitarpic2.png";
 import keysTile from "./images/keyspic2.png";
 
 const Home = () => {
-    return (
-        <>
-          <div className="homepage">
-              <h1 className="hometitle">Welcome to KamJam</h1>
-              <div className="tileContainer">
-              <div className="homeTiles">
-                {/* guitars */}
-                <Link to="/Guitars/products">
-                <img src={guitarTile} className="singleTile"/>
-                </Link>
-                {/* drums */}
-                <Link to="/Drums/products">
-                <img src={drumTile} className="singleTile"/>
-                </Link>
-                {/* Band and orchestra */}
-                <Link to="/Band/products">
-                <img src={bandTile} className="singleTile"/>
-                </Link>
-                {/* keys and synths */}
-                <Link to="/Keyboards/products">
-                <img src={keysTile} className="singleTile"/>
-                </Link>
-                {/* Accesories */}
-                <Link to="/Accessories/products">
-                  <img src={accTile} className="singleTile"/>
-                </Link>
-                {/* all products */}
-                <Link to="/products">
-                <img src={clusterTile} className="singleTile"/>
-                </Link>
-              </div>
-              </div>
+  return (
+    <>
+      <div className="homepage">
+        <h1 className="hometitle">Kam Jam</h1>
+        <p className="homesub">
+          The world's grooviest musical instrument retailer
+        </p>
+        <div className="tileContainer">
+          <div className="homeTiles">
+            {/* guitars */}
+            <Link to="/Guitars/products">
+              <img src={guitarTile} className="singleTile" />
+            </Link>
+            {/* drums */}
+            <Link to="/Drums/products">
+              <img src={drumTile} className="singleTile" />
+            </Link>
+            {/* Band and orchestra */}
+            <Link to="/Band/products">
+              <img src={bandTile} className="singleTile" />
+            </Link>
+            {/* keys and synths */}
+            <Link to="/Keyboards/products">
+              <img src={keysTile} className="singleTile" />
+            </Link>
+            {/* Accesories */}
+            <Link to="/Accessories/products">
+              <img src={accTile} className="singleTile" />
+            </Link>
+            {/* all products */}
+            <Link to="/products">
+              <img src={clusterTile} className="singleTile" />
+            </Link>
           </div>
-        </>
-    );
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Home;

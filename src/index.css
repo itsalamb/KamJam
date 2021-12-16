@@ -17,6 +17,13 @@
 
 */
 
+.App {
+  background-image: url("./components/images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+
 .hometitle {
   font-family: "Ranchers";
 }

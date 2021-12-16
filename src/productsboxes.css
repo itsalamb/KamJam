@@ -13,26 +13,32 @@
   font-family: "Chicle";
 }
 
+.product-page {
+  background-image: url("./components/images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+
 .product-container {
-    display: flex;
-    margin: 0;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    background-color: beige;
-    min-height: 80vh;
+  display: flex;
+  margin: 0;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  min-height: 80vh;
 }
 
 .product-card {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 2vw;
-    width: 400px;
-    height: 400px;
-    background-image: url("./components/images/background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2vw;
+  width: 400px;
+  height: 400px;
+  /* background-image: url("./components/images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; */
+  justify-content: center;
 }
 
 .price {
@@ -83,9 +89,8 @@
 }
 
 .product-title {
-    background-color: beige;
-    text-align: center;
-    font-size: 40pt;
-    height: 5vh;
-    align-content: flex-end;
+  text-align: center;
+  font-size: 40pt;
+  height: 5vh;
+  align-content: flex-end;
 }
