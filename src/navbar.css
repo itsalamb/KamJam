@@ -17,14 +17,14 @@
 
 /* NavBar styles */
 
-/* .navbar {
-  display: flex;
+.navbar {
+  /* display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center; */
   height: 15vh;
   max-height: 15vh;
-} */
+}
 
 .nav-main {
   display: flex;
@@ -80,7 +80,7 @@
 .right-nav {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   text-decoration: none;
@@ -89,7 +89,7 @@
 
 .cart-icon {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   width: 200px;
@@ -156,9 +156,9 @@ input {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   grid-gap: 10px;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .bottom-bar, .nav-main {
@@ -173,3 +173,18 @@ input {
   flex-wrap: wrap;
   flex-direction: row;
 } */
+
+.right-nav-2 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  text-decoration: none;
+  gap: 5px;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: row;
+}
