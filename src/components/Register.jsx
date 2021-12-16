@@ -51,7 +51,7 @@ const Register = ({ setIsLoggedIn }) => {
             <br />
             <label>
               <input
-                className="email"
+                className="login-info"
                 type="text"
                 required={true}
                 placeholder="Email"
@@ -62,7 +62,7 @@ const Register = ({ setIsLoggedIn }) => {
             <br />
             <label>
               <input
-                className="email"
+                className="login-info"
                 type="text"
                 required={true}
                 placeholder="Name"
@@ -73,7 +73,7 @@ const Register = ({ setIsLoggedIn }) => {
             <br />
             <label>
               <input
-                className="password"
+                className="login-info"
                 type="password"
                 required={true}
                 placeholder="Password"
@@ -82,7 +82,7 @@ const Register = ({ setIsLoggedIn }) => {
               ></input>
             </label>
             <br />
-            <button className="to-register" type="submit">
+            <button className="login-links" type="submit">
               Create Account!
             </button>
           </form>
