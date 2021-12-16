@@ -74,13 +74,12 @@ const LoginForm = ({ isLoggedIn, setIsLoggedIn }) => {
       <div className="loginPage">
         <h2 className="welcome-back">Welcome Back!</h2>
         <p className="login-sub">You're looking groovy as always.</p>
-        {errorMessage ? <h4 className="login-sub">{errorMessage}</h4> : null}
-        {successMessage ? (
-          <h4 className="login-sub">{successMessage}</h4>
-        ) : null}
         <div className="form-test">
           <form className="loginForm" onSubmit={handleSubmit}>
             <h2 className="login-to">Log into Kam Jam</h2>
+            {errorMessage ? (
+              <h4 className="login-sub">{errorMessage}</h4>
+            ) : null}
             <br />
             <label>
               <input
