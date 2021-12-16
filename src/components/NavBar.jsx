@@ -27,8 +27,8 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
         <Link to="/">
           <img src={logo} className="logo" />
         </Link>
-      </div>
-      <SearchBar className="top-bar"/>
+      
+      <SearchBar className="top-bar" />
       <div className="right-nav">
         <div className="cart-icon">
           {user.name ? <p>Hello, {user.name}!</p> : <p>Hello guest!</p>}
@@ -41,7 +41,7 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
             </Link>
           </div> */}
         </div>
-        <div className="right-nav">
+        <div className="right-nav-2">
           {user.id ? (
             <Link className="utility-links" to="/login" onClick={handleClick}>
               Logout
@@ -59,6 +59,7 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
           <Link to="/cart" className="utility-links">
             View Cart
           </Link>
+          </div>
         </div>
       </div>
       <div className="nav-main">
