@@ -64,7 +64,7 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
       </div>
       <div className="nav-main">
         {/* product category links */}
-        <div className="links bottom-bar">
+        <div className="bottom-bar">
           <Link to="/" className="navlinks">
             Home
           </Link>
