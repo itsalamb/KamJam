@@ -5,7 +5,7 @@ const Products = ({ title, products }) => {
   const history = useHistory();
 
   return (
-    <>
+    <div className="product-page">
       <h1 className="product-title">{title}</h1>
       <div className="product-container">
         {products.map((product) => (
@@ -33,7 +33,7 @@ const Products = ({ title, products }) => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

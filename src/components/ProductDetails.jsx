@@ -4,9 +4,9 @@ import AddToCartButton from "./AddToCartButton";
 import { ProductsContext } from "./ProductsProvider";
 import NotFound from "./NotFound";
 
-const ProductDetails = ({ }) => {
+const ProductDetails = ({}) => {
   const [product, setProduct] = useState([]);
-  const [productNotFound, setProductNotFound] = useState(false)
+  const [productNotFound, setProductNotFound] = useState(false);
 
   const params = useParams();
   const { products } = useContext(ProductsContext);
@@ -22,7 +22,7 @@ const ProductDetails = ({ }) => {
       });
       const { product } = await resp.json();
       if (!product.length) {
-        setProductNotFound(true)
+        setProductNotFound(true);
       } else {
         setProduct(product);
       }
@@ -31,7 +31,12 @@ const ProductDetails = ({ }) => {
   }, []);
 
   if (productNotFound) {
-    return <NotFound title="No Product Found" description="This Product Does Not Exist" />
+    return (
+      <NotFound
+        title="No Product Found"
+        description="This Product Does Not Exist"
+      />
+    );
   }
 
   return (
@@ -42,10 +47,14 @@ const ProductDetails = ({ }) => {
             <h1 className="single-product-name">{product.name}</h1>
             <div className="img-description">
               <img className="single-product-image" src={product.imageurl} />
-              <h2 className="single-product-description">Description: {product.description}</h2>
+              <h2 className="single-product-description">
+                Description: {product.description}
+              </h2>
             </div>
             <div className="price-cart-box">
-              <p className="product-condition">Condition :{product.condition}</p>
+              <p className="product-condition">
+                Condition: {product.condition}
+              </p>
               <p className="single-price">$ {product.price}</p>
               <AddToCartButton />
             </div>
