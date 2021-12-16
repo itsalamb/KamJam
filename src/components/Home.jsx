@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <>
           <div className="homepage">
-              <h1 className="hometitle">Welcome to KamJam</h1>
+              <h1 className="product-title">Welcome to KamJam</h1>
               <div className="tileContainer">
               <div className="homeTiles">
                 {/* guitars */}
